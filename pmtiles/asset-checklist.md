@@ -1,14 +1,16 @@
 # PMTiles Style Assets – benötigte Dateien & Sprite-Vorschlag
 
-## 1) Bereits vorhandene Pin-SVGs im Repo
+## 1) Status im aktuellen Repo
 
-Folgende Markerquellen sind bereits vorhanden:
+Die folgenden Marker-/Glyph-/Sprite-Dateien sind in **diesem Repository aktuell nicht enthalten**.
+Die unten genannten Pfade/URLs sind daher als Zielstruktur bzw. Referenz zu verstehen, nicht als bereits commitete Assets.
 
-- `src/assets/fonts/rd-pin-sprite.svg`
-- `src/assets/fonts/nah-pin-sprite.svg`
-- `src/assets/fonts/nef-pin-sprite.svg`
-- `src/assets/fonts/brd-pin-sprite.svg`
-- `src/assets/fonts/fallback-pin-sprite.svg`
+Fehlend im aktuellen Stand sind insbesondere:
+
+- einzelne Marker-SVGs (z. B. `rd-pin`, `nah-pin`, `nef-pin`, `brd-pin`, `fallback-pin`)
+- ein fertiger Sprite-Atlas (`.png`, `@2x.png`, `.json`)
+- Glyph-PBF-Dateien für Textlabels
+- ein lokaler Ablageort im Repo war bisher nicht vorhanden; dieser liegt jetzt unter `assets/fonts/`
 
 ## 2) Für externe Style-JSONs benötigte Runtime-Assets
 

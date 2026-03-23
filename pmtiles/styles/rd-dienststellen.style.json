@@ -2,12 +2,12 @@
   "version": 8,
   "name": "OE5ITH RD-Dienststellen (CI)",
   "metadata": {
-    "generator": "scripts/generate-pmtiles-folder-styles.js",
+    "generator": "build_hosted_overlays.py",
     "folder": "RD-Dienststellen",
     "sourceLayers": [
       "brd_ooe",
       "rd_by",
-      "rd_n",
+      "rd_noe",
       "rd_oo_nef",
       "rd_oo_sew",
       "rd_sbg",
@@ -18,8 +18,6 @@
       "accent": "#3b82f6"
     }
   },
-  "glyphs": "https://tiles.oe5ith.at/assets/fonts/{fontstack}/{range}.pbf",
-  "sprite": "https://tiles.oe5ith.at/assets/sprites/oe5ith-markers",
   "sources": {
     "folder": {
       "type": "vector",
@@ -34,6 +32,66 @@
       "type": "background",
       "paint": {
         "background-color": "#1a1a1a"
+      }
+    },
+    {
+      "id": "rd-dienststellen-brd_ooe-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "brd_ooe",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "rd-dienststellen-brd_ooe-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "brd_ooe",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
       }
     },
     {
@@ -54,7 +112,52 @@
         false
       ],
       "layout": {
-        "icon-image": "rd-pin",
+        "icon-image": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "emergency"
+            ],
+            "mountain_rescue"
+          ],
+          "brd-pin",
+          [
+            "any",
+            [
+              "==",
+              [
+                "get",
+                "ambulance_station:emergency_doctor"
+              ],
+              true
+            ],
+            [
+              "in",
+              [
+                "downcase",
+                [
+                  "to-string",
+                  [
+                    "get",
+                    "ambulance_station:emergency_doctor"
+                  ]
+                ]
+              ],
+              [
+                "literal",
+                [
+                  "yes",
+                  "true",
+                  "1"
+                ]
+              ]
+            ]
+          ],
+          "nef-pin",
+          "rd-pin"
+        ],
         "icon-size": [
           "interpolate",
           [
@@ -100,6 +203,66 @@
         "text-color": "#e0e0e0",
         "text-halo-color": "#1a1a1a",
         "text-halo-width": 1
+      }
+    },
+    {
+      "id": "rd-dienststellen-rd_by-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "rd_by",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "rd-dienststellen-rd_by-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "rd_by",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
       }
     },
     {
@@ -120,7 +283,52 @@
         false
       ],
       "layout": {
-        "icon-image": "rd-pin",
+        "icon-image": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "emergency"
+            ],
+            "mountain_rescue"
+          ],
+          "brd-pin",
+          [
+            "any",
+            [
+              "==",
+              [
+                "get",
+                "ambulance_station:emergency_doctor"
+              ],
+              true
+            ],
+            [
+              "in",
+              [
+                "downcase",
+                [
+                  "to-string",
+                  [
+                    "get",
+                    "ambulance_station:emergency_doctor"
+                  ]
+                ]
+              ],
+              [
+                "literal",
+                [
+                  "yes",
+                  "true",
+                  "1"
+                ]
+              ]
+            ]
+          ],
+          "nef-pin",
+          "rd-pin"
+        ],
         "icon-size": [
           "interpolate",
           [
@@ -169,10 +377,70 @@
       }
     },
     {
-      "id": "rd-dienststellen-rd_n-symbols",
+      "id": "rd-dienststellen-rd_noe-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "rd_noe",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "rd-dienststellen-rd_noe-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "rd_noe",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "rd-dienststellen-rd_noe-symbols",
       "type": "symbol",
       "source": "folder",
-      "source-layer": "rd_n",
+      "source-layer": "rd_noe",
       "filter": [
         "match",
         [
@@ -186,7 +454,52 @@
         false
       ],
       "layout": {
-        "icon-image": "rd-pin",
+        "icon-image": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "emergency"
+            ],
+            "mountain_rescue"
+          ],
+          "brd-pin",
+          [
+            "any",
+            [
+              "==",
+              [
+                "get",
+                "ambulance_station:emergency_doctor"
+              ],
+              true
+            ],
+            [
+              "in",
+              [
+                "downcase",
+                [
+                  "to-string",
+                  [
+                    "get",
+                    "ambulance_station:emergency_doctor"
+                  ]
+                ]
+              ],
+              [
+                "literal",
+                [
+                  "yes",
+                  "true",
+                  "1"
+                ]
+              ]
+            ]
+          ],
+          "nef-pin",
+          "rd-pin"
+        ],
         "icon-size": [
           "interpolate",
           [
@@ -232,6 +545,66 @@
         "text-color": "#e0e0e0",
         "text-halo-color": "#1a1a1a",
         "text-halo-width": 1
+      }
+    },
+    {
+      "id": "rd-dienststellen-rd_oo_nef-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "rd_oo_nef",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "rd-dienststellen-rd_oo_nef-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "rd_oo_nef",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
       }
     },
     {
@@ -252,7 +625,52 @@
         false
       ],
       "layout": {
-        "icon-image": "rd-pin",
+        "icon-image": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "emergency"
+            ],
+            "mountain_rescue"
+          ],
+          "brd-pin",
+          [
+            "any",
+            [
+              "==",
+              [
+                "get",
+                "ambulance_station:emergency_doctor"
+              ],
+              true
+            ],
+            [
+              "in",
+              [
+                "downcase",
+                [
+                  "to-string",
+                  [
+                    "get",
+                    "ambulance_station:emergency_doctor"
+                  ]
+                ]
+              ],
+              [
+                "literal",
+                [
+                  "yes",
+                  "true",
+                  "1"
+                ]
+              ]
+            ]
+          ],
+          "nef-pin",
+          "rd-pin"
+        ],
         "icon-size": [
           "interpolate",
           [
@@ -298,6 +716,66 @@
         "text-color": "#e0e0e0",
         "text-halo-color": "#1a1a1a",
         "text-halo-width": 1
+      }
+    },
+    {
+      "id": "rd-dienststellen-rd_oo_sew-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "rd_oo_sew",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "rd-dienststellen-rd_oo_sew-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "rd_oo_sew",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
       }
     },
     {
@@ -318,7 +796,52 @@
         false
       ],
       "layout": {
-        "icon-image": "rd-pin",
+        "icon-image": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "emergency"
+            ],
+            "mountain_rescue"
+          ],
+          "brd-pin",
+          [
+            "any",
+            [
+              "==",
+              [
+                "get",
+                "ambulance_station:emergency_doctor"
+              ],
+              true
+            ],
+            [
+              "in",
+              [
+                "downcase",
+                [
+                  "to-string",
+                  [
+                    "get",
+                    "ambulance_station:emergency_doctor"
+                  ]
+                ]
+              ],
+              [
+                "literal",
+                [
+                  "yes",
+                  "true",
+                  "1"
+                ]
+              ]
+            ]
+          ],
+          "nef-pin",
+          "rd-pin"
+        ],
         "icon-size": [
           "interpolate",
           [
@@ -364,6 +887,66 @@
         "text-color": "#e0e0e0",
         "text-halo-color": "#1a1a1a",
         "text-halo-width": 1
+      }
+    },
+    {
+      "id": "rd-dienststellen-rd_sbg-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "rd_sbg",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "rd-dienststellen-rd_sbg-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "rd_sbg",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
       }
     },
     {
@@ -384,7 +967,52 @@
         false
       ],
       "layout": {
-        "icon-image": "rd-pin",
+        "icon-image": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "emergency"
+            ],
+            "mountain_rescue"
+          ],
+          "brd-pin",
+          [
+            "any",
+            [
+              "==",
+              [
+                "get",
+                "ambulance_station:emergency_doctor"
+              ],
+              true
+            ],
+            [
+              "in",
+              [
+                "downcase",
+                [
+                  "to-string",
+                  [
+                    "get",
+                    "ambulance_station:emergency_doctor"
+                  ]
+                ]
+              ],
+              [
+                "literal",
+                [
+                  "yes",
+                  "true",
+                  "1"
+                ]
+              ]
+            ]
+          ],
+          "nef-pin",
+          "rd-pin"
+        ],
         "icon-size": [
           "interpolate",
           [
@@ -433,6 +1061,66 @@
       }
     },
     {
+      "id": "rd-dienststellen-rd_stmk-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "rd_stmk",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "rd-dienststellen-rd_stmk-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "rd_stmk",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
       "id": "rd-dienststellen-rd_stmk-symbols",
       "type": "symbol",
       "source": "folder",
@@ -450,7 +1138,52 @@
         false
       ],
       "layout": {
-        "icon-image": "rd-pin",
+        "icon-image": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "emergency"
+            ],
+            "mountain_rescue"
+          ],
+          "brd-pin",
+          [
+            "any",
+            [
+              "==",
+              [
+                "get",
+                "ambulance_station:emergency_doctor"
+              ],
+              true
+            ],
+            [
+              "in",
+              [
+                "downcase",
+                [
+                  "to-string",
+                  [
+                    "get",
+                    "ambulance_station:emergency_doctor"
+                  ]
+                ]
+              ],
+              [
+                "literal",
+                [
+                  "yes",
+                  "true",
+                  "1"
+                ]
+              ]
+            ]
+          ],
+          "nef-pin",
+          "rd-pin"
+        ],
         "icon-size": [
           "interpolate",
           [
@@ -498,5 +1231,7 @@
         "text-halo-width": 1
       }
     }
-  ]
+  ],
+  "glyphs": "https://tiles.oe5ith.at/assets/fonts/{fontstack}/{range}.pbf",
+  "sprite": "https://tiles.oe5ith.at/assets/sprites/oe5ith-markers"
 }
