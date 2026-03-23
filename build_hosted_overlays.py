@@ -377,7 +377,7 @@ def zonen_layer_keys(layer_spec: LayerSpec) -> List[str]:
     return keys
 
 
-def build_zonen_match_expression(layer_spec: LayerSpec, color_mapping: Dict[str, str]) -> List[Any]:
+def build_zonen_layer_match_expression(layer_spec: LayerSpec, color_mapping: Dict[str, str]) -> List[Any]:
     expression: List[Any] = ["match", ["coalesce", ["get", "alt_name"], ["get", "name"]]]
     for key in zonen_layer_keys(layer_spec):
         color = color_mapping.get(key)
@@ -446,7 +446,7 @@ def build_zonen_style(bundle: BundleSpec, base_url: str, sprite_url: Optional[st
     layers = style["layers"]
     add_background_layer(layers)
     for spec in bundle.layers:
-        color_expression = build_zonen_match_expression(spec, color_mapping)
+        color_expression = build_zonen_layer_match_expression(spec, color_mapping)
         base_id = f"{bundle.slug}-{spec.layer}"
         add_zonen_fill_layer(layers, base_id, spec.layer, color_expression)
         add_zonen_line_layer(layers, base_id, spec.layer, color_expression)
