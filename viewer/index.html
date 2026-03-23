@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Overlay Test Viewer</title>
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
+    <link rel="stylesheet" href="/viewer/styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <h1>Overlay Test Viewer</h1>
+      <p class="lead">OSM-Basiskarte + lokal servierte Overlay-Styles aus deinem Build-Verzeichnis.</p>
+
+      <label for="overlay-select">Overlay auswählen</label>
+      <select id="overlay-select">
+        <option value="">-- kein Overlay --</option>
+      </select>
+
+      <button id="reload-button" type="button">Liste neu laden</button>
+
+      <div class="panel">
+        <h2>Status</h2>
+        <pre id="status-box">Initialisiere…</pre>
+      </div>
+
+      <div class="panel">
+        <h2>Hinweise</h2>
+        <ul>
+          <li>Die Liste kommt aus <code>styles/index.json</code> im konfigurierten Bundle-Verzeichnis.</li>
+          <li>PMTiles-URLs werden serverseitig auf <code>/bundle/...</code> umgeschrieben.</li>
+          <li>Wenn keine lokalen PMTiles vorhanden sind, kannst du den Viewer trotzdem schon gegen generierte Styles testen.</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main>
+      <div id="map"></div>
+    </main>
+
+    <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+    <script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
+    <script src="/viewer/app.js"></script>
+  </body>
+</html>

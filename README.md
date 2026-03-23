@@ -113,6 +113,52 @@ Standardmäßig referenzieren die Styles:
 
 Diese URLs kannst du per CLI überschreiben.
 
+
+## Lokaler Test-Viewer
+
+Zusätzlich gibt es jetzt einen kleinen Python-Testserver mit MapLibre-Viewer:
+
+- Server: `test_overlay_server.py`
+- Viewer-Dateien: `viewer/index.html`, `viewer/app.js`, `viewer/styles.css`
+
+Der Viewer lädt:
+
+- eine OSM-Basiskarte,
+- die Overlay-Liste aus `styles/index.json`,
+- und das ausgewählte Overlay per Dropdown.
+
+### Beispielablauf
+
+Zuerst ein lokales Bundle erzeugen:
+
+```bash
+python3 build_hosted_overlays.py \
+  --root geojson \
+  --out dist \
+  --base-url http://127.0.0.1:8000 \
+  --skip-pmtiles
+```
+
+Danach den Testserver starten:
+
+```bash
+python3 test_overlay_server.py --bundle-dir dist --host 127.0.0.1 --port 8000
+```
+
+Dann im Browser öffnen:
+
+- `http://127.0.0.1:8000/`
+
+### Was der Server macht
+
+- liefert die Viewer-Seite aus
+- liefert `/api/overlays` aus `styles/index.json`
+- liefert `/api/style?style=...` für das ausgewählte Style-JSON
+- schreibt PMTiles-Source-URLs für den lokalen Test auf `/bundle/...` um
+- serviert das Build-Verzeichnis unter `/bundle/`
+
+Damit kannst du lokal sehr schnell prüfen, ob dein Export und die Layer-Struktur so funktionieren, wie du es später auf dem Server hosten willst.
+
 ## Voraussetzungen
 
 - Python 3.9+
