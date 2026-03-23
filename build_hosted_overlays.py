@@ -32,12 +32,15 @@ TEXT = "#e0e0e0"
 HALO = "#1a1a1a"
 DEFAULT_MAXZOOM = 15
 TEMPLATE_STYLES_DIR = Path(__file__).resolve().parent / "pmtiles" / "styles"
+REPO_ROOT = Path(__file__).resolve().parent
+ZONEN_COLOR_MAPPING_PATH = REPO_ROOT / "assets" / "color_mapping.json"
 DEFAULT_SOURCE_ID = "folder"
 DEFAULT_FONT_STACK = ["Segoe UI Regular", "Arial Unicode MS Regular"]
 SYMBOL_FOLDERS = {"rd-dienststellen", "nah-stuetzpunkte"}
 ICON_BY_FOLDER = {
     "nah-stuetzpunkte": "nah-pin",
 }
+ZONEN_FALLBACK_COLOR = "#6b7280"
 
 
 @dataclass(frozen=True)
@@ -294,6 +297,9 @@ def point_icon_for_bundle(bundle: BundleSpec) -> Any:
 
 
 def build_style(bundle: BundleSpec, base_url: str, sprite_url: Optional[str], glyphs_url: Optional[str]) -> Dict[str, Any]:
+    if bundle.slug == "zonen":
+        return build_zonen_style(bundle, base_url, sprite_url, glyphs_url)
+
     template = load_template_style(bundle)
     if template is not None:
         return rewrite_template_style(bundle, template, base_url, sprite_url, glyphs_url)
@@ -343,6 +349,109 @@ def build_style(bundle: BundleSpec, base_url: str, sprite_url: Optional[str], gl
 
     return style
 
+
+
+def zonen_feature_key(properties: Dict[str, Any]) -> Optional[str]:
+    value = properties.get("alt_name") or properties.get("name")
+    if value is None:
+        return None
+    text = str(value).strip()
+    return text or None
+
+
+def load_zonen_color_mapping() -> Dict[str, str]:
+    payload = json.loads(ZONEN_COLOR_MAPPING_PATH.read_text(encoding="utf-8"))
+    return {str(name): str(color) for name, color in payload.items()}
+
+
+def zonen_layer_keys(layer_spec: LayerSpec) -> List[str]:
+    data = json.loads(layer_spec.file.read_text(encoding="utf-8"))
+    keys: List[str] = []
+    seen = set()
+    for feature in data.get("features", []):
+        properties = (feature or {}).get("properties") or {}
+        key = zonen_feature_key(properties)
+        if key and key not in seen:
+            seen.add(key)
+            keys.append(key)
+    return keys
+
+
+def build_zonen_match_expression(layer_spec: LayerSpec, color_mapping: Dict[str, str]) -> List[Any]:
+    expression: List[Any] = ["match", ["coalesce", ["get", "alt_name"], ["get", "name"]]]
+    for key in zonen_layer_keys(layer_spec):
+        color = color_mapping.get(key)
+        if color:
+            expression.extend([key, color])
+    expression.append(ZONEN_FALLBACK_COLOR)
+    return expression
+
+
+def add_zonen_fill_layer(style_layers: List[Dict[str, Any]], base_id: str, source_layer: str, color_expression: List[Any]) -> None:
+    style_layers.append({
+        "id": f"{base_id}-fill",
+        "type": "fill",
+        "source": DEFAULT_SOURCE_ID,
+        "source-layer": source_layer,
+        "paint": {
+            "fill-color": copy.deepcopy(color_expression),
+            "fill-opacity": 0.2,
+            "fill-outline-color": BORDER,
+        },
+    })
+
+
+def add_zonen_line_layer(style_layers: List[Dict[str, Any]], base_id: str, source_layer: str, color_expression: List[Any]) -> None:
+    style_layers.append({
+        "id": f"{base_id}-line",
+        "type": "line",
+        "source": DEFAULT_SOURCE_ID,
+        "source-layer": source_layer,
+        "paint": {
+            "line-color": copy.deepcopy(color_expression),
+            "line-width": 2,
+            "line-opacity": 0.9,
+        },
+    })
+
+
+def build_zonen_style(bundle: BundleSpec, base_url: str, sprite_url: Optional[str], glyphs_url: Optional[str]) -> Dict[str, Any]:
+    pmtiles_url = f"pmtiles://{base_url.rstrip('/')}/{bundle.pmtiles_relpath.as_posix()}"
+    color_mapping = load_zonen_color_mapping()
+    style: Dict[str, Any] = {
+        "version": 8,
+        "name": f"OE5ITH {bundle.title} (CI)",
+        "metadata": {
+            "generator": "build_hosted_overlays.py",
+            "folder": bundle.title,
+            "sourceLayers": [layer.layer for layer in bundle.layers],
+            "zonenColorSource": ZONEN_COLOR_MAPPING_PATH.relative_to(REPO_ROOT).as_posix(),
+            "zonenColorFallback": ZONEN_FALLBACK_COLOR,
+        },
+        "sources": {
+            DEFAULT_SOURCE_ID: {
+                "type": "vector",
+                "url": pmtiles_url,
+                "minzoom": 0,
+                "maxzoom": DEFAULT_MAXZOOM,
+            }
+        },
+        "layers": [],
+    }
+    if glyphs_url:
+        style["glyphs"] = glyphs_url
+    if sprite_url:
+        style["sprite"] = sprite_url
+
+    layers = style["layers"]
+    add_background_layer(layers)
+    for spec in bundle.layers:
+        color_expression = build_zonen_match_expression(spec, color_mapping)
+        base_id = f"{bundle.slug}-{spec.layer}"
+        add_zonen_fill_layer(layers, base_id, spec.layer, color_expression)
+        add_zonen_line_layer(layers, base_id, spec.layer, color_expression)
+
+    return style
 
 
 
