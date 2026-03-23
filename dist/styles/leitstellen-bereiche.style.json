@@ -1,0 +1,145 @@
+{
+  "version": 8,
+  "name": "OE5ITH Leitstellen-Bereiche (CI)",
+  "metadata": {
+    "generator": "build_hosted_overlays.py",
+    "folder": "Leitstellen-Bereiche",
+    "sourceLayers": [
+      "hrv",
+      "inn",
+      "rlz",
+      "skg",
+      "srki"
+    ],
+    "colorStrategy": "source-layer-palette"
+  },
+  "sources": {
+    "folder": {
+      "type": "vector",
+      "url": "pmtiles://https://tiles.oe5ith.at/pmtiles/Leitstellen-Bereiche.pmtiles",
+      "minzoom": 0,
+      "maxzoom": 15
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "#1a1a1a"
+      }
+    },
+    {
+      "id": "leitstellen-bereiche-hrv-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "hrv",
+      "paint": {
+        "fill-color": "#2563eb",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "leitstellen-bereiche-hrv-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "hrv",
+      "paint": {
+        "line-color": "#2563eb",
+        "line-width": 2,
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "leitstellen-bereiche-inn-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "inn",
+      "paint": {
+        "fill-color": "#16a34a",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "leitstellen-bereiche-inn-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "inn",
+      "paint": {
+        "line-color": "#16a34a",
+        "line-width": 2,
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "leitstellen-bereiche-rlz-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "rlz",
+      "paint": {
+        "fill-color": "#f59e0b",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "leitstellen-bereiche-rlz-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "rlz",
+      "paint": {
+        "line-color": "#f59e0b",
+        "line-width": 2,
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "leitstellen-bereiche-skg-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "skg",
+      "paint": {
+        "fill-color": "#7c3aed",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "leitstellen-bereiche-skg-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "skg",
+      "paint": {
+        "line-color": "#7c3aed",
+        "line-width": 2,
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "leitstellen-bereiche-srki-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "srki",
+      "paint": {
+        "fill-color": "#0891b2",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "leitstellen-bereiche-srki-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "srki",
+      "paint": {
+        "line-color": "#0891b2",
+        "line-width": 2,
+        "line-opacity": 0.9
+      }
+    }
+  ],
+  "glyphs": "https://tiles.oe5ith.at/assets/fonts/{fontstack}/{range}.pbf",
+  "sprite": "https://tiles.oe5ith.at/assets/sprites/oe5ith-markers"
+}
