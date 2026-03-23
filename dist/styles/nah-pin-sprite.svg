@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="260" viewBox="0 0 1100 260">
+  <defs>
+    <style>
+      text{font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; font-size:14px; fill:#111}
+      .label{font-weight:600}
+      .sub{font-size:12px; fill:#333}
+    </style>
+
+    <!-- EINHEITLICHER PIN + Heli-Logo -->
+    <g id="pin-heli">
+      <!-- Pin-Form -->
+      <path d="M32 6
+               C20 6 10 16 10 28
+               C10 44 32 70 32 70
+               C32 70 54 44 54 28
+               C54 16 44 6 32 6 Z"
+            fill="var(--fill)" stroke="#111" stroke-width="2" />
+
+      <!-- Heli (Original-Path aus deiner helicopter.svg; viewBox 0 0 576 512)
+           Position/Scale so gewählt, dass es im Pin mittig sitzt -->
+      <g transform="translate(19 16) scale(0.045)">
+        <path fill="var(--icon)" d="M176 32c-13.3 0-24 10.7-24 24s10.7 24 24 24l152 0 0 48-220.8 0-32.8-39.4C69.9 83.2 63.1 80 56 80L24 80C15.7 80 8 84.3 3.6 91.4s-4.8 15.9-1.1 23.4l48 96C54.6 218.9 62.9 224 72 224l107.8 0 104 143.1c15.1 20.7 39.1 32.9 64.7 32.9l75.5 0c75.1 0 136-60.9 136-136S499.1 128 424 128l-48 0 0-48 152 0c13.3 0 24-10.7 24-24s-10.7-24-24-24L176 32zM376 192l48 0c39.8 0 72 32.2 72 72s-32.2 72-72 72l-48 0 0-144zM552 416c-13.3 0-24 10.7-24 24 0 4.4-3.6 8-8 8l-272 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l272 0c30.9 0 56-25.1 56-56 0-13.3-10.7-24-24-24z"/>
+      </g>
+    </g>
+  </defs>
+
+  <!-- Row 1 -->
+  <g transform="translate(30,20)" style="--fill:#FFD200; --icon:#111111;">
+    <use href="#pin-heli"/>
+    <text x="70" y="28" class="label">ADAC Luftrettung</text>
+    <text x="70" y="48" class="sub">Gelb</text>
+  </g>
+
+  <g transform="translate(390,20)" style="--fill:#8B0000; --icon:#FFFFFF;">
+    <use href="#pin-heli"/>
+    <text x="70" y="28" class="label">DRF Luftrettung</text>
+    <text x="70" y="48" class="sub">Dunkelrot</text>
+  </g>
+
+  <g transform="translate(740,20)" style="--fill:#FF8C00; --icon:#111111;">
+    <use href="#pin-heli"/>
+    <text x="70" y="28" class="label">Bundesministerium des Inneren</text>
+    <text x="70" y="48" class="sub">Orange</text>
+  </g>
+
+  <!-- Row 2 -->
+  <g transform="translate(30,95)" style="--fill:#FFD200; --icon:#111111;">
+    <use href="#pin-heli"/>
+    <text x="70" y="28" class="label">ÖAMTC Flugrettung</text>
+    <text x="70" y="48" class="sub">Gelb</text>
+  </g>
+
+  <g transform="translate(390,95)" style="--fill:#E53935; --icon:#FFFFFF;">
+    <use href="#pin-heli"/>
+    <text x="70" y="28" class="label">Martin Flugrettung</text>
+    <text x="70" y="48" class="sub">Rot</text>
+  </g>
+
+  <g transform="translate(740,95)" style="--fill:#8B0000; --icon:#FFFFFF;">
+    <use href="#pin-heli"/>
+    <text x="70" y="28" class="label">ARA Flugrettung</text>
+    <text x="70" y="48" class="sub">Dunkelrot</text>
+  </g>
+
+  <!-- Row 3 -->
+  <g transform="translate(30,170)" style="--fill:#00A651; --icon:#FFFFFF;">
+    <use href="#pin-heli"/>
+    <text x="70" y="28" class="label">Wucher Helicopter</text>
+    <text x="70" y="48" class="sub">Grün</text>
+  </g>
+
+  <g transform="translate(390,170)" style="--fill:#0057B8; --icon:#FFFFFF;">
+    <use href="#pin-heli"/>
+    <text x="70" y="28" class="label">SHS – Schider Helicopter Service</text>
+    <text x="70" y="48" class="sub">Blau</text>
+  </g>
+
+  <g transform="translate(740,170)" style="--fill:#FFFFFF; --icon:#111111;">
+    <use href="#pin-heli"/>
+    <text x="70" y="28" class="label">Schenk Air</text>
+    <text x="70" y="48" class="sub">Weiß</text>
+  </g>
+</svg>

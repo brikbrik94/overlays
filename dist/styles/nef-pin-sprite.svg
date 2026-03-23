@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="180" viewBox="0 0 980 180">
+  <defs>
+    <style>
+      text{font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; font-size:14px; fill:#111}
+      .label{font-weight:600}
+      .sub{font-size:12px; fill:#333}
+    </style>
+
+    <!-- EINHEITLICHER PIN + ORIGINAL user-doctor PATH -->
+    <g id="pin-user-doctor">
+      <path d="M32 6
+               C20 6 10 16 10 28
+               C10 44 32 70 32 70
+               C32 70 54 44 54 28
+               C54 16 44 6 32 6 Z"
+            fill="var(--fill)" stroke="#111" stroke-width="2" />
+
+      <!-- ORIGINAL aus user-doctor.svg (viewBox 0 0 448 512) -->
+      <g transform="translate(22.4 17.0) scale(0.043)">
+        <path fill="var(--icon)" d="M224 8a120 120 0 1 0 0 240 120 120 0 1 0 0-240zm60 312.8c-5.4-.5-11-.8-16.6-.8l-86.9 0c-5.6 0-11.1 .3-16.6 .8l0 67.5c16.5 7.6 28 24.3 28 43.6 0 26.5-21.5 48-48 48s-48-21.5-48-48c0-19.4 11.5-36.1 28-43.6l0-58.4C61 353 16 413.6 16 484.6 16 499.7 28.3 512 43.4 512l361.1 0c15.1 0 27.4-12.3 27.4-27.4 0-71-45-131.5-108-154.6l0 37.4c23.3 8.2 40 30.5 40 56.6l0 32c0 11-9 20-20 20s-20-9-20-20l0-32c0-11-9-20-20-20s-20 9-20 20l0 32c0 11-9 20-20 20s-20-9-20-20l0-32c0-26.1 16.7-48.3 40-56.6l0-46.6z"/>
+      </g>
+    </g>
+    <!-- MA70 Schachbrettmuster (horizontal gerade, vertikal schräg) -->
+    <pattern id="ma70-pattern-nef" x="0" y="0" width="50" height="25" patternUnits="userSpaceOnUse" patternTransform="skewX(-15)">
+      <!-- Blaue Parallelogramme -->
+      <polygon points="0,0 25,0 25,12.5 0,12.5" fill="#0052CC"/>
+      <polygon points="25,12.5 50,12.5 50,25 25,25" fill="#0052CC"/>
+      <!-- Orangene Parallelogramme -->
+      <polygon points="25,0 50,0 50,12.5 25,12.5" fill="#FF7043"/>
+      <polygon points="0,12.5 25,12.5 25,25 0,25" fill="#FF7043"/>
+    </pattern>
+
+    <g id="pin-ma70">
+      <path d="M32 6
+               C20 6 10 16 10 28
+               C10 44 32 70 32 70
+               C32 70 54 44 54 28
+               C54 16 44 6 32 6 Z"
+            fill="url(#ma70-pattern-nef)" stroke="#111" stroke-width="2" />
+      <g transform="translate(22.4 17.0) scale(0.043)">
+        <path fill="#FFFFFF" d="M224 8a120 120 0 1 0 0 240 120 120 0 1 0 0-240zm60 312.8c-5.4-.5-11-.8-16.6-.8l-86.9 0c-5.6 0-11.1 .3-16.6 .8l0 67.5c16.5 7.6 28 24.3 28 43.6 0 26.5-21.5 48-48 48s-48-21.5-48-48c0-19.4 11.5-36.1 28-43.6l0-58.4C61 353 16 413.6 16 484.6 16 499.7 28.3 512 43.4 512l361.1 0c15.1 0 27.4-12.3 27.4-27.4 0-71-45-131.5-108-154.6l0 37.4c23.3 8.2 40 30.5 40 56.6l0 32c0 11-9 20-20 20s-20-9-20-20l0-32c0-11-9-20-20-20s-20 9-20 20l0 32c0 11-9 20-20 20s-20-9-20-20l0-32c0-26.1 16.7-48.3 40-56.6l0-46.6z"/>
+      </g>
+    </g>
+
+    <g id="pin-juh">
+      <use href="#pin-user-doctor"/>
+    </g>
+
+  </defs>
+
+  <!-- ÖRK -->
+  <g transform="translate(30,20)" style="--fill:#FF0000; --icon:#FFFFFF;">
+    <use href="#pin-user-doctor"/>
+    <text x="70" y="28" class="label">ÖRK</text>
+    <text x="70" y="48" class="sub">#FF0000</text>
+  </g>
+
+  <!-- BRK -->
+  <g transform="translate(170,20)" style="--fill:#E60005; --icon:#FFFFFF;">
+    <use href="#pin-user-doctor"/>
+    <text x="70" y="28" class="label">BRK</text>
+    <text x="70" y="48" class="sub">#E60005</text>
+  </g>
+
+  <!-- ASB -->
+  <g transform="translate(310,20)" style="--fill:#FFD200; --icon:#111111;">
+    <use href="#pin-user-doctor"/>
+    <text x="70" y="28" class="label">ASB</text>
+    <text x="70" y="48" class="sub">#FFD200</text>
+  </g>
+
+  <!-- Grünes Kreuz -->
+  <g transform="translate(450,20)" style="--fill:#00A651; --icon:#FFFFFF;">
+    <use href="#pin-user-doctor"/>
+    <text x="70" y="28" class="label">GK</text>
+    <text x="70" y="48" class="sub">#00A651</text>
+  </g>
+
+  <!-- Malteser -->
+  <g transform="translate(620,20)" style="--fill:#FFFFFF; --icon:#111111;">
+    <use href="#pin-user-doctor"/>
+    <text x="70" y="28" class="label">MHD</text>
+    <text x="70" y="48" class="sub">#FFFFFF</text>
+  </g>
+
+  <!-- IMS -->
+  <g transform="translate(30,95)" style="--fill:#66CCFF; --icon:#111111;">
+    <use href="#pin-user-doctor"/>
+    <text x="70" y="28" class="label">IMS</text>
+    <text x="70" y="48" class="sub">#66CCFF</text>
+  </g>
+
+  <!-- Rettungsdienst Stadler -->
+  <g transform="translate(170,95)" style="--fill:#003A8C; --icon:#FFFFFF;">
+    <use href="#pin-user-doctor"/>
+    <text x="70" y="28" class="label">Stadler</text>
+    <text x="70" y="48" class="sub">#003A8C</text>
+  </g>
+  <!-- MA70 -->
+  <g transform="translate(310,95)" style="--icon:#111111;">
+    <use href="#pin-ma70"/>
+    <text x="70" y="28" class="label">MA70</text>
+    <text x="70" y="48" class="sub">Blau-Orange</text>
+  </g>
+
+  <!-- JUH -->
+  <g transform="translate(450,95)" style="--fill:#FF6600; --icon:#FFFFFF;">
+    <use href="#pin-juh"/>
+    <text x="70" y="28" class="label">JUH</text>
+    <text x="70" y="48" class="sub">#FF6600</text>
+  </g>
+
+</svg>
