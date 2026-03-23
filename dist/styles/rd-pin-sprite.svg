@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="180" viewBox="0 0 980 180">
+  <defs>
+    <style>
+      text{font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; font-size:14px; fill:#111}
+      .label{font-weight:600}
+      .sub{font-size:12px; fill:#333}
+    </style>
+
+    <!-- EINHEITLICHER PIN -->
+    <g id="pin-ambulance">
+      <!-- Pin-Form -->
+      <path d="M32 6
+               C20 6 10 16 10 28
+               C10 44 32 70 32 70
+               C32 70 54 44 54 28
+               C54 16 44 6 32 6 Z"
+            fill="var(--fill)" stroke="#111" stroke-width="2" />
+
+      <!-- Ambulance Icon (Font Awesome viewBox 576x512), skaliert & zentriert -->
+      <g transform="translate(21 18.25) scale(0.0382)">
+        <path fill="var(--icon)" d="M64 32C28.7 32 0 60.7 0 96L0 384c0 35.3 28.7 64 64 64l3.3 0c10.4 36.9 44.4 64 84.7 64s74.2-27.1 84.7-64l102.6 0c10.4 36.9 44.4 64 84.7 64s74.2-27.1 84.7-64l3.3 0c35.3 0 64-28.7 64-64l0-146.7c0-17-6.7-33.3-18.7-45.3L512 146.7c-12-12-28.3-18.7-45.3-18.7l-50.7 0 0-32c0-35.3-28.7-64-64-64L64 32zM512 237.3l0 50.7-96 0 0-96 50.7 0 45.3 45.3zM152 384a40 40 0 1 1 0 80 40 40 0 1 1 0-80zm232 40a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM176 136c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 40 40 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-40 0 0 40c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-40-40 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16l40 0 0-40z"/>
+      </g>
+    </g>
+  </defs>
+
+  <!-- ÖRK -->
+  <g transform="translate(30,20)" style="--fill:#FF0000; --icon:#FFFFFF;">
+    <use href="#pin-ambulance"/>
+    <text x="70" y="28" class="label">ÖRK</text>
+    <text x="70" y="48" class="sub">#FF0000</text>
+  </g>
+
+  <!-- BRK -->
+  <g transform="translate(170,20)" style="--fill:#E60005; --icon:#FFFFFF;">
+    <use href="#pin-ambulance"/>
+    <text x="70" y="28" class="label">BRK</text>
+    <text x="70" y="48" class="sub">#E60005</text>
+  </g>
+
+  <!-- ASB -->
+  <g transform="translate(310,20)" style="--fill:#FFD200; --icon:#111111;">
+    <use href="#pin-ambulance"/>
+    <text x="70" y="28" class="label">ASB</text>
+    <text x="70" y="48" class="sub">#FFD200</text>
+  </g>
+
+  <!-- Grünes Kreuz -->
+  <g transform="translate(450,20)" style="--fill:#00A651; --icon:#FFFFFF;">
+    <use href="#pin-ambulance"/>
+    <text x="70" y="28" class="label">Grünes Kreuz</text>
+    <text x="70" y="48" class="sub">#00A651</text>
+  </g>
+
+  <!-- Malteser -->
+  <g transform="translate(620,20)" style="--fill:#FFFFFF; --icon:#111111;">
+    <use href="#pin-ambulance"/>
+    <text x="70" y="28" class="label">Malteser</text>
+    <text x="70" y="48" class="sub">#FFFFFF</text>
+  </g>
+
+  <!-- IMS -->
+  <g transform="translate(30,95)" style="--fill:#66CCFF; --icon:#111111;">
+    <use href="#pin-ambulance"/>
+    <text x="70" y="28" class="label">IMS</text>
+    <text x="70" y="48" class="sub">#66CCFF</text>
+  </g>
+
+  <!-- Rettungsdienst Stadler -->
+  <g transform="translate(170,95)" style="--fill:#003A8C; --icon:#FFFFFF;">
+    <use href="#pin-ambulance"/>
+    <text x="70" y="28" class="label">Rettungsdienst Stadler</text>
+    <text x="70" y="48" class="sub">#003A8C</text>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="80" viewBox="0 0 64 80">
+  <defs>
+    <g id="pin">
+      <path d="M32 6
+               C20 6 10 16 10 28
+               C10 44 32 70 32 70
+               C32 70 54 44 54 28
+               C54 16 44 6 32 6 Z"
+            fill="var(--fill)" stroke="#111" stroke-width="2" />
+      <circle cx="32" cy="30" r="10" fill="#FFFFFF" opacity="0.9" />
+    </g>
+  </defs>
+</svg>
