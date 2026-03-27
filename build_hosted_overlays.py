@@ -33,7 +33,7 @@ HALO = "#1a1a1a"
 DEFAULT_MAXZOOM = 15
 TEMPLATE_STYLES_DIR = Path(__file__).resolve().parent / "pmtiles" / "styles"
 REPO_ROOT = Path(__file__).resolve().parent
-ZONEN_COLOR_MAPPING_PATH = REPO_ROOT / "assets" / "color_mapping.json"
+ZONEN_COLOR_MAPPING_PATH = REPO_ROOT / "assets" / "mappings" / "color_mapping.json"
 DEFAULT_SOURCE_ID = "folder"
 DEFAULT_FONT_STACK = ["Segoe UI Regular", "Arial Unicode MS Regular"]
 SYMBOL_FOLDERS = {"rd-dienststellen", "nah-stuetzpunkte"}
@@ -652,6 +652,21 @@ def rewrite_template_style(bundle: BundleSpec, template: Dict[str, Any], base_ur
 
     return style
 
+
+
+def copy_directory_contents(src: Path, dst: Path) -> None:
+    if not src.exists():
+        return
+    if dst.exists():
+        shutil.rmtree(dst)
+    shutil.copytree(src, dst)
+
+
+def copy_static_assets_to_dist(repo_root: Path, out_dir: Path) -> None:
+    assets_root = repo_root / "assets"
+    copy_directory_contents(assets_root / "sprites", out_dir / "assets" / "sprites")
+    copy_directory_contents(assets_root / "mappings", out_dir / "assets" / "mappings")
+
 def write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -683,6 +698,8 @@ def main() -> int:
     root = Path(args.root).expanduser().resolve()
     out_dir = Path(args.out).expanduser().resolve()
     out_dir.mkdir(parents=True, exist_ok=True)
+
+    copy_static_assets_to_dist(REPO_ROOT, out_dir)
 
     bundle_dirs = discover_bundle_dirs(root)
     if not bundle_dirs:

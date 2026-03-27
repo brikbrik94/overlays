@@ -20,7 +20,7 @@
       "sew_stmk",
       "sew_srki"
     ],
-    "zonenColorSource": "assets/color_mapping.json",
+    "zonenColorSource": "assets/mappings/color_mapping.json",
     "zonenColorFallback": "#6b7280"
   },
   "sources": {
