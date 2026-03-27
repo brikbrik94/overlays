@@ -16,3 +16,14 @@ python3 scripts/build_sprites.py --source assets/sprites --out dist/assets/sprit
 
 Dieser Ordner ist die zentrale Quelle für die spätere Bereitstellung über
 `/assets/sprites/...` im Hosted-Setup.
+
+
+SVG-Konvertierung (SVG -> PNG):
+```bash
+python3 scripts/convert_sprite_svgs.py --source assets/sprites --out assets/sprites/png
+```
+
+Danach Sprite-Build ausführen:
+```bash
+python3 scripts/build_sprites.py --source assets/sprites/png --out dist/assets/sprites
+```
