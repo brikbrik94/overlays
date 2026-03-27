@@ -27,3 +27,8 @@ Danach Sprite-Build ausführen:
 ```bash
 python3 scripts/build_sprites.py --source assets/sprites/png --out dist/assets/sprites
 ```
+
+Python-Abhängigkeiten (Debian 13 kompatibel via venv):
+```bash
+bash scripts/install_python_deps.sh
+```
