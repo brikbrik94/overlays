@@ -1,0 +1,77 @@
+{
+  "root": "/home/daniel/github/overlays/geojson",
+  "folder": "Zonen",
+  "pmtiles": "/home/daniel/github/overlays/dist/pmtiles/Zonen.pmtiles",
+  "layers": [
+    {
+      "layer": "nef_am",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/NEF-AM.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "nef_hrv",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/NEF-HRV.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "nef_inn",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/NEF-INN.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "nef_rlz",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/NEF-RLZ.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "nef_skg",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/NEF-SKG.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "nef_srki",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/NEF-SrKi.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "sew_hrv",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/SEW-HRV.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "sew_inn",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/SEW-INN.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "sew_noe",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/SEW-NÖ.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "sew_rlz",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/SEW-RLZ.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "sew_sbg",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/SEW-SBG.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "sew_skg",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/SEW-SKG.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "sew_stmk",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/SEW-STMK.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "sew_srki",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/SEW-SrKi.geojson",
+      "geom_type": "polygon"
+    }
+  ]
+}

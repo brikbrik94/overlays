@@ -1,0 +1,37 @@
+{
+  "root": "/home/daniel/github/overlays/geojson",
+  "folder": "Anfahrtszeit/Linz",
+  "pmtiles": "/home/daniel/github/overlays/dist/pmtiles/Anfahrtszeit/Linz.pmtiles",
+  "layers": [
+    {
+      "layer": "15_0",
+      "file": "/home/daniel/github/overlays/geojson/Anfahrtszeit/Linz/15-0.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "30_15",
+      "file": "/home/daniel/github/overlays/geojson/Anfahrtszeit/Linz/30-15.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "45_30",
+      "file": "/home/daniel/github/overlays/geojson/Anfahrtszeit/Linz/45-30.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "60_45",
+      "file": "/home/daniel/github/overlays/geojson/Anfahrtszeit/Linz/60-45.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "75_60",
+      "file": "/home/daniel/github/overlays/geojson/Anfahrtszeit/Linz/75-60.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "90_75",
+      "file": "/home/daniel/github/overlays/geojson/Anfahrtszeit/Linz/90-75.geojson",
+      "geom_type": "polygon"
+    }
+  ]
+}

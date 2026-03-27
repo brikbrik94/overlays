@@ -1,0 +1,12 @@
+{
+  "root": "/home/daniel/github/overlays/geojson",
+  "folder": "Bezirke",
+  "pmtiles": "/home/daniel/github/overlays/dist/pmtiles/Bezirke.pmtiles",
+  "layers": [
+    {
+      "layer": "bezirke",
+      "file": "/home/daniel/github/overlays/geojson/Bezirke/Bezirke.geojson",
+      "geom_type": "polygon"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "root": "/home/daniel/github/overlays/geojson",
+  "folder": "NAH-Stützpunkte",
+  "pmtiles": "/home/daniel/github/overlays/dist/pmtiles/NAH-Stützpunkte.pmtiles",
+  "layers": [
+    {
+      "layer": "nah_bayern",
+      "file": "/home/daniel/github/overlays/geojson/NAH-Stützpunkte/NAH-Bayern.geojson",
+      "geom_type": "point"
+    },
+    {
+      "layer": "nah_zonen_oesterreich",
+      "file": "/home/daniel/github/overlays/geojson/NAH-Stützpunkte/NAH-Zonen-Österreich.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "nah_oesterreich",
+      "file": "/home/daniel/github/overlays/geojson/NAH-Stützpunkte/NAH-Österreich.geojson",
+      "geom_type": "point"
+    },
+    {
+      "layer": "nah_oesterreich_clean",
+      "file": "/home/daniel/github/overlays/geojson/NAH-Stützpunkte/NAH-Österreich_clean.geojson",
+      "geom_type": "point"
+    }
+  ]
+}

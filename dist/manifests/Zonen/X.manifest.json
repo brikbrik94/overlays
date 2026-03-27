@@ -1,0 +1,37 @@
+{
+  "root": "/home/daniel/github/overlays/geojson",
+  "folder": "Zonen/X",
+  "pmtiles": "/home/daniel/github/overlays/dist/pmtiles/Zonen/X.pmtiles",
+  "layers": [
+    {
+      "layer": "hrv",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/X/HRV.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "inn",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/X/INN.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "nef_ooe",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/X/NEF-OOE.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "rlz",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/X/RLZ.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "skg",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/X/SKG.geojson",
+      "geom_type": "polygon"
+    },
+    {
+      "layer": "srki",
+      "file": "/home/daniel/github/overlays/geojson/Zonen/X/SRKI.geojson",
+      "geom_type": "polygon"
+    }
+  ]
+}

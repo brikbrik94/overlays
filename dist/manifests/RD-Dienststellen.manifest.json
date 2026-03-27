@@ -1,0 +1,42 @@
+{
+  "root": "/home/daniel/github/overlays/geojson",
+  "folder": "RD-Dienststellen",
+  "pmtiles": "/home/daniel/github/overlays/dist/pmtiles/RD-Dienststellen.pmtiles",
+  "layers": [
+    {
+      "layer": "brd_ooe",
+      "file": "/home/daniel/github/overlays/geojson/RD-Dienststellen/BRD-OOE.geojson",
+      "geom_type": "point"
+    },
+    {
+      "layer": "rd_by",
+      "file": "/home/daniel/github/overlays/geojson/RD-Dienststellen/RD-BY.geojson",
+      "geom_type": "point"
+    },
+    {
+      "layer": "rd_noe",
+      "file": "/home/daniel/github/overlays/geojson/RD-Dienststellen/RD-NÖ.geojson",
+      "geom_type": "point"
+    },
+    {
+      "layer": "rd_oo_nef",
+      "file": "/home/daniel/github/overlays/geojson/RD-Dienststellen/RD-OO-NEF.geojson",
+      "geom_type": "point"
+    },
+    {
+      "layer": "rd_oo_sew",
+      "file": "/home/daniel/github/overlays/geojson/RD-Dienststellen/RD-OO-SEW.geojson",
+      "geom_type": "point"
+    },
+    {
+      "layer": "rd_sbg",
+      "file": "/home/daniel/github/overlays/geojson/RD-Dienststellen/RD-SBG.geojson",
+      "geom_type": "point"
+    },
+    {
+      "layer": "rd_stmk",
+      "file": "/home/daniel/github/overlays/geojson/RD-Dienststellen/RD-STMK.geojson",
+      "geom_type": "point"
+    }
+  ]
+}

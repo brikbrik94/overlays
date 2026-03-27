@@ -1,0 +1,1797 @@
+{
+  "version": 8,
+  "name": "OE5ITH Gemeinden (CI)",
+  "metadata": {
+    "generator": "build_hosted_overlays.py",
+    "folder": "Gemeinden",
+    "sourceLayers": [
+      "gemeinden_braunau",
+      "gemeinden_eferding",
+      "gemeinden_freistadt",
+      "gemeinden_gmunden",
+      "gemeinden_grieskirchen",
+      "gemeinden_kirchdorf",
+      "gemeinden_linz_land",
+      "gemeinden_linz",
+      "gemeinden_perg",
+      "gemeinden_ried",
+      "gemeinden_rohrbach",
+      "gemeinden_schaerding",
+      "gemeinden_steyr_land",
+      "gemeinden_steyr",
+      "gemeinden_urfahr_umgebung",
+      "gemeinden_voecklabruck",
+      "gemeinden_wels_land",
+      "gemeinden_wels"
+    ],
+    "ci": {
+      "topbarHeight": 60,
+      "accent": "#3b82f6"
+    }
+  },
+  "glyphs": "https://tiles.oe5ith.at/assets/fonts/{fontstack}/{range}.pbf",
+  "sprite": "https://tiles.oe5ith.at/assets/sprites/oe5ith-markers",
+  "sources": {
+    "folder": {
+      "type": "vector",
+      "url": "pmtiles://https://tiles.oe5ith.at/pmtiles/Gemeinden.pmtiles",
+      "minzoom": 0,
+      "maxzoom": 15
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "#1a1a1a"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_braunau-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "gemeinden_braunau",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_braunau-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "gemeinden_braunau",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_braunau-circle",
+      "type": "circle",
+      "source": "folder",
+      "source-layer": "gemeinden_braunau",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "circle-color": "#3b82f6",
+        "circle-stroke-color": "#e0e0e0",
+        "circle-stroke-width": 1,
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          3.5,
+          12,
+          6.5
+        ],
+        "circle-opacity": 0.95
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_eferding-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "gemeinden_eferding",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_eferding-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "gemeinden_eferding",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_eferding-circle",
+      "type": "circle",
+      "source": "folder",
+      "source-layer": "gemeinden_eferding",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "circle-color": "#3b82f6",
+        "circle-stroke-color": "#e0e0e0",
+        "circle-stroke-width": 1,
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          3.5,
+          12,
+          6.5
+        ],
+        "circle-opacity": 0.95
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_freistadt-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "gemeinden_freistadt",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_freistadt-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "gemeinden_freistadt",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_freistadt-circle",
+      "type": "circle",
+      "source": "folder",
+      "source-layer": "gemeinden_freistadt",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "circle-color": "#3b82f6",
+        "circle-stroke-color": "#e0e0e0",
+        "circle-stroke-width": 1,
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          3.5,
+          12,
+          6.5
+        ],
+        "circle-opacity": 0.95
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_gmunden-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "gemeinden_gmunden",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_gmunden-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "gemeinden_gmunden",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_gmunden-circle",
+      "type": "circle",
+      "source": "folder",
+      "source-layer": "gemeinden_gmunden",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "circle-color": "#3b82f6",
+        "circle-stroke-color": "#e0e0e0",
+        "circle-stroke-width": 1,
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          3.5,
+          12,
+          6.5
+        ],
+        "circle-opacity": 0.95
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_grieskirchen-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "gemeinden_grieskirchen",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_grieskirchen-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "gemeinden_grieskirchen",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_grieskirchen-circle",
+      "type": "circle",
+      "source": "folder",
+      "source-layer": "gemeinden_grieskirchen",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "circle-color": "#3b82f6",
+        "circle-stroke-color": "#e0e0e0",
+        "circle-stroke-width": 1,
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          3.5,
+          12,
+          6.5
+        ],
+        "circle-opacity": 0.95
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_kirchdorf-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "gemeinden_kirchdorf",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_kirchdorf-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "gemeinden_kirchdorf",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_kirchdorf-circle",
+      "type": "circle",
+      "source": "folder",
+      "source-layer": "gemeinden_kirchdorf",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "circle-color": "#3b82f6",
+        "circle-stroke-color": "#e0e0e0",
+        "circle-stroke-width": 1,
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          3.5,
+          12,
+          6.5
+        ],
+        "circle-opacity": 0.95
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_linz-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "gemeinden_linz",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_linz-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "gemeinden_linz",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_linz-circle",
+      "type": "circle",
+      "source": "folder",
+      "source-layer": "gemeinden_linz",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "circle-color": "#3b82f6",
+        "circle-stroke-color": "#e0e0e0",
+        "circle-stroke-width": 1,
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          3.5,
+          12,
+          6.5
+        ],
+        "circle-opacity": 0.95
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_linz_land-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "gemeinden_linz_land",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_linz_land-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "gemeinden_linz_land",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_linz_land-circle",
+      "type": "circle",
+      "source": "folder",
+      "source-layer": "gemeinden_linz_land",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "circle-color": "#3b82f6",
+        "circle-stroke-color": "#e0e0e0",
+        "circle-stroke-width": 1,
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          3.5,
+          12,
+          6.5
+        ],
+        "circle-opacity": 0.95
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_perg-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "gemeinden_perg",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_perg-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "gemeinden_perg",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_perg-circle",
+      "type": "circle",
+      "source": "folder",
+      "source-layer": "gemeinden_perg",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "circle-color": "#3b82f6",
+        "circle-stroke-color": "#e0e0e0",
+        "circle-stroke-width": 1,
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          3.5,
+          12,
+          6.5
+        ],
+        "circle-opacity": 0.95
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_ried-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "gemeinden_ried",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_ried-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "gemeinden_ried",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_ried-circle",
+      "type": "circle",
+      "source": "folder",
+      "source-layer": "gemeinden_ried",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "circle-color": "#3b82f6",
+        "circle-stroke-color": "#e0e0e0",
+        "circle-stroke-width": 1,
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          3.5,
+          12,
+          6.5
+        ],
+        "circle-opacity": 0.95
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_rohrbach-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "gemeinden_rohrbach",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_rohrbach-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "gemeinden_rohrbach",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_rohrbach-circle",
+      "type": "circle",
+      "source": "folder",
+      "source-layer": "gemeinden_rohrbach",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "circle-color": "#3b82f6",
+        "circle-stroke-color": "#e0e0e0",
+        "circle-stroke-width": 1,
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          3.5,
+          12,
+          6.5
+        ],
+        "circle-opacity": 0.95
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_schärding-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "gemeinden_schärding",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_schärding-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "gemeinden_schärding",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_schärding-circle",
+      "type": "circle",
+      "source": "folder",
+      "source-layer": "gemeinden_schärding",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "circle-color": "#3b82f6",
+        "circle-stroke-color": "#e0e0e0",
+        "circle-stroke-width": 1,
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          3.5,
+          12,
+          6.5
+        ],
+        "circle-opacity": 0.95
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_steyr-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "gemeinden_steyr",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_steyr-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "gemeinden_steyr",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_steyr-circle",
+      "type": "circle",
+      "source": "folder",
+      "source-layer": "gemeinden_steyr",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "circle-color": "#3b82f6",
+        "circle-stroke-color": "#e0e0e0",
+        "circle-stroke-width": 1,
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          3.5,
+          12,
+          6.5
+        ],
+        "circle-opacity": 0.95
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_steyr_land-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "gemeinden_steyr_land",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_steyr_land-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "gemeinden_steyr_land",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_steyr_land-circle",
+      "type": "circle",
+      "source": "folder",
+      "source-layer": "gemeinden_steyr_land",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "circle-color": "#3b82f6",
+        "circle-stroke-color": "#e0e0e0",
+        "circle-stroke-width": 1,
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          3.5,
+          12,
+          6.5
+        ],
+        "circle-opacity": 0.95
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_urfahr_umgebung-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "gemeinden_urfahr_umgebung",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_urfahr_umgebung-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "gemeinden_urfahr_umgebung",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_urfahr_umgebung-circle",
+      "type": "circle",
+      "source": "folder",
+      "source-layer": "gemeinden_urfahr_umgebung",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "circle-color": "#3b82f6",
+        "circle-stroke-color": "#e0e0e0",
+        "circle-stroke-width": 1,
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          3.5,
+          12,
+          6.5
+        ],
+        "circle-opacity": 0.95
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_vöcklabruck-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "gemeinden_vöcklabruck",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_vöcklabruck-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "gemeinden_vöcklabruck",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_vöcklabruck-circle",
+      "type": "circle",
+      "source": "folder",
+      "source-layer": "gemeinden_vöcklabruck",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "circle-color": "#3b82f6",
+        "circle-stroke-color": "#e0e0e0",
+        "circle-stroke-width": 1,
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          3.5,
+          12,
+          6.5
+        ],
+        "circle-opacity": 0.95
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_wels-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "gemeinden_wels",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_wels-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "gemeinden_wels",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_wels-circle",
+      "type": "circle",
+      "source": "folder",
+      "source-layer": "gemeinden_wels",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "circle-color": "#3b82f6",
+        "circle-stroke-color": "#e0e0e0",
+        "circle-stroke-width": 1,
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          3.5,
+          12,
+          6.5
+        ],
+        "circle-opacity": 0.95
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_wels_land-fill",
+      "type": "fill",
+      "source": "folder",
+      "source-layer": "gemeinden_wels_land",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#333333"
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_wels_land-line",
+      "type": "line",
+      "source": "folder",
+      "source-layer": "gemeinden_wels_land",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "LineString",
+          "MultiLineString",
+          "Polygon",
+          "MultiPolygon"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "line-color": "#3b82f6",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          1.5,
+          12,
+          3.5
+        ],
+        "line-opacity": 0.9
+      }
+    },
+    {
+      "id": "gemeinden-gemeinden_wels_land-circle",
+      "type": "circle",
+      "source": "folder",
+      "source-layer": "gemeinden_wels_land",
+      "filter": [
+        "match",
+        [
+          "geometry-type"
+        ],
+        [
+          "Point",
+          "MultiPoint"
+        ],
+        true,
+        false
+      ],
+      "paint": {
+        "circle-color": "#3b82f6",
+        "circle-stroke-color": "#e0e0e0",
+        "circle-stroke-width": 1,
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          3.5,
+          12,
+          6.5
+        ],
+        "circle-opacity": 0.95
+      }
+    }
+  ]
+}
