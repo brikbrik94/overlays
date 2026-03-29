@@ -40,7 +40,7 @@
       "filter": ["==", ["geometry-type"], "Point"],
       "layout": {
         "icon-image": ["case", ["==", ["get", "emergency"], "mountain_rescue"], "brd-pin", ["any", ["==", ["get", "ambulance_station:emergency_doctor"], true], ["in", ["downcase", ["to-string", ["get", "ambulance_station:emergency_doctor"]]], ["literal", ["yes", "true", "1"]]]], "nef-pin", "rd-pin"],
-        "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.9, 12, 1.3],
+        "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.5, 12, 0.9],
         "icon-allow-overlap": true
       }
     },
@@ -52,7 +52,7 @@
       "filter": ["==", ["geometry-type"], "Point"],
       "layout": {
         "icon-image": ["case", ["==", ["get", "emergency"], "mountain_rescue"], "brd-pin", ["any", ["==", ["get", "ambulance_station:emergency_doctor"], true], ["in", ["downcase", ["to-string", ["get", "ambulance_station:emergency_doctor"]]], ["literal", ["yes", "true", "1"]]]], "nef-pin", "rd-pin"],
-        "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.9, 12, 1.3],
+        "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.5, 12, 0.9],
         "icon-allow-overlap": true
       }
     },
@@ -64,7 +64,7 @@
       "filter": ["==", ["geometry-type"], "Point"],
       "layout": {
         "icon-image": ["case", ["==", ["get", "emergency"], "mountain_rescue"], "brd-pin", ["any", ["==", ["get", "ambulance_station:emergency_doctor"], true], ["in", ["downcase", ["to-string", ["get", "ambulance_station:emergency_doctor"]]], ["literal", ["yes", "true", "1"]]]], "nef-pin", "rd-pin"],
-        "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.9, 12, 1.3],
+        "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.5, 12, 0.9],
         "icon-allow-overlap": true
       }
     },
@@ -76,7 +76,7 @@
       "filter": ["==", ["geometry-type"], "Point"],
       "layout": {
         "icon-image": ["case", ["==", ["get", "emergency"], "mountain_rescue"], "brd-pin", ["any", ["==", ["get", "ambulance_station:emergency_doctor"], true], ["in", ["downcase", ["to-string", ["get", "ambulance_station:emergency_doctor"]]], ["literal", ["yes", "true", "1"]]]], "nef-pin", "rd-pin"],
-        "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.9, 12, 1.3],
+        "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.5, 12, 0.9],
         "icon-allow-overlap": true
       }
     },
@@ -88,7 +88,7 @@
       "filter": ["==", ["geometry-type"], "Point"],
       "layout": {
         "icon-image": ["case", ["==", ["get", "emergency"], "mountain_rescue"], "brd-pin", ["any", ["==", ["get", "ambulance_station:emergency_doctor"], true], ["in", ["downcase", ["to-string", ["get", "ambulance_station:emergency_doctor"]]], ["literal", ["yes", "true", "1"]]]], "nef-pin", "rd-pin"],
-        "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.9, 12, 1.3],
+        "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.5, 12, 0.9],
         "icon-allow-overlap": true
       }
     },
@@ -100,7 +100,7 @@
       "filter": ["==", ["geometry-type"], "Point"],
       "layout": {
         "icon-image": ["case", ["==", ["get", "emergency"], "mountain_rescue"], "brd-pin", ["any", ["==", ["get", "ambulance_station:emergency_doctor"], true], ["in", ["downcase", ["to-string", ["get", "ambulance_station:emergency_doctor"]]], ["literal", ["yes", "true", "1"]]]], "nef-pin", "rd-pin"],
-        "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.9, 12, 1.3],
+        "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.5, 12, 0.9],
         "icon-allow-overlap": true
       }
     },
@@ -112,7 +112,7 @@
       "filter": ["==", ["geometry-type"], "Point"],
       "layout": {
         "icon-image": ["case", ["==", ["get", "emergency"], "mountain_rescue"], "brd-pin", ["any", ["==", ["get", "ambulance_station:emergency_doctor"], true], ["in", ["downcase", ["to-string", ["get", "ambulance_station:emergency_doctor"]]], ["literal", ["yes", "true", "1"]]]], "nef-pin", "rd-pin"],
-        "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.9, 12, 1.3],
+        "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.5, 12, 0.9],
         "icon-allow-overlap": true
       }
     }
