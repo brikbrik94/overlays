@@ -66,10 +66,11 @@ extract_or_copy_svg() {
   fi
 }
 
-copy_marker_png() {
+copy_icon_alias() {
   local source_dir="$1"
   local preferred="$2"
   local out_name="$3"
+  local out_dir="$4"
   local candidate=""
   if [[ -n "$preferred" && -f "$source_dir/$preferred" ]]; then
     candidate="$source_dir/$preferred"
@@ -77,8 +78,8 @@ copy_marker_png() {
     candidate="$(find "$source_dir" -maxdepth 1 -type f -name '*.png' | sort | head -n1 || true)"
   fi
   if [[ -n "$candidate" ]]; then
-    cp "$candidate" "$PNG_DIR/markers/$out_name"
-    echo "marker alias: $(basename "$candidate") -> markers/$out_name"
+    cp "$candidate" "$out_dir/$out_name"
+    echo "icon alias: $(basename "$candidate") -> $out_dir/$out_name"
   fi
 }
 
@@ -107,12 +108,23 @@ fi
 
 "$VENV_PY" "$ROOT_DIR/scripts/convert_sprite_svgs.py" --source "$EXTRACT_DIR" --out "$PNG_DIR"
 
-mkdir -p "$PNG_DIR/markers"
-copy_marker_png "$PNG_DIR/rd" "oerk.png" "rd-pin.png"
-copy_marker_png "$PNG_DIR/nef" "oerk.png" "nef-pin.png"
-copy_marker_png "$PNG_DIR/nah" "adac-luftrettung.png" "nah-pin.png"
-copy_marker_png "$PNG_DIR/brd" "brd.png" "brd-pin.png"
-copy_marker_png "$PNG_DIR/fallback" "fallback.png" "fallback-pin.png"
+COMBINED_DIR="$PNG_DIR/oe5ith-markers"
+mkdir -p "$COMBINED_DIR"
+
+for group in rd nef nah brd fallback; do
+  if [[ -d "$PNG_DIR/$group" ]]; then
+    find "$PNG_DIR/$group" -maxdepth 1 -type f -name '*.png' | while read -r icon; do
+      base="$(basename "$icon" .png)"
+      cp "$icon" "$COMBINED_DIR/${group}-${base}.png"
+    done
+  fi
+done
+
+copy_icon_alias "$PNG_DIR/rd" "oerk.png" "rd-pin.png" "$COMBINED_DIR"
+copy_icon_alias "$PNG_DIR/nef" "oerk.png" "nef-pin.png" "$COMBINED_DIR"
+copy_icon_alias "$PNG_DIR/nah" "adac-luftrettung.png" "nah-pin.png" "$COMBINED_DIR"
+copy_icon_alias "$PNG_DIR/brd" "brd.png" "brd-pin.png" "$COMBINED_DIR"
+copy_icon_alias "$PNG_DIR/fallback" "fallback.png" "fallback-pin.png" "$COMBINED_DIR"
 
 "$VENV_PY" "$ROOT_DIR/scripts/build_sprites.py" --source "$PNG_DIR" --out "$DIST_DIR"
 

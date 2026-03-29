@@ -15,7 +15,7 @@
     ]
   },
   "glyphs": "../assets/fonts/{fontstack}/{range}.pbf",
-  "sprite": "../assets/sprites/markers/sprite",
+  "sprite": "../dist/assets/sprites/oe5ith-markers/sprite",
   "sources": {
     "folder": {
       "type": "vector",
