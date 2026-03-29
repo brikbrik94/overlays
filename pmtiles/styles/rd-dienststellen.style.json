@@ -46,44 +46,121 @@
       ],
       "layout": {
         "icon-image": [
-          "case",
+          "let",
+          "org",
           [
-            "==",
+            "downcase",
             [
-              "get",
-              "emergency"
-            ],
-            "mountain_rescue"
-          ],
-          "brd-pin",
-          [
-            "any",
-            [
-              "==",
+              "concat",
               [
-                "get",
-                "ambulance_station:emergency_doctor"
-              ],
-              true
-            ],
-            [
-              "in",
-              [
-                "downcase",
+                "coalesce",
                 [
                   "to-string",
                   [
                     "get",
-                    "ambulance_station:emergency_doctor"
+                    "operator"
                   ]
+                ],
+                ""
+              ],
+              " ",
+              [
+                "coalesce",
+                [
+                  "to-string",
+                  [
+                    "get",
+                    "brand"
+                  ]
+                ],
+                ""
+              ],
+              " ",
+              [
+                "coalesce",
+                [
+                  "to-string",
+                  [
+                    "get",
+                    "short_name"
+                  ]
+                ],
+                ""
+              ],
+              " ",
+              [
+                "coalesce",
+                [
+                  "to-string",
+                  [
+                    "get",
+                    "name"
+                  ]
+                ],
+                ""
+              ]
+            ]
+          ],
+          [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "emergency"
+              ],
+              "mountain_rescue"
+            ],
+            "brd-pin",
+            [
+              "any",
+              [
+                "==",
+                [
+                  "get",
+                  "ambulance_station:emergency_doctor"
+                ],
+                true
+              ],
+              [
+                "in",
+                [
+                  "downcase",
+                  [
+                    "to-string",
+                    [
+                      "get",
+                      "ambulance_station:emergency_doctor"
+                    ]
+                  ]
+                ],
+                [
+                  "literal",
+                  [
+                    "yes",
+                    "true",
+                    "1"
+                  ]
+                ]
+              ]
+            ],
+            "nef-pin",
+            [
+              "any",
+              [
+                "in",
+                "bayerisches rotes kreuz",
+                [
+                  "var",
+                  "org"
                 ]
               ],
               [
-                "literal",
+                "in",
+                " brk",
                 [
-                  "yes",
-                  "true",
-                  "1"
+                  "var",
+                  "org"
                 ]
               ]
             ]
@@ -208,7 +285,7 @@
           ],
           "rd-brk",
           [
-            "any",
+            "downcase",
             [
               "in",
               "österreichisches rotes kreuz",
@@ -270,7 +347,7 @@
               "in",
               " oerk",
               [
-                "downcase",
+                "coalesce",
                 [
                   "concat",
                   [
@@ -970,7 +1047,7 @@
           ],
           "rd-gk",
           [
-            "any",
+            "case",
             [
               "in",
               "ma70",
@@ -1028,11 +1105,12 @@
                 ]
               ]
             ],
+            "brd-pin",
             [
               "in",
               "berufsrettung wien",
               [
-                "downcase",
+                "==",
                 [
                   "concat",
                   [
@@ -1177,44 +1255,266 @@
       ],
       "layout": {
         "icon-image": [
-          "case",
+          "let",
+          "org",
           [
-            "==",
+            "downcase",
             [
-              "get",
-              "emergency"
-            ],
-            "mountain_rescue"
-          ],
-          "brd-pin",
-          [
-            "any",
-            [
-              "==",
+              "concat",
               [
-                "get",
-                "ambulance_station:emergency_doctor"
-              ],
-              true
-            ],
-            [
-              "in",
-              [
-                "downcase",
+                "coalesce",
                 [
                   "to-string",
                   [
                     "get",
-                    "ambulance_station:emergency_doctor"
+                    "operator"
                   ]
+                ],
+                ""
+              ],
+              " ",
+              [
+                "coalesce",
+                [
+                  "to-string",
+                  [
+                    "get",
+                    "brand"
+                  ]
+                ],
+                ""
+              ],
+              " ",
+              [
+                "coalesce",
+                [
+                  "to-string",
+                  [
+                    "get",
+                    "short_name"
+                  ]
+                ],
+                ""
+              ],
+              " ",
+              [
+                "coalesce",
+                [
+                  "to-string",
+                  [
+                    "get",
+                    "name"
+                  ]
+                ],
+                ""
+              ]
+            ]
+          ],
+          [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "emergency"
+              ],
+              "mountain_rescue"
+            ],
+            "brd-pin",
+            [
+              "any",
+              [
+                "==",
+                [
+                  "get",
+                  "ambulance_station:emergency_doctor"
+                ],
+                true
+              ],
+              [
+                "in",
+                [
+                  "downcase",
+                  [
+                    "to-string",
+                    [
+                      "get",
+                      "ambulance_station:emergency_doctor"
+                    ]
+                  ]
+                ],
+                [
+                  "literal",
+                  [
+                    "yes",
+                    "true",
+                    "1"
+                  ]
+                ]
+              ]
+            ],
+            "nef-pin",
+            [
+              "any",
+              [
+                "in",
+                "bayerisches rotes kreuz",
+                [
+                  "var",
+                  "org"
                 ]
               ],
               [
-                "literal",
+                "in",
+                " brk",
                 [
-                  "yes",
-                  "true",
-                  "1"
+                  "var",
+                  "org"
+                ]
+              ]
+            ],
+            "rd-brk",
+            [
+              "any",
+              [
+                "in",
+                "österreichisches rotes kreuz",
+                [
+                  "var",
+                  "org"
+                ]
+              ],
+              [
+                "in",
+                " oerk",
+                [
+                  "var",
+                  "org"
+                ]
+              ],
+              [
+                "in",
+                " örk",
+                [
+                  "var",
+                  "org"
+                ]
+              ]
+            ],
+            "rd-oerk",
+            [
+              "any",
+              [
+                "in",
+                "samariter",
+                [
+                  "var",
+                  "org"
+                ]
+              ],
+              [
+                "in",
+                " asb",
+                [
+                  "var",
+                  "org"
+                ]
+              ]
+            ],
+            "rd-asb",
+            [
+              "any",
+              [
+                "in",
+                "malteser",
+                [
+                  "var",
+                  "org"
+                ]
+              ],
+              [
+                "in",
+                " mhd",
+                [
+                  "var",
+                  "org"
+                ]
+              ]
+            ],
+            "rd-mhd",
+            [
+              "any",
+              [
+                "in",
+                "johanniter",
+                [
+                  "var",
+                  "org"
+                ]
+              ],
+              [
+                "in",
+                " juh",
+                [
+                  "var",
+                  "org"
+                ]
+              ]
+            ],
+            "rd-juh",
+            [
+              "in",
+              "stadler",
+              [
+                "var",
+                "org"
+              ]
+            ],
+            "rd-stadler",
+            [
+              "any",
+              [
+                "in",
+                "grünes kreuz",
+                [
+                  "var",
+                  "org"
+                ]
+              ],
+              [
+                "in",
+                "gruenes kreuz",
+                [
+                  "var",
+                  "org"
+                ]
+              ],
+              [
+                "in",
+                " gk",
+                [
+                  "var",
+                  "org"
+                ]
+              ]
+            ],
+            "rd-gk",
+            [
+              "any",
+              [
+                "in",
+                "ma70",
+                [
+                  "var",
+                  "org"
+                ]
+              ],
+              [
+                "in",
+                "berufsrettung wien",
+                [
+                  "var",
+                  "org"
                 ]
               ]
             ]
@@ -6807,8 +7107,33 @@
           [
             "linear"
           ],
+          "rd-brk",
           [
-            "zoom"
+            "any",
+            [
+              "in",
+              "österreichisches rotes kreuz",
+              [
+                "var",
+                "org"
+              ]
+            ],
+            [
+              "in",
+              " oerk",
+              [
+                "var",
+                "org"
+              ]
+            ],
+            [
+              "in",
+              " örk",
+              [
+                "var",
+                "org"
+              ]
+            ]
           ],
           6,
           0.35,
@@ -6832,44 +7157,121 @@
       ],
       "layout": {
         "icon-image": [
-          "case",
+          "let",
+          "org",
           [
-            "==",
+            "downcase",
             [
-              "get",
-              "emergency"
-            ],
-            "mountain_rescue"
-          ],
-          "brd-pin",
-          [
-            "any",
-            [
-              "==",
+              "concat",
               [
-                "get",
-                "ambulance_station:emergency_doctor"
-              ],
-              true
-            ],
-            [
-              "in",
-              [
-                "downcase",
+                "coalesce",
                 [
                   "to-string",
                   [
                     "get",
-                    "ambulance_station:emergency_doctor"
+                    "operator"
                   ]
+                ],
+                ""
+              ],
+              " ",
+              [
+                "coalesce",
+                [
+                  "to-string",
+                  [
+                    "get",
+                    "brand"
+                  ]
+                ],
+                ""
+              ],
+              " ",
+              [
+                "coalesce",
+                [
+                  "to-string",
+                  [
+                    "get",
+                    "short_name"
+                  ]
+                ],
+                ""
+              ],
+              " ",
+              [
+                "coalesce",
+                [
+                  "to-string",
+                  [
+                    "get",
+                    "name"
+                  ]
+                ],
+                ""
+              ]
+            ]
+          ],
+          [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "emergency"
+              ],
+              "mountain_rescue"
+            ],
+            "brd-pin",
+            [
+              "any",
+              [
+                "==",
+                [
+                  "get",
+                  "ambulance_station:emergency_doctor"
+                ],
+                true
+              ],
+              [
+                "in",
+                [
+                  "downcase",
+                  [
+                    "to-string",
+                    [
+                      "get",
+                      "ambulance_station:emergency_doctor"
+                    ]
+                  ]
+                ],
+                [
+                  "literal",
+                  [
+                    "yes",
+                    "true",
+                    "1"
+                  ]
+                ]
+              ]
+            ],
+            "nef-pin",
+            [
+              "any",
+              [
+                "in",
+                "bayerisches rotes kreuz",
+                [
+                  "var",
+                  "org"
                 ]
               ],
               [
-                "literal",
+                "in",
+                " brk",
                 [
-                  "yes",
-                  "true",
-                  "1"
+                  "var",
+                  "org"
                 ]
               ]
             ]
@@ -7345,11 +7747,13 @@
                 ]
               ]
             ],
+            "rd-juh",
             [
               "in",
               " mhd",
               [
-                "downcase",
+                "in",
+                "grünes kreuz",
                 [
                   "concat",
                   [
@@ -7756,7 +8160,7 @@
           ],
           "rd-gk",
           [
-            "any",
+            "case",
             [
               "in",
               "ma70",
@@ -7814,11 +8218,12 @@
                 ]
               ]
             ],
+            "brd-pin",
             [
               "in",
               "berufsrettung wien",
               [
-                "downcase",
+                "==",
                 [
                   "concat",
                   [
@@ -7868,6 +8273,26 @@
                     ],
                     ""
                   ]
+                ],
+                [
+                  "literal",
+                  [
+                    "yes",
+                    "true",
+                    "1"
+                  ]
+                ]
+              ]
+            ],
+            "nef-pin",
+            [
+              "any",
+              [
+                "in",
+                "bayerisches rotes kreuz",
+                [
+                  "var",
+                  "org"
                 ]
               ]
             ]
