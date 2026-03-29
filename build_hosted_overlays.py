@@ -204,31 +204,23 @@ def expr_truthy(prop: str) -> List[Any]:
 
 
 def build_rd_icon_expression() -> List[Any]:
-    org_text = [
-        "downcase",
-        [
-            "concat",
-            ["coalesce", ["to-string", ["get", "operator"]], ""], " ",
-            ["coalesce", ["to-string", ["get", "brand"]], ""], " ",
-            ["coalesce", ["to-string", ["get", "short_name"]], ""], " ",
-            ["coalesce", ["to-string", ["get", "name"]], ""],
-        ],
-    ]
+    brand_short = ["downcase", ["to-string", ["get", "brand:short"]]]
     return [
-        "let", "org", org_text,
+        "case",
+        ["==", ["get", "emergency"], "mountain_rescue"], "brd-pin",
+        expr_truthy("ambulance_station:emergency_doctor"), "nef-pin",
         [
-            "case",
-            ["==", ["get", "emergency"], "mountain_rescue"], "brd-pin",
-            expr_truthy("ambulance_station:emergency_doctor"), "nef-pin",
-            ["any", ["in", "bayerisches rotes kreuz", ["var", "org"]], ["in", " brk", ["var", "org"]]], "rd-brk",
-            ["any", ["in", "österreichisches rotes kreuz", ["var", "org"]], ["in", " oerk", ["var", "org"]], ["in", " örk", ["var", "org"]]], "rd-oerk",
-            ["any", ["in", "samariter", ["var", "org"]], ["in", " asb", ["var", "org"]]], "rd-asb",
-            ["any", ["in", "malteser", ["var", "org"]], ["in", " mhd", ["var", "org"]]], "rd-mhd",
-            ["any", ["in", "johanniter", ["var", "org"]], ["in", " juh", ["var", "org"]]], "rd-juh",
-            ["in", "stadler", ["var", "org"]], "rd-stadler",
-            ["any", ["in", "grünes kreuz", ["var", "org"]], ["in", "gruenes kreuz", ["var", "org"]], ["in", " gk", ["var", "org"]]], "rd-gk",
-            ["any", ["in", "ma70", ["var", "org"]], ["in", "berufsrettung wien", ["var", "org"]]], "rd-ma70",
-            ["in", "ims", ["var", "org"]], "rd-ims",
+            "match",
+            brand_short,
+            ["brk"], "rd-brk",
+            ["örk", "oerk"], "rd-oerk",
+            ["asb"], "rd-asb",
+            ["mhd"], "rd-mhd",
+            ["juh"], "rd-juh",
+            ["gk"], "rd-gk",
+            ["ma70"], "rd-ma70",
+            ["ims"], "rd-ims",
+            ["stadler"], "rd-stadler",
             "rd-pin",
         ],
     ]

@@ -163,185 +163,65 @@
                   "org"
                 ]
               ]
+            ]
+          ],
+          "nef-pin",
+          [
+            "match",
+            [
+              "downcase",
+              [
+                "to-string",
+                [
+                  "get",
+                  "brand:short"
+                ]
+              ]
+            ],
+            [
+              "brk"
             ],
             "rd-brk",
             [
-              "any",
-              [
-                "in",
-                "österreichisches rotes kreuz",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " oerk",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " örk",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "örk",
+              "oerk"
             ],
             "rd-oerk",
             [
-              "any",
-              [
-                "in",
-                "samariter",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " asb",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "asb"
             ],
             "rd-asb",
             [
-              "any",
-              [
-                "in",
-                "malteser",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " mhd",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "mhd"
             ],
             "rd-mhd",
             [
-              "any",
-              [
-                "in",
-                "johanniter",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " juh",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "juh"
             ],
             "rd-juh",
             [
-              "in",
-              "stadler",
-              [
-                "var",
-                "org"
-              ]
-            ],
-            "rd-stadler",
-            [
-              "any",
-              [
-                "in",
-                "grünes kreuz",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                "gruenes kreuz",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " gk",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "gk"
             ],
             "rd-gk",
             [
-              "any",
-              [
-                "in",
-                "ma70",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                "berufsrettung wien",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "ma70"
             ],
             "rd-ma70",
             [
-              "in",
-              "ims",
-              [
-                "var",
-                "org"
-              ]
+              "ims"
             ],
             "rd-ims",
+            [
+              "stadler"
+            ],
+            "rd-stadler",
             "rd-pin"
           ]
         ],
         "icon-size": [
           "interpolate",
           [
-            "any",
-            [
-              "in",
-              "bayerisches rotes kreuz",
-              [
-                "var",
-                "org"
-              ]
-            ],
-            [
-              "in",
-              " brk",
-              [
-                "var",
-                "org"
-              ]
-            ]
+            "linear"
           ],
           "rd-brk",
           [
@@ -448,224 +328,56 @@
               ]
             ]
           ],
+          "nef-pin",
           [
-            "case",
+            "match",
             [
-              "==",
+              "downcase",
               [
-                "get",
-                "emergency"
-              ],
-              "mountain_rescue"
-            ],
-            "brd-pin",
-            [
-              "any",
-              [
-                "==",
+                "to-string",
                 [
                   "get",
-                  "ambulance_station:emergency_doctor"
-                ],
-                true
-              ],
-              [
-                "in",
-                [
-                  "downcase",
-                  [
-                    "to-string",
-                    [
-                      "get",
-                      "ambulance_station:emergency_doctor"
-                    ]
-                  ]
-                ],
-                [
-                  "literal",
-                  [
-                    "yes",
-                    "true",
-                    "1"
-                  ]
+                  "brand:short"
                 ]
               ]
             ],
-            "nef-pin",
             [
-              "any",
-              [
-                "in",
-                "bayerisches rotes kreuz",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " brk",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "brk"
             ],
             "rd-brk",
             [
-              "any",
-              [
-                "in",
-                "österreichisches rotes kreuz",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " oerk",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " örk",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "örk",
+              "oerk"
             ],
             "rd-oerk",
             [
-              "any",
-              [
-                "in",
-                "samariter",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " asb",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "asb"
             ],
             "rd-asb",
             [
-              "any",
-              [
-                "in",
-                "malteser",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " mhd",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "mhd"
             ],
             "rd-mhd",
             [
-              "any",
-              [
-                "in",
-                "johanniter",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " juh",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "juh"
             ],
             "rd-juh",
             [
-              "in",
-              "stadler",
-              [
-                "var",
-                "org"
-              ]
-            ],
-            "rd-stadler",
-            [
-              "any",
-              [
-                "in",
-                "grünes kreuz",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                "gruenes kreuz",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " gk",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "gk"
             ],
             "rd-gk",
             [
-              "any",
-              [
-                "in",
-                "ma70",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                "berufsrettung wien",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "ma70"
             ],
             "rd-ma70",
             [
-              "in",
-              "ims",
-              [
-                "var",
-                "org"
-              ]
+              "ims"
             ],
             "rd-ims",
+            [
+              "stadler"
+            ],
+            "rd-stadler",
             "rd-pin"
           ]
         ],
@@ -816,510 +528,58 @@
                   "org"
                 ]
               ]
-            ],
-            "rd-brk",
-            [
-              "any",
-              [
-                "in",
-                "österreichisches rotes kreuz",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " oerk",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " örk",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
-            ],
-            "rd-oerk",
-            [
-              "any",
-              [
-                "in",
-                "samariter",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " asb",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
-            ],
-            "rd-asb",
-            [
-              "any",
-              [
-                "in",
-                "malteser",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " mhd",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
-            ],
-            "rd-mhd",
-            [
-              "any",
-              [
-                "in",
-                "johanniter",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " juh",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
-            ],
-            "rd-juh",
-            [
-              "in",
-              "stadler",
-              [
-                "var",
-                "org"
-              ]
-            ],
-            "rd-stadler",
-            [
-              "any",
-              [
-                "in",
-                "grünes kreuz",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                "gruenes kreuz",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " gk",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
-            ],
-            "rd-gk",
-            [
-              "any",
-              [
-                "in",
-                "ma70",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                "berufsrettung wien",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
-            ],
-            "rd-ma70",
-            [
-              "in",
-              "ims",
-              [
-                "var",
-                "org"
-              ]
-            ],
-            "rd-ims",
-            "rd-pin"
-          ]
-        ],
-        "icon-size": [
-          "interpolate",
-          [
-            "any",
-            [
-              "in",
-              "bayerisches rotes kreuz",
-              [
-                "var",
-                "org"
-              ]
-            ],
-            [
-              "in",
-              " brk",
-              [
-                "var",
-                "org"
-              ]
             ]
           ],
-          "rd-brk",
+          "nef-pin",
           [
-            "any",
+            "match",
             [
-              "in",
-              "österreichisches rotes kreuz",
+              "downcase",
               [
-                "var",
-                "org"
-              ]
-            ],
-            [
-              "in",
-              " oerk",
-              [
-                "var",
-                "org"
-              ]
-            ],
-            [
-              "in",
-              " örk",
-              [
-                "var",
-                "org"
-              ]
-            ]
-          ],
-          6,
-          0.35,
-          12,
-          0.65
-        ],
-        "icon-allow-overlap": true
-      }
-    },
-    {
-      "id": "rd-dienststellen-rd_oo_sew-symbols",
-      "type": "symbol",
-      "source": "folder",
-      "source-layer": "rd_oo_sew",
-      "filter": [
-        "==",
-        [
-          "geometry-type"
-        ],
-        "Point"
-      ],
-      "layout": {
-        "icon-image": [
-          "let",
-          "org",
-          [
-            "downcase",
-            [
-              "concat",
-              [
-                "coalesce",
-                [
-                  "to-string",
-                  [
-                    "get",
-                    "operator"
-                  ]
-                ],
-                ""
-              ],
-              " ",
-              [
-                "coalesce",
-                [
-                  "to-string",
-                  [
-                    "get",
-                    "brand"
-                  ]
-                ],
-                ""
-              ],
-              " ",
-              [
-                "coalesce",
-                [
-                  "to-string",
-                  [
-                    "get",
-                    "short_name"
-                  ]
-                ],
-                ""
-              ],
-              " ",
-              [
-                "coalesce",
-                [
-                  "to-string",
-                  [
-                    "get",
-                    "name"
-                  ]
-                ],
-                ""
-              ]
-            ]
-          ],
-          [
-            "case",
-            [
-              "in",
-              "malteser",
-              [
-                "get",
-                "emergency"
-              ],
-              "mountain_rescue"
-            ],
-            "brd-pin",
-            [
-              "any",
-              [
-                "==",
+                "to-string",
                 [
                   "get",
-                  "ambulance_station:emergency_doctor"
-                ],
-                true
-              ],
-              [
-                "in",
-                [
-                  "downcase",
-                  [
-                    "to-string",
-                    [
-                      "get",
-                      "ambulance_station:emergency_doctor"
-                    ]
-                  ]
-                ],
-                [
-                  "literal",
-                  [
-                    "yes",
-                    "true",
-                    "1"
-                  ]
+                  "brand:short"
                 ]
               ]
             ],
-            "nef-pin",
             [
-              "any",
-              [
-                "in",
-                "bayerisches rotes kreuz",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " brk",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "brk"
             ],
             "rd-brk",
             [
-              "any",
-              [
-                "in",
-                "österreichisches rotes kreuz",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " oerk",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " örk",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "örk",
+              "oerk"
             ],
             "rd-oerk",
             [
-              "any",
-              [
-                "in",
-                "samariter",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " asb",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "asb"
             ],
             "rd-asb",
             [
-              "any",
-              [
-                "in",
-                "malteser",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " mhd",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "mhd"
             ],
             "rd-mhd",
             [
-              "any",
-              [
-                "in",
-                "johanniter",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " juh",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "juh"
             ],
             "rd-juh",
             [
-              "in",
-              "stadler",
-              [
-                "var",
-                "org"
-              ]
-            ],
-            "rd-stadler",
-            [
-              "any",
-              [
-                "in",
-                "grünes kreuz",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                "gruenes kreuz",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " gk",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "gk"
             ],
             "rd-gk",
             [
-              "any",
-              [
-                "in",
-                "ma70",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                "berufsrettung wien",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "ma70"
             ],
             "rd-ma70",
             [
-              "in",
-              "ims",
-              [
-                "var",
-                "org"
-              ]
+              "ims"
             ],
             "rd-ims",
+            [
+              "stadler"
+            ],
+            "rd-stadler",
             "rd-pin"
           ]
         ],
@@ -1615,40 +875,65 @@
                   "org"
                 ]
               ]
+            ]
+          ],
+          "nef-pin",
+          [
+            "match",
+            [
+              "downcase",
+              [
+                "to-string",
+                [
+                  "get",
+                  "brand:short"
+                ]
+              ]
+            ],
+            [
+              "brk"
+            ],
+            "rd-brk",
+            [
+              "örk",
+              "oerk"
+            ],
+            "rd-oerk",
+            [
+              "asb"
+            ],
+            "rd-asb",
+            [
+              "mhd"
+            ],
+            "rd-mhd",
+            [
+              "juh"
+            ],
+            "rd-juh",
+            [
+              "gk"
+            ],
+            "rd-gk",
+            [
+              "ma70"
             ],
             "rd-ma70",
             [
-              "in",
-              "ims",
-              [
-                "var",
-                "org"
-              ]
+              "ims"
             ],
             "rd-ims",
+            [
+              "stadler"
+            ],
+            "rd-stadler",
             "rd-pin"
           ]
         ],
         "icon-size": [
           "interpolate",
           [
-            "any",
-            [
-              "in",
-              "bayerisches rotes kreuz",
-              [
-                "var",
-                "org"
-              ]
-            ],
-            [
-              "in",
-              " brk",
-              [
-                "var",
-                "org"
-              ]
-            ]
+            "linear"
           ],
           "rd-brk",
           [
@@ -1817,56 +1102,94 @@
                   "org"
                 ]
               ]
+            ]
+          ],
+          "nef-pin",
+          [
+            "match",
+            [
+              "downcase",
+              [
+                "to-string",
+                [
+                  "get",
+                  "brand:short"
+                ]
+              ]
+            ],
+            [
+              "brk"
             ],
             "rd-brk",
             [
-              "any",
-              [
-                "in",
-                "österreichisches rotes kreuz",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " oerk",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " örk",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "örk",
+              "oerk"
             ],
             "rd-oerk",
             [
-              "any",
-              [
-                "in",
-                "samariter",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " asb",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "asb"
             ],
             "rd-asb",
+            [
+              "mhd"
+            ],
+            "rd-mhd",
+            [
+              "juh"
+            ],
+            "rd-juh",
+            [
+              "gk"
+            ],
+            "rd-gk",
+            [
+              "ma70"
+            ],
+            "rd-ma70",
+            [
+              "ims"
+            ],
+            "rd-ims",
+            [
+              "stadler"
+            ],
+            "rd-stadler",
+            "rd-pin"
+          ]
+        ],
+        "icon-size": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          0.35,
+          12,
+          0.65
+        ],
+        "icon-allow-overlap": true
+      }
+    },
+    {
+      "id": "rd-dienststellen-rd_sbg-symbols",
+      "type": "symbol",
+      "source": "folder",
+      "source-layer": "rd_sbg",
+      "filter": [
+        "==",
+        [
+          "geometry-type"
+        ],
+        "Point"
+      ],
+      "layout": {
+        "icon-image": [
+          "case",
+          [
+            "==",
             [
               "any",
               [
@@ -1942,37 +1265,58 @@
                   "org"
                 ]
               ]
+            ]
+          ],
+          "nef-pin",
+          [
+            "match",
+            [
+              "downcase",
+              [
+                "to-string",
+                [
+                  "get",
+                  "brand:short"
+                ]
+              ]
+            ],
+            [
+              "brk"
+            ],
+            "rd-brk",
+            [
+              "örk",
+              "oerk"
+            ],
+            "rd-oerk",
+            [
+              "asb"
+            ],
+            "rd-asb",
+            [
+              "mhd"
+            ],
+            "rd-mhd",
+            [
+              "juh"
+            ],
+            "rd-juh",
+            [
+              "gk"
             ],
             "rd-gk",
             [
-              "any",
-              [
-                "in",
-                "ma70",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                "berufsrettung wien",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "ma70"
             ],
             "rd-ma70",
             [
-              "in",
-              "ims",
-              [
-                "var",
-                "org"
-              ]
+              "ims"
             ],
             "rd-ims",
+            [
+              "stadler"
+            ],
+            "rd-stadler",
             "rd-pin"
           ]
         ],
@@ -1982,23 +1326,7 @@
             "linear"
           ],
           [
-            "any",
-            [
-              "in",
-              "bayerisches rotes kreuz",
-              [
-                "var",
-                "org"
-              ]
-            ],
-            [
-              "in",
-              " brk",
-              [
-                "var",
-                "org"
-              ]
-            ]
+            "zoom"
           ],
           6,
           0.35,
@@ -2140,162 +1468,58 @@
                   "org"
                 ]
               ]
+            ]
+          ],
+          "nef-pin",
+          [
+            "match",
+            [
+              "downcase",
+              [
+                "to-string",
+                [
+                  "get",
+                  "brand:short"
+                ]
+              ]
+            ],
+            [
+              "brk"
             ],
             "rd-brk",
             [
-              "any",
-              [
-                "in",
-                "österreichisches rotes kreuz",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " oerk",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " örk",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "örk",
+              "oerk"
             ],
             "rd-oerk",
             [
-              "any",
-              [
-                "in",
-                "samariter",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " asb",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "asb"
             ],
             "rd-asb",
             [
-              "any",
-              [
-                "in",
-                "malteser",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " mhd",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "mhd"
             ],
             "rd-mhd",
             [
-              "any",
-              [
-                "in",
-                "johanniter",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " juh",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "juh"
             ],
             "rd-juh",
             [
-              "in",
-              "stadler",
-              [
-                "var",
-                "org"
-              ]
-            ],
-            "rd-stadler",
-            [
-              "any",
-              [
-                "in",
-                "grünes kreuz",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                "gruenes kreuz",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                " gk",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "gk"
             ],
             "rd-gk",
             [
-              "any",
-              [
-                "in",
-                "ma70",
-                [
-                  "var",
-                  "org"
-                ]
-              ],
-              [
-                "in",
-                "berufsrettung wien",
-                [
-                  "var",
-                  "org"
-                ]
-              ]
+              "ma70"
             ],
             "rd-ma70",
             [
-              "in",
-              "ims",
-              [
-                "var",
-                "org"
-              ]
+              "ims"
             ],
             "rd-ims",
+            [
+              "stadler"
+            ],
+            "rd-stadler",
             "rd-pin"
           ]
         ],
