@@ -275,30 +275,6 @@
     {
       "type": "Feature",
       "properties": {
-        "addr:city": null,
-        "addr:housenumber": null,
-        "addr:postcode": null,
-        "addr:street": null,
-        "ambulance_station:patient_transport": null,
-        "brand": null,
-        "brand:short": null,
-        "emergency": "ambulance_station",
-        "name": null,
-        "operator": null,
-        "short_name": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          13.27409754221831,
-          47.985017632536305
-        ]
-      },
-      "id": 12
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "addr:city": "Strobl",
         "addr:housenumber": "3",
         "addr:postcode": "5350",
