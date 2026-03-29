@@ -721,7 +721,7 @@ def main() -> int:
     parser.add_argument("--root", default="geojson", help="GeoJSON root directory.")
     parser.add_argument("--out", default="dist", help="Output directory for hosted bundle.")
     parser.add_argument("--base-url", default="", help="Optional public base URL where the bundle will be hosted.")
-    parser.add_argument("--sprite-url", default="../dist/assets/sprites/oe5ith-markers/sprite", help="Sprite URL for MapLibre styles.")
+    parser.add_argument("--sprite-url", default="../assets/sprites/oe5ith-markers/sprite", help="Sprite URL for MapLibre styles.")
     parser.add_argument("--glyphs-url", default="../assets/fonts/{fontstack}/{range}.pbf", help="Glyphs URL for MapLibre styles.")
     parser.add_argument("--skip-pmtiles", action="store_true", help="Do not run tippecanoe, only generate manifests/styles/index.")
     parser.add_argument("--dry-run", action="store_true", help="Print tippecanoe commands without executing them.")

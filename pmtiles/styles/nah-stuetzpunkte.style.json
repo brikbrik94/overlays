@@ -12,7 +12,7 @@
     ]
   },
   "glyphs": "../assets/fonts/{fontstack}/{range}.pbf",
-  "sprite": "../dist/assets/sprites/oe5ith-markers/sprite",
+  "sprite": "../assets/sprites/oe5ith-markers/sprite",
   "sources": {
     "folder": {
       "type": "vector",
