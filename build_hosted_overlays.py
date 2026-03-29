@@ -678,8 +678,27 @@ def copy_directory_contents(src: Path, dst: Path) -> None:
 
 def copy_static_assets_to_dist(repo_root: Path, out_dir: Path) -> None:
     assets_root = repo_root / "assets"
-    copy_directory_contents(assets_root / "sprites", out_dir / "assets" / "sprites")
     copy_directory_contents(assets_root / "mappings", out_dir / "assets" / "mappings")
+
+
+def clean_output_dir_preserving_sprites(out_dir: Path) -> None:
+    if not out_dir.exists():
+        return
+    preserve_dir = out_dir / "assets" / "sprites"
+    for entry in out_dir.iterdir():
+        if preserve_dir.exists() and entry.resolve() == preserve_dir.resolve().parent:
+            for nested in entry.iterdir():
+                if nested.resolve() == preserve_dir.resolve():
+                    continue
+                if nested.is_dir():
+                    shutil.rmtree(nested)
+                else:
+                    nested.unlink()
+            continue
+        if entry.is_dir():
+            shutil.rmtree(entry)
+        else:
+            entry.unlink()
 
 def write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -713,7 +732,7 @@ def main() -> int:
     root = Path(args.root).expanduser().resolve()
     out_dir = Path(args.out).expanduser().resolve()
     if args.clean and out_dir.exists():
-        shutil.rmtree(out_dir)
+        clean_output_dir_preserving_sprites(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
     copy_static_assets_to_dist(REPO_ROOT, out_dir)
