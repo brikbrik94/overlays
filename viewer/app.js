@@ -1,6 +1,7 @@
 const statusBox = document.getElementById('status-box');
 const overlaySelect = document.getElementById('overlay-select');
 const reloadButton = document.getElementById('reload-button');
+const DEBUG_SPRITES = true;
 
 function setStatus(message, extra) {
   statusBox.textContent = extra ? `${message}\n\n${extra}` : message;
@@ -55,6 +56,64 @@ async function fetchOverlayStyle(styleFile) {
     throw new Error(`Style konnte nicht geladen werden (${response.status}).`);
   }
   return response.json();
+}
+
+function resolveSpriteJsonUrl(spriteBase) {
+  const base = `${window.location.origin}/api/style`;
+  return new URL(`${spriteBase}.json`, base).toString();
+}
+
+async function debugSpriteAvailability(style, styleFile) {
+  if (!DEBUG_SPRITES || !style?.sprite) {
+    return null;
+  }
+
+  const spriteJsonUrl = resolveSpriteJsonUrl(style.sprite);
+  const requiredIcons = styleFile.includes('rd-dienststellen')
+    ? ['rd-pin', 'nef-pin', 'brd-pin']
+    : styleFile.includes('nah-stuetzpunkte')
+      ? ['nah-pin']
+      : [];
+
+  try {
+    const response = await fetch(spriteJsonUrl);
+    if (!response.ok) {
+      console.warn('[sprite-debug] sprite.json request failed', {
+        styleFile,
+        spriteBase: style.sprite,
+        spriteJsonUrl,
+        status: response.status,
+      });
+      return { ok: false, status: response.status, spriteJsonUrl };
+    }
+
+    const payload = await response.json();
+    const keys = Object.keys(payload || {});
+    const missing = requiredIcons.filter((icon) => !keys.includes(icon));
+    console.info('[sprite-debug] sprite.json loaded', {
+      styleFile,
+      spriteBase: style.sprite,
+      spriteJsonUrl,
+      iconCount: keys.length,
+      requiredIcons,
+      missingIcons: missing,
+      sampleIcons: keys.slice(0, 12),
+    });
+    return {
+      ok: true,
+      spriteJsonUrl,
+      iconCount: keys.length,
+      missingIcons: missing,
+    };
+  } catch (error) {
+    console.error('[sprite-debug] sprite.json debug failed', {
+      styleFile,
+      spriteBase: style.sprite,
+      spriteJsonUrl,
+      error: String(error),
+    });
+    return { ok: false, spriteJsonUrl, error: String(error) };
+  }
 }
 
 function populateOverlaySelect(items) {
@@ -116,6 +175,7 @@ async function applyOverlay(styleFile) {
   }
 
   const style = await fetchOverlayStyle(styleFile);
+  const spriteDebug = await debugSpriteAvailability(style, styleFile);
   map.setStyle(composeMapStyle(style), { diff: false });
   const activeOverlay = style.metadata?.localTestServer || { styleFile };
   setStatus(
@@ -127,6 +187,7 @@ async function applyOverlay(styleFile) {
         layerCount: normalizeOverlayLayers(style).length,
         pmtilesFile: activeOverlay.pmtilesFile || null,
         sprite: style.sprite || null,
+        spriteDebug,
       },
       null,
       2,
