@@ -54,13 +54,13 @@ def normalize_label(value: str) -> str:
     return value.strip().lower()
 
 
-def resolve_provider_target(label: str, provider_map: Dict[str, Dict[str, str]], enforce: bool) -> tuple[str, str]:
+def resolve_provider_target(label: str, provider_map: Dict[str, Dict[str, str]], enforce: bool, default_group: str) -> tuple[str, str]:
     key = normalize_label(label)
     if key in provider_map:
-        return provider_map[key].get("group", "fallback"), provider_map[key].get("name", slugify(label))
+        return provider_map[key].get("group", default_group), provider_map[key].get("name", slugify(label))
     if enforce:
-        return "fallback", slugify(label)
-    return "fallback", slugify(label)
+        return default_group, slugify(label)
+    return default_group, slugify(label)
 
 
 def parse_style_vars(style_text: str) -> Dict[str, str]:
@@ -74,6 +74,21 @@ def parse_style_vars(style_text: str) -> Dict[str, str]:
         if key.startswith("--") and value:
             result[key] = value
     return result
+
+
+def resolve_css_vars_in_tree(root: ET.Element, style_vars: Dict[str, str]) -> None:
+    if not style_vars:
+        return
+    replacements = {f"var({name})": value for name, value in style_vars.items() if value}
+    if not replacements:
+        return
+
+    for node in root.iter():
+        for key, value in list(node.attrib.items()):
+            replaced = value
+            for pattern, actual in replacements.items():
+                replaced = replaced.replace(pattern, actual)
+            node.set(key, replaced)
 
 
 def get_text_content(node: ET.Element) -> str:
@@ -102,9 +117,8 @@ def href_of_use(group: ET.Element) -> str:
     return href
 
 
-def build_icon_svg(root: ET.Element, defs: ET.Element | None, group: ET.Element) -> ET.ElementTree:
+def build_icon_svg(root: ET.Element, defs: ET.Element | None, group: ET.Element, style_vars: Dict[str, str]) -> ET.ElementTree:
     out_root = ET.Element(qname("svg"), {
-        "xmlns": SVG_NS,
         "width": "64",
         "height": "72",
         "viewBox": "0 0 64 72",
@@ -122,10 +136,17 @@ def build_icon_svg(root: ET.Element, defs: ET.Element | None, group: ET.Element)
         icon_group.append(copy.deepcopy(use))
 
     out_root.append(icon_group)
+    resolve_css_vars_in_tree(out_root, style_vars)
     return ET.ElementTree(out_root)
 
 
-def extract_icons(input_svg: Path, out_dir: Path, provider_map: Dict[str, Dict[str, str]], enforce_provider_names: bool) -> int:
+def extract_icons(
+    input_svg: Path,
+    out_dir: Path,
+    provider_map: Dict[str, Dict[str, str]],
+    enforce_provider_names: bool,
+    default_group: str,
+) -> int:
     tree = ET.parse(input_svg)
     root = tree.getroot()
     defs = root.find(qname("defs"))
@@ -142,15 +163,15 @@ def extract_icons(input_svg: Path, out_dir: Path, provider_map: Dict[str, Dict[s
             continue
 
         label = first_label_text(child) or f"icon-{index}"
-        group, icon_name = resolve_provider_target(label, provider_map, enforce_provider_names)
+        group, icon_name = resolve_provider_target(label, provider_map, enforce_provider_names, default_group)
         rel_file = Path(group) / f"{icon_name}.svg"
         output_svg = out_dir / rel_file
         output_svg.parent.mkdir(parents=True, exist_ok=True)
+        styles = parse_style_vars(child.get("style", ""))
 
-        icon_tree = build_icon_svg(root, defs, child)
+        icon_tree = build_icon_svg(root, defs, child, styles)
         icon_tree.write(output_svg, encoding="utf-8", xml_declaration=True)
 
-        styles = parse_style_vars(child.get("style", ""))
         metadata.append({
             "group": group,
             "name": icon_name,
@@ -175,6 +196,7 @@ def main() -> int:
     parser.add_argument("--out", default="assets/sprites/extracted", help="Directory for extracted icon SVGs.")
     parser.add_argument("--provider-map", default="", help="Optional JSON file mapping labels to {group,name}.")
     parser.add_argument("--provider-names", action="store_true", help="Use provider-based grouped target names (rd/nef/nah/brd/fallback).")
+    parser.add_argument("--default-group", default="fallback", help="Default output group for labels not present in provider map.")
     args = parser.parse_args()
 
     input_svg = Path(args.input).expanduser().resolve()
@@ -188,7 +210,7 @@ def main() -> int:
         payload = json.loads(map_path.read_text(encoding="utf-8"))
         provider_map.update({str(k).strip().lower(): v for k, v in payload.items()})
 
-    return extract_icons(input_svg, out_dir, provider_map, args.provider_names)
+    return extract_icons(input_svg, out_dir, provider_map, args.provider_names, args.default_group)
 
 
 if __name__ == "__main__":

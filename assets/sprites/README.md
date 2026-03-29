@@ -48,6 +48,11 @@ python3 scripts/build_sprites.py --source assets/sprites/png --out dist/assets/s
 
 Ein-Kommando-Pipeline (venv + Extraktion + SVG->PNG + Sprite-Build):
 ```bash
+bash scripts/run_sprite_pipeline.sh
+```
+
+Optional nur eine Datei:
+```bash
 bash scripts/run_sprite_pipeline.sh --input assets/sprites/<dein-preview>.svg
 ```
 
