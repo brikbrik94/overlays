@@ -1,1 +1,2456 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"@id":"relation/1363852","addr:city":"Steyr","addr:country":"AT","addr:housename":"Rotes Kreuz","addr:housenumber":"5","addr:postcode":"4400","addr:street":"Redtenbachergasse","alt_name":"1550","ambulance_station:patient_transport":"yes","at_bev:addr_date":"2016-10-02","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","contact:phone":"+43 7252 5399 1200","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Bezirksstelle Steyr-Stadt","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","type":"multipolygon","website":"https://www.roteskreuz.at/oberoesterreich/steyr-stadt/bezirksstelle-steyr-stadt","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.4124765,48.0381251]},"id":"relation/1363852"},{"type":"Feature","properties":{"@id":"relation/9312386","addr:city":"Schwertberg","addr:country":"AT","addr:housenumber":"1","addr:postcode":"4311","addr:street":"Rot-Kreuz-Platz","alt_name":"0770","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","construction_date":"2018-06-01;1987-01-01","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Schwertberg","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","type":"multipolygon","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.5747134,48.2683268]},"id":"relation/9312386"},{"type":"Feature","properties":{"@id":"relation/13006534","addr:city":"Walding","addr:country":"AT","addr:housenumber":"25","addr:postcode":"4111","addr:street":"Mühlkreisbahnstraße","alt_name":"1250","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","construction_date":"2018-04-22;1974-01-01","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Walding","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","phone":"144","short_name":"ÖRK","type":"multipolygon","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.1484634,48.3515203]},"id":"relation/13006534"},{"type":"Feature","properties":{"@id":"way/28439207","addr:city":"Vöcklabruck","addr:country":"AT","addr:housenumber":"1a","addr:postcode":"4840","addr:street":"Dr. Wilhelm Bock-Straße","alt_name":"1310","ambulance_station:emergency_doctor":"yes","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Bezirksstelle Vöcklabruck","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.6371087,48.0031512]},"id":"way/28439207"},{"type":"Feature","properties":{"@id":"way/29504195","addr:city":"Rohrbach-Berg","addr:country":"AT","addr:housenumber":"4","addr:postcode":"4150","addr:street":"Krankenhausstraße","alt_name":"0910","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Bezirksstelle Rohrbach","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/rohrbach/home","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.9842069,48.5697564]},"id":"way/29504195"},{"type":"Feature","properties":{"@id":"way/54996546","addr:city":"Sattledt","addr:country":"AT","addr:housenumber":"2","addr:postcode":"4642","addr:street":"Sattledterstraße","alt_name":"1660","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Sattledt","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/sattledt","wheelchair":"yes","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.0576317,48.0726335]},"id":"way/54996546"},{"type":"Feature","properties":{"@id":"way/81042810","addr:city":"Molln","addr:country":"AT","addr:housenumber":"1","addr:postcode":"4591","addr:street":"Parkstraße","alt_name":"0540","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Molln","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.2587937,47.8845039]},"id":"way/81042810"},{"type":"Feature","properties":{"@id":"way/85952747","addr:city":"Bad Ischl","addr:country":"AT","addr:housenumber":"71b","addr:postcode":"4820","addr:street":"Grazer Straße","alt_name":"0330","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Bad Ischl","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","source":"bad-ischl.ooe.gv.at/Umpostung_von_PLZ_5351_Aigen-Voglhub_auf_PLZ_4820_Bad_Ischl_ab_26_Februar_2018","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.6254922,47.6999168]},"id":"way/85952747"},{"type":"Feature","properties":{"@id":"way/86434239","addr:city":"Neufelden","addr:country":"AT","addr:housenumber":"30","addr:postcode":"4120","addr:street":"Veldner Straße","alt_name":"0950","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Neufelden","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","source":"basemap.at","website":"https://www.roteskreuz.at/oberoesterreich/rohrbach/ortsstelle-neufelden","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.992386,48.4840569]},"id":"way/86434239"},{"type":"Feature","properties":{"@id":"way/99470390","addr:city":"Bad Hall","addr:country":"AT","addr:housenumber":"1","addr:postcode":"4540","addr:street":"Karl-Wögerer-Platz","alt_name":"1130","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"civic","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Bad Hall","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/steyr-land/ortsstelle-bad-hall","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.2155289,48.0321771]},"id":"way/99470390"},{"type":"Feature","properties":{"@id":"way/110278643","addr:city":"Scharnstein","addr:country":"AT","addr:housenumber":"7a","addr:postcode":"4644","addr:street":"Neu-Scharnstein","alt_name":"0350","ambulance_station:patient_transport":"yes","at_bev:addr_date":"2021-10-01","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Scharnstein","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.9588116,47.9057233]},"id":"way/110278643"},{"type":"Feature","properties":{"@id":"way/111793481","addr:city":"Feldkirchen an der Donau","addr:country":"AT","addr:housenumber":"2","addr:postcode":"4101","addr:street":"Gewerbeparkstraße","alt_name":"ASB Feldkirchen","ambulance_station:patient_transport":"yes","brand":"Arbeiter-Samariter-Bund Österreichs","brand:wikidata":"Q627072","brand:wikipedia":"de:Arbeiter-Samariter-Bund Österreichs","building":"rettungsdienst","emergency":"ambulance_station","emergency_telephone_code":"+43 732 2124;+43 732 144","name":"Samariterbund Feldkirchen","operator":"Arbeiter-Samariter-Bund Österreichs Gruppe Feldkirchen","phone":"+43-7233-6380","short_name":"ASB","website":"https://www.asb-feldkirchen.at/","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.0529484,48.3474332]},"id":"way/111793481"},{"type":"Feature","properties":{"@id":"way/123692805","addr:city":"St. Florian","addr:country":"AT","addr:housenumber":"18b","addr:postcode":"4490","addr:street":"Stiftstraße","alt_name":"0650","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"rettungsdienst","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle St. Florian","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.3717198,48.2043884]},"id":"way/123692805"},{"type":"Feature","properties":{"@id":"way/124352976","addr:city":"Waldhausen im Strudengau","addr:country":"AT","addr:housenumber":"194","addr:postcode":"4391","addr:street":"Markt","alt_name":"0780","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Waldhausen","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/perg/ortsstelle-waldhausen-im-strudengau","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.951617,48.2715652]},"id":"way/124352976"},{"type":"Feature","properties":{"@id":"way/125550536","addr:city":"Wels","addr:country":"AT","addr:housenumber":"1","addr:postcode":"4600","addr:street":"Rot-Kreuz-Straße","alt_name":"1610","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"civic","construction_date":"2016-09-14","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Bezirksstelle Wels","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.022806,48.1726205]},"id":"way/125550536"},{"type":"Feature","properties":{"@id":"way/126446034","addr:city":"Bad Leonfelden","addr:country":"AT","addr:housenumber":"144","addr:postcode":"4190","addr:street":"Maximilianstraße","alt_name":"1210","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Bad Leonfelden","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","phone":"144","short_name":"ÖRK","source":"Bing","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.3063639,48.5233635]},"id":"way/126446034"},{"type":"Feature","properties":{"@id":"way/128255917","addr:city":"Eferding","addr:country":"AT","addr:housenumber":"10","addr:postcode":"4070","addr:street":"Vor dem Linzertor","alt_name":"0110","ambulance_station:emergency_doctor":"yes","ambulance_station:patient_transport":"yes","at_bev:addr_date":"2017-10-01","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Bezirksstelle Ortsstelle Eferding","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","phone":"144;+43 7272 2400","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.024318,48.3060443]},"id":"way/128255917"},{"type":"Feature","properties":{"@id":"way/131395676","addr:city":"Kirchdorf an der Krems","addr:country":"AT","addr:housenumber":"11","addr:postcode":"4560","addr:street":"Krankenhausstraße","alt_name":"0510","ambulance_station:emergency_doctor":"yes","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Bezirksstelle Kirchdorf an der Krems","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.123279,47.9080188]},"id":"way/131395676"},{"type":"Feature","properties":{"@id":"way/146463496","addr:city":"Bad Goisern am Hallstättersee","addr:country":"AT","addr:housenumber":"145","addr:place":"Reitern","addr:postcode":"4822","alt_name":"0320","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Bad Goisern","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.6340424,47.6217484]},"id":"way/146463496"},{"type":"Feature","properties":{"@id":"way/147039823","addr:city":"Alkoven","addr:country":"AT","addr:housenumber":"4","addr:postcode":"4072","addr:street":"Margeritenstraße","alt_name":"ASB Alkoven","ambulance_station:patient_transport":"yes","at_bev:addr_date":"2017-04-07","brand":"Arbeiter-Samariter-Bund Österreichs","brand:wikidata":"Q627072","brand:wikipedia":"de:Arbeiter-Samariter-Bund Österreichs","building":"rettungsdienst","emergency":"ambulance_station","emergency_telephone_code":"+43 732 2124;+43 732 144","name":"Samariterbund Alkoven","opening_hours":"24/7","operator":"Arbeiter-Samariter-Bund Österreichs Gruppe Alkoven","phone":"+43-7274-6308","roof:shape":"half-hipped","source":"geoimage.at","website":"https://asb-alkoven.org","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.1239918,48.2899233]},"id":"way/147039823"},{"type":"Feature","properties":{"@id":"way/148585606","addr:city":"Kirchschlag bei Linz","addr:country":"AT","addr:housenumber":"38a","addr:postcode":"4202","addr:street":"Kirchschlag","alt_name":"1240","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","email":"kirchschlag@o.roteskreuz.at","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","image":"https://www.roteskreuz.at/fileadmin/_processed_/csm_Allgemein_Dienststelle_1240_2014_698816ba84.jpg","name":"Rotes Kreuz Ortsstelle Kirchschlag","opening_hours":"24/7","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","phone":"144","short_name":"ÖRK","website":"https://www.roteskreuz.at/ooe/dienststellen/urfahr-umgebung/die-bezirksstelle/die-ortsstellen/kirchschlag","wheelchair":"yes","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.2766619,48.4140019]},"id":"way/148585606"},{"type":"Feature","properties":{"@id":"way/148972655","addr:city":"Gallneukirchen","addr:country":"AT","addr:housenumber":"6","addr:postcode":"4210","addr:street":"Linzer Straße","alt_name":"1220","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Gallneukirchen","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","phone":"144","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.4121648,48.3511808]},"id":"way/148972655"},{"type":"Feature","properties":{"@id":"way/149216668","addr:city":"Neuhofen an der Krems","addr:housenumber":"20","addr:postcode":"4501","addr:street":"Steyrer Straße","alt_name":"0630","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Neuhofen an der Krems","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.234084,48.137307]},"id":"way/149216668"},{"type":"Feature","properties":{"@id":"way/151461276","addr:city":"Windischgarsten","addr:country":"AT","addr:housenumber":"46","addr:postcode":"4580","addr:street":"Gleinkerseestraße","alt_name":"0560","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"hospital","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Windischgarsten","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.3153441,47.7159087]},"id":"way/151461276"},{"type":"Feature","properties":{"@id":"way/151861051","addr:city":"Herzogsdorf","addr:country":"AT","addr:housenumber":"23","addr:postcode":"4175","addr:street":"Hauptstraße","alt_name":"1230","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","construction_date":"2009-09-19","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Herzogsdorf","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.1157311,48.4358714]},"id":"way/151861051"},{"type":"Feature","properties":{"@id":"way/154636263","addr:city":"Spital am Pyhrn","addr:country":"AT","addr:housenumber":"3","addr:postcode":"4582","addr:street":"Pyhrnstraße","ambulance_station:patient_transport":"yes","building":"yes","building:levels":"2","emergency":"mountain_rescue","name":"Bergrettung Spital am Pyhrn","operator":"Bergrettung Oberösterreich","phone":"+43 732 140","roof:levels":"1","roof:shape":"half-hipped","source":"geoimage.at","website":"https://www.bergrettung-ooe.at/spital-am-pyhrn","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.34004,47.6628095]},"id":"way/154636263"},{"type":"Feature","properties":{"@id":"way/154906225","addr:city":"Sankt Martin im Mühlkreis","addr:country":"AT","addr:housenumber":"7","addr:postcode":"4113","addr:street":"Landshaager Straße","alt_name":"0970","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle St. Martin im Mühlkreis","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/rohrbach/ortsstelle-st-martin-im-muehlkreis","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.0402222,48.4139921]},"id":"way/154906225"},{"type":"Feature","properties":{"@id":"way/160958847","addr:city":"Schärding","addr:country":"AT","addr:housenumber":"2","addr:postcode":"4780","addr:street":"Othmar-Spanlang-Straße","alt_name":"1010","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","email":"schaerding@o.roteskreuz.at","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Bezirksstelle Schärding","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","phone":"+43 7712 2131200","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/schaerding/ortsstelle-schaerding","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.4401448,48.4456481]},"id":"way/160958847"},{"type":"Feature","properties":{"@id":"way/162274580","addr:city":"Marchtrenk","addr:country":"AT","addr:housenumber":"10","addr:postcode":"4614","addr:street":"Badgasse","alt_name":"1640","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Marchtrenk","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.1148495,48.1874962]},"id":"way/162274580"},{"type":"Feature","properties":{"@id":"way/162280769","addr:city":"St. Georgen im Attergau","addr:country":"AT","addr:housenumber":"18","addr:postcode":"4880","addr:street":"Stelzhamerstraße","ambulance_station:patient_transport":"yes","at_bev:addr_date":"2017-10-01","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle St. Georgen im Attergau","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","phone":"+43 7667 6244","short_name":"ÖRK","source":"geoimage.at","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.4845473,47.9339935]},"id":"way/162280769"},{"type":"Feature","properties":{"@id":"way/165834419","addr:city":"Gmunden","addr:country":"AT","addr:housenumber":"48","addr:postcode":"4810","addr:street":"Miller v. Aichholz-Straße","alt_name":"0310","ambulance_station:patient_transport":"yes","at_bev:addr_date":"2019-04-30;1985-01-01","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","construction_date":"2019-04-30","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Bezirksstelle Gmunden","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.7784272,47.9139662]},"id":"way/165834419"},{"type":"Feature","properties":{"@id":"way/167327276","addr:city":"Helfenberg","addr:country":"AT","addr:housenumber":"1","addr:postcode":"4184","addr:street":"Schloßstraße","alt_name":"0930","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","construction_date":"2022-12-31","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Helfenberg","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","phone":"144","short_name":"ÖRK","source":"geoimage.at","website":"https://www.roteskreuz.at/oberoesterreich/rohrbach/ortsstelle-helfenberg","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.1422584,48.5428736]},"id":"way/167327276"},{"type":"Feature","properties":{"@id":"way/197667243","addr:city":"St. Georgen am Walde","addr:country":"AT","addr:housenumber":"15","addr:postcode":"4372","addr:street":"Jörgenberg","alt_name":"0760","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle St. Georgen am Walde","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.8952856,48.3586058]},"id":"way/197667243"},{"type":"Feature","properties":{"@id":"way/203262289","addr:city":"Perg","addr:country":"AT","addr:housenumber":"15","addr:postcode":"4320","addr:street":"Dirnbergerstraße","alt_name":"0710","ambulance_station:emergency_doctor":"yes","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Perg","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.6359585,48.245149]},"id":"way/203262289"},{"type":"Feature","properties":{"@id":"way/207717716","addr:city":"Unterweißenbach","addr:country":"AT","addr:housenumber":"16","addr:postcode":"4273","addr:street":"Almstraße","alt_name":"0270","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Unterweißenbach","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.7830509,48.439383]},"id":"way/207717716"},{"type":"Feature","properties":{"@id":"way/219120858","addr:city":"Ebensee","addr:country":"AT","addr:housenumber":"5","addr:postcode":"4802","addr:street":"Alte Saline","alt_name":"0340","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","email":"ebensee@o.roteskreuz.at","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Ebensee","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","phone":"+43 6133 20091","short_name":"ÖRK","source":"bing","website":"https://www.roteskreuz.at/ooe/dienststellen/gmunden/die-bezirksstelle/die-ortsstellen/ebensee/","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.774241,47.8095308]},"id":"way/219120858"},{"type":"Feature","properties":{"@id":"way/222875868","addr:city":"Frankenmarkt","addr:housenumber":"10","addr:postcode":"4890","addr:street":"Buchschartenstraße","alt_name":"1350","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Frankenmarkt","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.4128472,47.9883649]},"id":"way/222875868"},{"type":"Feature","properties":{"@id":"way/229498785","addr:city":"Kremsmünster","addr:country":"AT","addr:housenumber":"16","addr:postcode":"4550","addr:street":"Linzer Straße","alt_name":"0530","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","email":"kremsmuenster@o.roteskreuz.at","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Kremsmünster","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.1362701,48.056189]},"id":"way/229498785"},{"type":"Feature","properties":{"@id":"node/246625236","addr:city":"Eggelsberg","addr:country":"AT","addr:housenumber":"2","addr:postcode":"5142","addr:street":"B&R Straße","alt_name":"0041","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Eggelsberg","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","phone":"+43 7748 2244","short_name":"ÖRK"},"geometry":{"type":"Point","coordinates":[12.9894997,48.0748764]},"id":"node/246625236"},{"type":"Feature","properties":{"@id":"way/259458782","addr:city":"Unterach am Attersee","addr:country":"AT","addr:housenumber":"5","addr:postcode":"4866","addr:street":"Mühlleiten","alt_name":"1397","ambulance_station:patient_transport":"yes","at_bev:addr_date":"2017-10-01","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"house","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Unterach am Attersee","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","source":"geoimage.at","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.4767132,47.8014707]},"id":"way/259458782"},{"type":"Feature","properties":{"@id":"way/262131033","addr:city":"Ternberg","addr:country":"AT","addr:housenumber":"14","addr:postcode":"4452","addr:street":"Prinzstraße","alt_name":"1150","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Ternberg","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/steyr-land/ortsstelle-ternberg","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.3601203,47.9451435]},"id":"way/262131033"},{"type":"Feature","properties":{"@id":"way/273139855","addr:city":"Freistadt","addr:country":"AT","addr:housenumber":"33","addr:postcode":"4240","addr:street":"Zemannstraße","alt_name":"0220","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Bezirksstelle Freistadt","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"http://freistadt.o.roteskreuz.at","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.5047439,48.506416]},"id":"way/273139855"},{"type":"Feature","properties":{"@id":"node/290667070","addr:city":"Traun","addr:housenumber":"92","addr:postcode":"4050","addr:street":"Johann Roithner-Straße","alt_name":"0640","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","description":"Ortsstelle","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Traun","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK"},"geometry":{"type":"Point","coordinates":[14.2518134,48.2252475]},"id":"node/290667070"},{"type":"Feature","properties":{"@id":"way/300941644","addr:city":"Enns","addr:housenumber":"15","addr:postcode":"4470","addr:street":"Teichweg","alt_name":"0610","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","construction_date":"2019-09-24","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Enns","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.4741911,48.2174399]},"id":"way/300941644"},{"type":"Feature","properties":{"@id":"way/301243211","addr:city":"Tragwein","addr:country":"AT","addr:housenumber":"10","addr:postcode":"4284","addr:street":"Schulstraße","alt_name":"0240","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"public","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Tragwein","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.6218797,48.3290833]},"id":"way/301243211"},{"type":"Feature","properties":{"@id":"way/306339252","addr:city":"Lambach","addr:country":"AT","addr:housenumber":"8","addr:postcode":"4650","addr:street":"Maximilian-Pagl-Straße","alt_name":"1630","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Lambach","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.8662082,48.0899695]},"id":"way/306339252"},{"type":"Feature","properties":{"@id":"way/332229267","addr:city":"St. Veit im Mühlkreis","addr:country":"AT","addr:housenumber":"6","addr:postcode":"4173","addr:street":"Linzer Straße","alt_name":"0980","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","building:levels":"1","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle St. Veit im Mühlkreis","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","source":"geoimage.at","website":"https://www.roteskreuz.at/oberoesterreich/rohrbach/ortsstelle-st-veit-im-muehlkreis","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.1630444,48.4658637]},"id":"way/332229267"},{"type":"Feature","properties":{"@id":"way/382744859","addr:city":"Redlham","addr:country":"AT","addr:housenumber":"4","addr:postcode":"4846","addr:street":"Gewerbepark Mitte","alt_name":"1330","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Redlham","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.7416012,48.0315758]},"id":"way/382744859"},{"type":"Feature","properties":{"@id":"way/406577178","addr:city":"Weyer","addr:country":"AT","addr:housenumber":"12","addr:postcode":"3335","addr:street":"Dr.-Friedrich-Schmeidel-Straße","alt_name":"1160","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Weyer","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/steyr-land/ortsstelle-weyer","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.6680895,47.8628108]},"id":"way/406577178"},{"type":"Feature","properties":{"@id":"way/413914926","addr:city":"Peuerbach","addr:country":"AT","addr:housenumber":"3","addr:postcode":"4722","addr:street":"Kolbestraße","alt_name":"0420","ambulance_station:patient_transport":"yes","at_bev:addr_date":"2017-10-01","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Peuerbach","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","source":"Geoimage.at MaxRes","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.7733715,48.3472932]},"id":"way/413914926"},{"type":"Feature","properties":{"@id":"way/431815134","addr:city":"Seewalchen am Attersee","addr:country":"AT","addr:housenumber":"11","addr:postcode":"4863","addr:street":"Paul-Wiener-Straße","alt_name":"1380","ambulance_station:patient_transport":"yes","at_bev:addr_date":"2017-04-07","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","description":"Rotes Kreuz Seewalchen Telefonnummer: 0766265440 Medizinischer Notfall: 144 Krankentransport Anmeldung: 14844 Fahrzeuge: SEW 4.1381","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Seewalchen am Attersee","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/voecklabruck/ortsstelle-seewalchen","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.6031134,47.9615433]},"id":"way/431815134"},{"type":"Feature","properties":{"@id":"way/451845112","addr:city":"St. Wolfgang im Salzkammergut","addr:country":"AT","addr:housenumber":"27","addr:place":"Schwarzenbach","addr:postcode":"5360","alt_name":"0370","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","construction_date":"2019-05-23;1994-01-01","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle St. Wolfgang im Salzkammergut","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.4839333,47.7299364]},"id":"way/451845112"},{"type":"Feature","properties":{"@id":"way/477874138","addr:city":"Vorchdorf","addr:country":"AT","addr:housenumber":"4b","addr:postcode":"4655","addr:street":"Dr. Mitterbauerstraße","alt_name":"0360","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Vorchdorf","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.9167442,48.0101498]},"id":"way/477874138"},{"type":"Feature","properties":{"@id":"way/605380527","addr:city":"Hartkirchen","addr:country":"AT","addr:housenumber":"17","addr:postcode":"4081","addr:street":"Karlingerstraße","alt_name":"0120","ambulance_station:patient_transport":"yes","at_bev:addr_date":"2017-04-30;1979-01-01","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","construction_date":"2016-12-11;1979-01-01","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Hartkirchen","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.0030746,48.3604017]},"id":"way/605380527"},{"type":"Feature","properties":{"@id":"way/665073179","addr:city":"Liebenau","addr:country":"AT","addr:housenumber":"154","addr:place":"Liebenau","addr:postcode":"4252","alt_name":"0280","ambulance_station:patient_transport":"yes","at_bev:addr_date":"2017-10-01","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","construction_date":"2017-01-01;1971-01-01","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Liebenau","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.8047421,48.5330862]},"id":"way/665073179"},{"type":"Feature","properties":{"@id":"node/672752552","addr:city":"Mattighofen","addr:housenumber":"23a","addr:postcode":"5230","addr:street":"Salzburgerstraße","alt_name":"0030","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Mattighofen","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK"},"geometry":{"type":"Point","coordinates":[13.1559478,48.0971854]},"id":"node/672752552"},{"type":"Feature","properties":{"@id":"way/676828251","addr:city":"Schönering","addr:housenumber":"1a","addr:postcode":"4073","addr:street":"Am Dorfplatz","alt_name":"0130","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Wilhering","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.1635557,48.2998426]},"id":"way/676828251"},{"type":"Feature","properties":{"@id":"way/697092751","addr:city":"Ried im Innkreis","addr:country":"AT","addr:housenumber":"3","addr:postcode":"4910","addr:street":"Hohenzeller Straße","alt_name":"0810","ambulance_station:emergency_doctor":"yes","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","building:levels":"2","contact:email":"ri-office@o.roteskreuz.at","contact:fax":"+43 7752 81844-20","contact:phone":"+43 7752 81844","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Bezirksstelle Ried im Innkreis","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","source":"geoimage.at","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.4949414,48.2099456]},"id":"way/697092751"},{"type":"Feature","properties":{"@id":"way/736636880","addr:city":"Braunau am Inn","addr:country":"AT","addr:housenumber":"8","addr:postcode":"5280","addr:street":"Jubiläumstraße","alt_name":"0010","ambulance_station:emergency_doctor":"yes","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Bezirksstelle Braunau","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","phone":"144","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.033678,48.2548368]},"id":"way/736636880"},{"type":"Feature","properties":{"@id":"way/778882036","addr:city":"Linz","addr:housenumber":"25","addr:postcode":"4030","addr:street":"Spinnereistraße","alt_name":"1930","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","construction_date":"2017-01-01","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Linz Süd","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.3279688,48.2550436]},"id":"way/778882036"},{"type":"Feature","properties":{"@id":"way/822198813","addr:city":"Ostermiething","addr:housenumber":"14","addr:postcode":"5121","addr:street":"Gewerbegebiet","alt_name":"0040","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","construction_date":"2018-04-01","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Riedersbach","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[12.8435392,48.0435654]},"id":"way/822198813"},{"type":"Feature","properties":{"@id":"node/964267392","addr:city":"Leonding","addr:housenumber":"5","addr:postcode":"4060","addr:street":"Limesstraße","alt_name":"0620","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","contact:phone":"+43 732 672144","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Leonding","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK"},"geometry":{"type":"Point","coordinates":[14.2547818,48.2654832]},"id":"node/964267392"},{"type":"Feature","properties":{"@id":"way/1133799497","addr:city":"Riedau","addr:country":"AT","addr:housenumber":"64","addr:postcode":"4752","addr:street":"Johann Raaberstraße","alt_name":"1040","ambulance_station:patient_transport":"yes","at_bev:addr_date":"2017-10-01","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Riedau","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/schaerding/ortsstelle-riedau","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.6297166,48.3032929]},"id":"way/1133799497"},{"type":"Feature","properties":{"@id":"way/1133800725","addr:city":"Andorf","addr:country":"AT","addr:housenumber":"22","addr:postcode":"4770","addr:street":"Bahnhofstraße","alt_name":"1020","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Andorf","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","phone":"144","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/schaerding/ortsstelle-andorf","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.5672087,48.3709968]},"id":"way/1133800725"},{"type":"Feature","properties":{"@id":"way/1157281049","addr:city":"Grieskirchen","addr:housenumber":"18","addr:postcode":"4710","addr:street":"Manglburg","alt_name":"0410","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","construction_date":"2016-08-30","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Bezirksstelle Grieskirchen","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.8246171,48.2347215]},"id":"way/1157281049"},{"type":"Feature","properties":{"@id":"way/1157355894","addr:city":"Ottnang am Hausruck","addr:housenumber":"41","addr:postcode":"4901","addr:street":"Thomasroither Straße","alt_name":"1360","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Thomasroith","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.6179555,48.0813765]},"id":"way/1157355894"},{"type":"Feature","properties":{"@id":"way/1157356585","addr:city":"Mondsee","addr:housenumber":"2","addr:postcode":"5310","addr:street":"Prielhofstraße","alt_name":"1370","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Mondsee","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.3399265,47.8600109]},"id":"way/1157356585"},{"type":"Feature","properties":{"@id":"way/1157377621","addr:city":"Esternberg","addr:country":"AT","addr:housenumber":"1","addr:postcode":"4092","addr:street":"Rot-Kreuz-Weg","alt_name":"1070","ambulance_station:patient_transport":"yes","at_bev:addr_date":"2017-10-01","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Esternberg","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/schaerding/ortsstelle-esternberg","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.5734487,48.5440457]},"id":"way/1157377621"},{"type":"Feature","properties":{"@id":"way/1157378822","addr:city":"Engelhartszell","addr:housenumber":"61","addr:postcode":"4090","addr:street":"Marktplatz","alt_name":"1030","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","construction_date":"2025-05-01","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Engelhartszell","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/schaerding/ortsstelle-engelhartszell","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.7333928,48.505839]},"id":"way/1157378822"},{"type":"Feature","properties":{"@id":"way/1157390024","addr:city":"Mettmach","addr:housenumber":"22","addr:postcode":"4931","addr:street":"Rieder Straße","alt_name":"0850","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Mettmach","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/ried/ortsstelle-mettmach","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.3493801,48.1680775]},"id":"way/1157390024"},{"type":"Feature","properties":{"@id":"way/1157407121","addr:city":"Linz","addr:country":"AT","addr:housenumber":"24","addr:postcode":"4040","addr:street":"Reindlstraße","alt_name":"ASB Linz Reindlstraße","ambulance_station:patient_transport":"yes","brand":"Arbeiter-Samariter-Bund Österreichs","brand:wikidata":"Q627072","brand:wikipedia":"de:Arbeiter-Samariter-Bund Österreichs","building":"rettungsdienst","contact:phone":"+43 732 736466","emergency":"ambulance_station","emergency_telephone_code":"+43 732 2124;+43 732 144","layer":"1","name":"Samariterbund Linz-Reindlstraße","opening_hours":"24/7","operator":"Arbeiter-Samariter-Bund Österreichs Gruppe Linz","phone":"+43 732 736466","website":"https://www.asb.or.at/","wheelchair":"yes","wheelchair:description":"Nicht alle Türen öffnen automatisch","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.2874489,48.3148999]},"id":"way/1157407121"},{"type":"Feature","properties":{"@id":"way/1157430974","addr:city":"Linz","addr:housenumber":"28","addr:postcode":"4020","addr:street":"Körnerstraße","alt_name":"1910","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","description":"Rotes Kreuz Landesverband OÖ Landesleitstelle (RLZ Linz-Mühlviertel) Hausärtzlicher Notdienst (HÄND)","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","layer":"1","name":"Österreichisches Rotes Kreuz","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/home","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.2991102,48.3046098]},"id":"way/1157430974"},{"type":"Feature","properties":{"@id":"way/1165123035","addr:city":"Altheim","addr:country":"AT","addr:housenumber":"5","addr:postcode":"4950","addr:street":"Braunauer Straße","alt":"0020","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","layer":"-1","name":"Rotes Kreuz Ortsstelle Altheim","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","roof:shape":"hipped","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[13.2293113,48.2486825]},"id":"way/1165123035"},{"type":"Feature","properties":{"@id":"way/1255375947","addr:city":"Pregarten","addr:housenumber":"20","addr:postcode":"4230","addr:street":"Pregartfeld","alt_name":"0230","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"civic","emergency":"ambulance_station","emergency_telephone_code":"144;+43 732 144","name":"Österreichisches Rotes Kreuz Pregarten","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","start_date":"2024-07-01","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.5277445,48.3493617]},"id":"way/1255375947"},{"type":"Feature","properties":{"@id":"way/1290445789","addr:city":"Grein","addr:housenumber":"3","addr:postcode":"4360","addr:street":"Breitenangerstraße","alt_name":"0720","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","construction_date":"2024-09-01","description":"https://www.meinbezirk.at/perg/c-leute/rotkreuz-ortsstellen-hielten-versammlungen-ab_a6601005","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortstelle Grein","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.8473868,48.2286727]},"id":"way/1290445789"},{"type":"Feature","properties":{"@id":"way/1435923398","addr:city":"Spital am Pyhrn","addr:housenumber":"3","addr:postcode":"4582","addr:street":"Pyhrnstraße","alt_name":"0550","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144;+43 732 144","name":"Rotes Kreuz Ortsstelle Spital am Phyrn","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","@geometry":"center"},"geometry":{"type":"Point","coordinates":[14.3401966,47.6627851]},"id":"way/1435923398"},{"type":"Feature","properties":{"@id":"node/1590647347","addr:city":"Kopfing im Innkreis","addr:housenumber":"156","addr:postcode":"4794","addr:street":"Sportplatzstraße","alt_name":"1050","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Kopfing","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/schaerding/ortsstelle-kopfing"},"geometry":{"type":"Point","coordinates":[13.6589776,48.4434136]},"id":"node/1590647347"},{"type":"Feature","properties":{"@id":"node/1614235461","addr:city":"St. Georgen an der Gusen","addr:country":"AT","addr:housenumber":"21","addr:postcode":"4222","addr:street":"Gusentalstraße","alt_name":"0740","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","contact:email":"st-georgen-gusen@o.roteskreuz.at","contact:facebook":"http://fb.com/rkstgeorgengusen","contact:fax":"+43 7237 2144 59","contact:instagram":"https://instagram.com/rkstgeorgengusen/","contact:phone":"+43 7237 2144","contact:twitter":"https://twitter.com/roteskreuzGG","contact:website":"https://www.roteskreuz.at/ooe/dienststellen/perg/bezirksstelle/ortsstellen/st-georgen-gusen/","contact:youtube":"https://www.youtube.com/RK0740","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle St. Georgen an der Gusen","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","wheelchair":"limited"},"geometry":{"type":"Point","coordinates":[14.4469246,48.2740889]},"id":"node/1614235461"},{"type":"Feature","properties":{"@id":"node/1674372424","addr:city":"Bad Zell","addr:country":"AT","addr:housenumber":"8","addr:postcode":"4283","addr:street":"Marktplatz","alt_name":"0250","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Bad Zell","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK"},"geometry":{"type":"Point","coordinates":[14.6697687,48.3500685]},"id":"node/1674372424"},{"type":"Feature","properties":{"@id":"node/2683646849","addr:city":"Lembach im Mühlkreis","addr:housenumber":"14","addr:postcode":"4132","addr:street":"Lederergasse","alt_name":"0990","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Lembach","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/rohrbach/ortsstelle-lembach-im-muehlkreis"},"geometry":{"type":"Point","coordinates":[13.8990652,48.4977209]},"id":"node/2683646849"},{"type":"Feature","properties":{"@id":"node/3240127660","addr:city":"Hofkirchen im Mühlkreis","addr:housenumber":"9","addr:postcode":"4142","addr:street":"Lembacher Straße","alt_name":"0940","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Hofkirchen","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/rohrbach/ortsstelle-hofkirchen-im-muehlkreis"},"geometry":{"type":"Point","coordinates":[13.8162249,48.4832294]},"id":"node/3240127660"},{"type":"Feature","properties":{"@id":"node/7252511627","addr:city":"Linz","addr:country":"AT","addr:housenumber":"3a","addr:postcode":"4020","addr:street":"Muldenstraße","alt_name":"ASB Linz Muldenstraße","ambulance_station:patient_transport":"yes","brand":"Arbeiter-Samariter-Bund Österreichs","brand:wikidata":"Q627072","brand:wikipedia":"de:Arbeiter-Samariter-Bund Österreichs","building":"rettungsdienst","emergency":"ambulance_station","emergency_telephone_code":"+43 732 2124;+43 732 144","name":"Samariterbund Linz-Muldenstraße","opening_hours":"24/7","operator":"Arbeiter-Samariter-Bund Österreichs Gruppe Linz","phone":"+437322124","short_name":"ASB","website":"https://asb.or.at/"},"geometry":{"type":"Point","coordinates":[14.306576,48.2761388]},"id":"node/7252511627"},{"type":"Feature","properties":{"@id":"node/7676990280","addr:city":"Königswiesen","addr:country":"AT","addr:housenumber":"1","addr:postcode":"4280","addr:street":"Florianiweg","alt_name":"0260","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Königswiesen","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","source":"geoimage.at"},"geometry":{"type":"Point","coordinates":[14.8362018,48.4066086]},"id":"node/7676990280"},{"type":"Feature","properties":{"@id":"node/7677074441","addr:city":"Grünburg","addr:housenumber":"33","addr:postcode":"4594","addr:street":"Hauptstraße","alt_name":"0520","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Grünburg","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK"},"geometry":{"type":"Point","coordinates":[14.262787,47.9703799]},"id":"node/7677074441"},{"type":"Feature","properties":{"@id":"node/7677121108","addr:city":"Haag am Hausruck","addr:housenumber":"20b","addr:postcode":"4680","addr:street":"Starhemberg","alt_name":"0430","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Haag am Hausruck","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich"},"geometry":{"type":"Point","coordinates":[13.6438908,48.187691]},"id":"node/7677121108"},{"type":"Feature","properties":{"@id":"node/7677159190","addr:city":"Linz","addr:housenumber":"3","addr:postcode":"4031","addr:street":"voest apline straße","alt_name":"1980","ambulance_station:emergency_doctor":"yes","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Betriebsrettung voestalpine","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK"},"geometry":{"type":"Point","coordinates":[14.339743,48.2701198]},"id":"node/7677159190"},{"type":"Feature","properties":{"@id":"node/7677207844","addr:city":"Obernberg am Inn","addr:housenumber":"6","addr:postcode":"4982","addr:street":"Kirchenplatz","alt_name":"0830","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Obernberg","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/ried/ortsstelle-neuhofen-an-der-krems"},"geometry":{"type":"Point","coordinates":[13.3347146,48.3197845]},"id":"node/7677207844"},{"type":"Feature","properties":{"@id":"node/7677216536","addr:city":"Peilstein im Mühlkreis","addr:country":"AT","addr:housenumber":"3","addr:postcode":"4153","addr:street":"Richterweg","alt_name":"0960","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Peilstein","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/rohrbach/ortsstelle-peilstein"},"geometry":{"type":"Point","coordinates":[13.8916865,48.6198284]},"id":"node/7677216536"},{"type":"Feature","properties":{"@id":"node/7677245589","addr:city":"Sierning","addr:country":"AT","addr:housenumber":"5","addr:postcode":"4522","addr:street":"Wallernstraße","alt_name":"1140","ambulance_station:patient_transport":"yes","at_bev:addr_date":"2016-10-02","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","check_date":"2025-03-29","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Sierning","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","source":"geoimage.at"},"geometry":{"type":"Point","coordinates":[14.3105278,48.0420072]},"id":"node/7677245589"},{"type":"Feature","properties":{"@id":"node/7677314096","addr:city":"Frankenburg am Hausruck","addr:postcode":"4873","addr:street":"Hauptstraße","alt_name":"1390","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Frankenburg","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK"},"geometry":{"type":"Point","coordinates":[13.4834863,48.0675062]},"id":"node/7677314096"},{"type":"Feature","properties":{"@id":"node/7781707506","addr:city":"Linz","addr:housenumber":"1-3","addr:postcode":"4020","addr:street":"Meggauerstraße","alt_name":"ASB Linz Keferfeld","ambulance_station:patient_transport":"yes","brand":"Arbeiter-Samariter-Bund Österreichs","brand:wikidata":"Q627072","brand:wikipedia":"de:Arbeiter-Samariter-Bund Österreichs","building":"rettungsdienst","emergency":"ambulance_station","emergency_telephone_code":"+43 732 2124;+43 732 144","name":"Samariterbund Linz-Keferfeld","opening_hours":"24/7","operator":"Arbeiter-Samariter-Bund Österreichs Gruppe Linz","phone":"+437322124","short_name":"ASB","website":"https://www.asb.or.at/"},"geometry":{"type":"Point","coordinates":[14.2816796,48.2697043]},"id":"node/7781707506"},{"type":"Feature","properties":{"@id":"node/7781709263","addr:city":"Linz","addr:housenumber":"69","addr:postcode":"4040","addr:street":"Altenberger Straße","alt_name":"1940","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","level":"-1","name":"Rotes Kreuz Ortsstelle Linz Nord","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK"},"geometry":{"type":"Point","coordinates":[14.3179388,48.3362799]},"id":"node/7781709263"},{"type":"Feature","properties":{"@id":"node/10763348830","addr:city":"Aigen-Schlägl","addr:housenumber":"19","addr:postcode":"4160","addr:street":"Hauptstraße","alt_name":"0920","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","construction_date":"2017-10-01;1999-01-01","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Aigen im Mühlkreis","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK","website":"https://www.roteskreuz.at/oberoesterreich/rohrbach/ortsstelle-aigen-im-muehlkreis"},"geometry":{"type":"Point","coordinates":[13.9689961,48.6438664]},"id":"node/10763348830"},{"type":"Feature","properties":{"@id":"node/10763350457","addr:city":"Ulrichsberg","addr:country":"AT","addr:housenumber":"6","addr:postcode":"4161","addr:street":"Steinwände","alt_name":"0965","ambulance_station:patient_transport":"yes","brand":"Österreichisches Rotes Kreuz","brand:short":"ÖRK","brand:wikidata":"Q168276","brand:wikipedia":"de:Österreichisches Rotes Kreuz","building":"yes","emergency":"ambulance_station","emergency_telephone_code":"144; +43 732 144","name":"Rotes Kreuz Ortsstelle Ulrichsberg","opening_hours":"24/7","operator":"Österreichisches Rotes Kreuz, Landesverband Oberösterreich","short_name":"ÖRK"},"geometry":{"type":"Point","coordinates":[13.90528,48.677551]},"id":"node/10763350457"}]}
+{
+  "type": "FeatureCollection",
+  "name": "RD-OO-SEW",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Steyr",
+        "addr:housenumber": "5",
+        "addr:postcode": "4400",
+        "addr:street": "Redtenbachergasse",
+        "alt_name": "1550",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Bezirksstelle Steyr-Stadt",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4124765,
+          48.0381251
+        ]
+      },
+      "id": 1
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Schwertberg",
+        "addr:housenumber": "1",
+        "addr:postcode": "4311",
+        "addr:street": "Rot-Kreuz-Platz",
+        "alt_name": "0770",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Schwertberg",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.5747134,
+          48.2683268
+        ]
+      },
+      "id": 2
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Walding",
+        "addr:housenumber": "25",
+        "addr:postcode": "4111",
+        "addr:street": "Mühlkreisbahnstraße",
+        "alt_name": "1250",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Walding",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.1484634,
+          48.3515203
+        ]
+      },
+      "id": 3
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Vöcklabruck",
+        "addr:housenumber": "1a",
+        "addr:postcode": "4840",
+        "addr:street": "Dr. Wilhelm Bock-Straße",
+        "alt_name": "1310",
+        "ambulance_station:emergency_doctor": "yes",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Bezirksstelle Vöcklabruck",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.6371087,
+          48.0031512
+        ]
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Rohrbach-Berg",
+        "addr:housenumber": "4",
+        "addr:postcode": "4150",
+        "addr:street": "Krankenhausstraße",
+        "alt_name": "0910",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Bezirksstelle Rohrbach",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.9842069,
+          48.5697564
+        ]
+      },
+      "id": 5
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Sattledt",
+        "addr:housenumber": "2",
+        "addr:postcode": "4642",
+        "addr:street": "Sattledterstraße",
+        "alt_name": "1660",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Sattledt",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.0576317,
+          48.0726335
+        ]
+      },
+      "id": 6
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Molln",
+        "addr:housenumber": "1",
+        "addr:postcode": "4591",
+        "addr:street": "Parkstraße",
+        "alt_name": "0540",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Molln",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.2587937,
+          47.8845039
+        ]
+      },
+      "id": 7
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Bad Ischl",
+        "addr:housenumber": "71b",
+        "addr:postcode": "4820",
+        "addr:street": "Grazer Straße",
+        "alt_name": "0330",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Bad Ischl",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.6254922,
+          47.6999168
+        ]
+      },
+      "id": 8
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Neufelden",
+        "addr:housenumber": "30",
+        "addr:postcode": "4120",
+        "addr:street": "Veldner Straße",
+        "alt_name": "0950",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Neufelden",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.992386,
+          48.4840569
+        ]
+      },
+      "id": 9
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Bad Hall",
+        "addr:housenumber": "1",
+        "addr:postcode": "4540",
+        "addr:street": "Karl-Wögerer-Platz",
+        "alt_name": "1130",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Bad Hall",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.2155289,
+          48.0321771
+        ]
+      },
+      "id": 10
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Scharnstein",
+        "addr:housenumber": "7a",
+        "addr:postcode": "4644",
+        "addr:street": "Neu-Scharnstein",
+        "alt_name": "0350",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Scharnstein",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.9588116,
+          47.9057233
+        ]
+      },
+      "id": 11
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Feldkirchen an der Donau",
+        "addr:housenumber": "2",
+        "addr:postcode": "4101",
+        "addr:street": "Gewerbeparkstraße",
+        "alt_name": "ASB Feldkirchen",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Arbeiter-Samariter-Bund Österreichs",
+        "brand:short": "ASB",
+        "emergency": "ambulance_station",
+        "name": "Samariterbund Feldkirchen",
+        "operator": "Arbeiter-Samariter-Bund Österreichs Gruppe Feldkirchen",
+        "short_name": "ASB"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.0529484,
+          48.3474332
+        ]
+      },
+      "id": 12
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "St. Florian",
+        "addr:housenumber": "18b",
+        "addr:postcode": "4490",
+        "addr:street": "Stiftstraße",
+        "alt_name": "0650",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle St. Florian",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.3717198,
+          48.2043884
+        ]
+      },
+      "id": 13
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Waldhausen im Strudengau",
+        "addr:housenumber": "194",
+        "addr:postcode": "4391",
+        "addr:street": "Markt",
+        "alt_name": "0780",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Waldhausen",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.951617,
+          48.2715652
+        ]
+      },
+      "id": 14
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Wels",
+        "addr:housenumber": "1",
+        "addr:postcode": "4600",
+        "addr:street": "Rot-Kreuz-Straße",
+        "alt_name": "1610",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Bezirksstelle Wels",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.022806,
+          48.1726205
+        ]
+      },
+      "id": 15
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Bad Leonfelden",
+        "addr:housenumber": "144",
+        "addr:postcode": "4190",
+        "addr:street": "Maximilianstraße",
+        "alt_name": "1210",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Bad Leonfelden",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.3063639,
+          48.5233635
+        ]
+      },
+      "id": 16
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Eferding",
+        "addr:housenumber": "10",
+        "addr:postcode": "4070",
+        "addr:street": "Vor dem Linzertor",
+        "alt_name": "0110",
+        "ambulance_station:emergency_doctor": "yes",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Bezirksstelle Ortsstelle Eferding",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.024318,
+          48.3060443
+        ]
+      },
+      "id": 17
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Kirchdorf an der Krems",
+        "addr:housenumber": "11",
+        "addr:postcode": "4560",
+        "addr:street": "Krankenhausstraße",
+        "alt_name": "0510",
+        "ambulance_station:emergency_doctor": "yes",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Bezirksstelle Kirchdorf an der Krems",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.123279,
+          47.9080188
+        ]
+      },
+      "id": 18
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Bad Goisern am Hallstättersee",
+        "addr:housenumber": "145",
+        "addr:postcode": "4822",
+        "addr:street": null,
+        "alt_name": "0320",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Bad Goisern",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.6340424,
+          47.6217484
+        ]
+      },
+      "id": 19
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Alkoven",
+        "addr:housenumber": "4",
+        "addr:postcode": "4072",
+        "addr:street": "Margeritenstraße",
+        "alt_name": "ASB Alkoven",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Arbeiter-Samariter-Bund Österreichs",
+        "brand:short": "ASB",
+        "emergency": "ambulance_station",
+        "name": "Samariterbund Alkoven",
+        "operator": "Arbeiter-Samariter-Bund Österreichs Gruppe Alkoven",
+        "short_name": "ASB"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.1239918,
+          48.2899233
+        ]
+      },
+      "id": 20
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Kirchschlag bei Linz",
+        "addr:housenumber": "38a",
+        "addr:postcode": "4202",
+        "addr:street": "Kirchschlag",
+        "alt_name": "1240",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Kirchschlag",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.2766619,
+          48.4140019
+        ]
+      },
+      "id": 21
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Gallneukirchen",
+        "addr:housenumber": "6",
+        "addr:postcode": "4210",
+        "addr:street": "Linzer Straße",
+        "alt_name": "1220",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Gallneukirchen",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4121648,
+          48.3511808
+        ]
+      },
+      "id": 22
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Neuhofen an der Krems",
+        "addr:housenumber": "20",
+        "addr:postcode": "4501",
+        "addr:street": "Steyrer Straße",
+        "alt_name": "0630",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Neuhofen an der Krems",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.234084,
+          48.137307
+        ]
+      },
+      "id": 23
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Windischgarsten",
+        "addr:housenumber": "46",
+        "addr:postcode": "4580",
+        "addr:street": "Gleinkerseestraße",
+        "alt_name": "0560",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Windischgarsten",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.3153441,
+          47.7159087
+        ]
+      },
+      "id": 24
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Herzogsdorf",
+        "addr:housenumber": "23",
+        "addr:postcode": "4175",
+        "addr:street": "Hauptstraße",
+        "alt_name": "1230",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Herzogsdorf",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.1157311,
+          48.4358714
+        ]
+      },
+      "id": 25
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Spital am Pyhrn",
+        "addr:housenumber": "3",
+        "addr:postcode": "4582",
+        "addr:street": "Pyhrnstraße",
+        "alt_name": "0550",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "mountain_rescue",
+        "name": "Rotes Kreuz Ortsstelle Spital am Pyhrn",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.34004,
+          47.6628095
+        ]
+      },
+      "id": 26
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Sankt Martin im Mühlkreis",
+        "addr:housenumber": "7",
+        "addr:postcode": "4113",
+        "addr:street": "Landshaager Straße",
+        "alt_name": "0970",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle St. Martin im Mühlkreis",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.0402222,
+          48.4139921
+        ]
+      },
+      "id": 27
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Schärding",
+        "addr:housenumber": "2",
+        "addr:postcode": "4780",
+        "addr:street": "Othmar-Spanlang-Straße",
+        "alt_name": "1010",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Bezirksstelle Schärding",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4401448,
+          48.4456481
+        ]
+      },
+      "id": 28
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Marchtrenk",
+        "addr:housenumber": "10",
+        "addr:postcode": "4614",
+        "addr:street": "Badgasse",
+        "alt_name": "1640",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Marchtrenk",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.1148495,
+          48.1874962
+        ]
+      },
+      "id": 29
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "St. Georgen im Attergau",
+        "addr:housenumber": "18",
+        "addr:postcode": "4880",
+        "addr:street": "Stelzhamerstraße",
+        "alt_name": null,
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle St. Georgen im Attergau",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4845473,
+          47.9339935
+        ]
+      },
+      "id": 30
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Gmunden",
+        "addr:housenumber": "48",
+        "addr:postcode": "4810",
+        "addr:street": "Miller v. Aichholz-Straße",
+        "alt_name": "0310",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Bezirksstelle Gmunden",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.7784272,
+          47.9139662
+        ]
+      },
+      "id": 31
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Helfenberg",
+        "addr:housenumber": "1",
+        "addr:postcode": "4184",
+        "addr:street": "Schloßstraße",
+        "alt_name": "0930",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Helfenberg",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.1422584,
+          48.5428736
+        ]
+      },
+      "id": 32
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "St. Georgen am Walde",
+        "addr:housenumber": "15",
+        "addr:postcode": "4372",
+        "addr:street": "Jörgenberg",
+        "alt_name": "0760",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle St. Georgen am Walde",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.8952856,
+          48.3586058
+        ]
+      },
+      "id": 33
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Perg",
+        "addr:housenumber": "15",
+        "addr:postcode": "4320",
+        "addr:street": "Dirnbergerstraße",
+        "alt_name": "0710",
+        "ambulance_station:emergency_doctor": "yes",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Perg",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.6359585,
+          48.245149
+        ]
+      },
+      "id": 34
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Unterweißenbach",
+        "addr:housenumber": "16",
+        "addr:postcode": "4273",
+        "addr:street": "Almstraße",
+        "alt_name": "0270",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Unterweißenbach",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.7830509,
+          48.439383
+        ]
+      },
+      "id": 35
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Ebensee",
+        "addr:housenumber": "5",
+        "addr:postcode": "4802",
+        "addr:street": "Alte Saline",
+        "alt_name": "0340",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Ebensee",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.774241,
+          47.8095308
+        ]
+      },
+      "id": 36
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Frankenmarkt",
+        "addr:housenumber": "10",
+        "addr:postcode": "4890",
+        "addr:street": "Buchschartenstraße",
+        "alt_name": "1350",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Frankenmarkt",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4128472,
+          47.9883649
+        ]
+      },
+      "id": 37
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Kremsmünster",
+        "addr:housenumber": "16",
+        "addr:postcode": "4550",
+        "addr:street": "Linzer Straße",
+        "alt_name": "0530",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Kremsmünster",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.1362701,
+          48.056189
+        ]
+      },
+      "id": 38
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Eggelsberg",
+        "addr:housenumber": "2",
+        "addr:postcode": "5142",
+        "addr:street": "B&R Straße",
+        "alt_name": "0041",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Eggelsberg",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.9894997,
+          48.0748764
+        ]
+      },
+      "id": 39
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Unterach am Attersee",
+        "addr:housenumber": "5",
+        "addr:postcode": "4866",
+        "addr:street": "Mühlleiten",
+        "alt_name": "1397",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Unterach am Attersee",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4767132,
+          47.8014707
+        ]
+      },
+      "id": 40
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Ternberg",
+        "addr:housenumber": "14",
+        "addr:postcode": "4452",
+        "addr:street": "Prinzstraße",
+        "alt_name": "1150",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Ternberg",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.3601203,
+          47.9451435
+        ]
+      },
+      "id": 41
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Freistadt",
+        "addr:housenumber": "33",
+        "addr:postcode": "4240",
+        "addr:street": "Zemannstraße",
+        "alt_name": "0220",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Bezirksstelle Freistadt",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.5047439,
+          48.506416
+        ]
+      },
+      "id": 42
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Traun",
+        "addr:housenumber": "92",
+        "addr:postcode": "4050",
+        "addr:street": "Johann Roithner-Straße",
+        "alt_name": "0640",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Traun",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.2518134,
+          48.2252475
+        ]
+      },
+      "id": 43
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Enns",
+        "addr:housenumber": "15",
+        "addr:postcode": "4470",
+        "addr:street": "Teichweg",
+        "alt_name": "0610",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Enns",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4741911,
+          48.2174399
+        ]
+      },
+      "id": 44
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Tragwein",
+        "addr:housenumber": "10",
+        "addr:postcode": "4284",
+        "addr:street": "Schulstraße",
+        "alt_name": "0240",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Tragwein",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.6218797,
+          48.3290833
+        ]
+      },
+      "id": 45
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Lambach",
+        "addr:housenumber": "8",
+        "addr:postcode": "4650",
+        "addr:street": "Maximilian-Pagl-Straße",
+        "alt_name": "1630",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Lambach",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.8662082,
+          48.0899695
+        ]
+      },
+      "id": 46
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "St. Veit im Mühlkreis",
+        "addr:housenumber": "6",
+        "addr:postcode": "4173",
+        "addr:street": "Linzer Straße",
+        "alt_name": "0980",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle St. Veit im Mühlkreis",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.1630444,
+          48.4658637
+        ]
+      },
+      "id": 47
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Redlham",
+        "addr:housenumber": "4",
+        "addr:postcode": "4846",
+        "addr:street": "Gewerbepark Mitte",
+        "alt_name": "1330",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Redlham",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.7416012,
+          48.0315758
+        ]
+      },
+      "id": 48
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Weyer",
+        "addr:housenumber": "12",
+        "addr:postcode": "3335",
+        "addr:street": "Dr.-Friedrich-Schmeidel-Straße",
+        "alt_name": "1160",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Weyer",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.6680895,
+          47.8628108
+        ]
+      },
+      "id": 49
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Peuerbach",
+        "addr:housenumber": "3",
+        "addr:postcode": "4722",
+        "addr:street": "Kolbestraße",
+        "alt_name": "0420",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Peuerbach",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.7733715,
+          48.3472932
+        ]
+      },
+      "id": 50
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Seewalchen am Attersee",
+        "addr:housenumber": "11",
+        "addr:postcode": "4863",
+        "addr:street": "Paul-Wiener-Straße",
+        "alt_name": "1380",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Seewalchen am Attersee",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.6031134,
+          47.9615433
+        ]
+      },
+      "id": 51
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "St. Wolfgang im Salzkammergut",
+        "addr:housenumber": "27",
+        "addr:postcode": "5360",
+        "addr:street": null,
+        "alt_name": "0370",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle St. Wolfgang im Salzkammergut",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4839333,
+          47.7299364
+        ]
+      },
+      "id": 52
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Vorchdorf",
+        "addr:housenumber": "4b",
+        "addr:postcode": "4655",
+        "addr:street": "Dr. Mitterbauerstraße",
+        "alt_name": "0360",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Vorchdorf",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.9167442,
+          48.0101498
+        ]
+      },
+      "id": 53
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Hartkirchen",
+        "addr:housenumber": "17",
+        "addr:postcode": "4081",
+        "addr:street": "Karlingerstraße",
+        "alt_name": "0120",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Hartkirchen",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.0030746,
+          48.3604017
+        ]
+      },
+      "id": 54
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Liebenau",
+        "addr:housenumber": "154",
+        "addr:postcode": "4252",
+        "addr:street": null,
+        "alt_name": "0280",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Liebenau",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.8047421,
+          48.5330862
+        ]
+      },
+      "id": 55
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Mattighofen",
+        "addr:housenumber": "23a",
+        "addr:postcode": "5230",
+        "addr:street": "Salzburgerstraße",
+        "alt_name": "0030",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Mattighofen",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.1559478,
+          48.0971854
+        ]
+      },
+      "id": 56
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Schönering",
+        "addr:housenumber": "1a",
+        "addr:postcode": "4073",
+        "addr:street": "Am Dorfplatz",
+        "alt_name": "0130",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Wilhering",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.1635557,
+          48.2998426
+        ]
+      },
+      "id": 57
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Ried im Innkreis",
+        "addr:housenumber": "3",
+        "addr:postcode": "4910",
+        "addr:street": "Hohenzeller Straße",
+        "alt_name": "0810",
+        "ambulance_station:emergency_doctor": "yes",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Bezirksstelle Ried im Innkreis",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4949414,
+          48.2099456
+        ]
+      },
+      "id": 58
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Braunau am Inn",
+        "addr:housenumber": "8",
+        "addr:postcode": "5280",
+        "addr:street": "Jubiläumstraße",
+        "alt_name": "0010",
+        "ambulance_station:emergency_doctor": "yes",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Bezirksstelle Braunau",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.033678,
+          48.2548368
+        ]
+      },
+      "id": 59
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Linz",
+        "addr:housenumber": "25",
+        "addr:postcode": "4030",
+        "addr:street": "Spinnereistraße",
+        "alt_name": "1930",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Linz Süd",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.3279688,
+          48.2550436
+        ]
+      },
+      "id": 60
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Ostermiething",
+        "addr:housenumber": "14",
+        "addr:postcode": "5121",
+        "addr:street": "Gewerbegebiet",
+        "alt_name": "0040",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Riedersbach",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.8435392,
+          48.0435654
+        ]
+      },
+      "id": 61
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Leonding",
+        "addr:housenumber": "5",
+        "addr:postcode": "4060",
+        "addr:street": "Limesstraße",
+        "alt_name": "0620",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Leonding",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.2547818,
+          48.2654832
+        ]
+      },
+      "id": 62
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Riedau",
+        "addr:housenumber": "64",
+        "addr:postcode": "4752",
+        "addr:street": "Johann Raaberstraße",
+        "alt_name": "1040",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Riedau",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.6297166,
+          48.3032929
+        ]
+      },
+      "id": 63
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Andorf",
+        "addr:housenumber": "22",
+        "addr:postcode": "4770",
+        "addr:street": "Bahnhofstraße",
+        "alt_name": "1020",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Andorf",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5672087,
+          48.3709968
+        ]
+      },
+      "id": 64
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Grieskirchen",
+        "addr:housenumber": "18",
+        "addr:postcode": "4710",
+        "addr:street": "Manglburg",
+        "alt_name": "0410",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Bezirksstelle Grieskirchen",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.8246171,
+          48.2347215
+        ]
+      },
+      "id": 65
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Ottnang am Hausruck",
+        "addr:housenumber": "41",
+        "addr:postcode": "4901",
+        "addr:street": "Thomasroither Straße",
+        "alt_name": "1360",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Thomasroith",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.6179555,
+          48.0813765
+        ]
+      },
+      "id": 66
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Mondsee",
+        "addr:housenumber": "2",
+        "addr:postcode": "5310",
+        "addr:street": "Prielhofstraße",
+        "alt_name": "1370",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Mondsee",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3399265,
+          47.8600109
+        ]
+      },
+      "id": 67
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Esternberg",
+        "addr:housenumber": "1",
+        "addr:postcode": "4092",
+        "addr:street": "Rot-Kreuz-Weg",
+        "alt_name": "1070",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Esternberg",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.5734487,
+          48.5440457
+        ]
+      },
+      "id": 68
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Engelhartszell",
+        "addr:housenumber": "61",
+        "addr:postcode": "4090",
+        "addr:street": "Marktplatz",
+        "alt_name": "1030",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Engelhartszell",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.7333928,
+          48.505839
+        ]
+      },
+      "id": 69
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Mettmach",
+        "addr:housenumber": "22",
+        "addr:postcode": "4931",
+        "addr:street": "Rieder Straße",
+        "alt_name": "0850",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Mettmach",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3493801,
+          48.1680775
+        ]
+      },
+      "id": 70
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Linz",
+        "addr:housenumber": "24",
+        "addr:postcode": "4040",
+        "addr:street": "Reindlstraße",
+        "alt_name": "ASB Linz Reindlstraße",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Arbeiter-Samariter-Bund Österreichs",
+        "brand:short": "ASB",
+        "emergency": "ambulance_station",
+        "name": "Samariterbund Linz-Reindlstraße",
+        "operator": "Arbeiter-Samariter-Bund Österreichs Gruppe Linz",
+        "short_name": "ASB"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.2874489,
+          48.3148999
+        ]
+      },
+      "id": 71
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Linz",
+        "addr:housenumber": "28",
+        "addr:postcode": "4020",
+        "addr:street": "Körnerstraße",
+        "alt_name": "1910",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Österreichisches Rotes Kreuz",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.2991102,
+          48.3046098
+        ]
+      },
+      "id": 72
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Altheim",
+        "addr:housenumber": "5",
+        "addr:postcode": "4950",
+        "addr:street": "Braunauer Straße",
+        "alt_name": null,
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Altheim",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.2293113,
+          48.2486825
+        ]
+      },
+      "id": 73
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Pregarten",
+        "addr:housenumber": "20",
+        "addr:postcode": "4230",
+        "addr:street": "Pregartfeld",
+        "alt_name": "0230",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Österreichisches Rotes Kreuz Pregarten",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.5277445,
+          48.3493617
+        ]
+      },
+      "id": 74
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Grein",
+        "addr:housenumber": "3",
+        "addr:postcode": "4360",
+        "addr:street": "Breitenangerstraße",
+        "alt_name": "0720",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortstelle Grein",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.8473868,
+          48.2286727
+        ]
+      },
+      "id": 75
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Spital am Pyhrn",
+        "addr:housenumber": "3",
+        "addr:postcode": "4582",
+        "addr:street": "Pyhrnstraße",
+        "alt_name": "0550",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Spital am Phyrn",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.3401966,
+          47.6627851
+        ]
+      },
+      "id": 76
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Kopfing im Innkreis",
+        "addr:housenumber": "156",
+        "addr:postcode": "4794",
+        "addr:street": "Sportplatzstraße",
+        "alt_name": "1050",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Kopfing",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.6589776,
+          48.4434136
+        ]
+      },
+      "id": 77
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "St. Georgen an der Gusen",
+        "addr:housenumber": "21",
+        "addr:postcode": "4222",
+        "addr:street": "Gusentalstraße",
+        "alt_name": "0740",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle St. Georgen an der Gusen",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4469246,
+          48.2740889
+        ]
+      },
+      "id": 78
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Bad Zell",
+        "addr:housenumber": "8",
+        "addr:postcode": "4283",
+        "addr:street": "Marktplatz",
+        "alt_name": "0250",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Bad Zell",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.6697687,
+          48.3500685
+        ]
+      },
+      "id": 79
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Lembach im Mühlkreis",
+        "addr:housenumber": "14",
+        "addr:postcode": "4132",
+        "addr:street": "Lederergasse",
+        "alt_name": "0990",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Lembach",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.8990652,
+          48.4977209
+        ]
+      },
+      "id": 80
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Hofkirchen im Mühlkreis",
+        "addr:housenumber": "9",
+        "addr:postcode": "4142",
+        "addr:street": "Lembacher Straße",
+        "alt_name": "0940",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Hofkirchen",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.8162249,
+          48.4832294
+        ]
+      },
+      "id": 81
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Linz",
+        "addr:housenumber": "3a",
+        "addr:postcode": "4020",
+        "addr:street": "Muldenstraße",
+        "alt_name": "ASB Linz Muldenstraße",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Arbeiter-Samariter-Bund Österreichs",
+        "brand:short": "ASB",
+        "emergency": "ambulance_station",
+        "name": "Samariterbund Linz-Muldenstraße",
+        "operator": "Arbeiter-Samariter-Bund Österreichs Gruppe Linz",
+        "short_name": "ASB"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.306576,
+          48.2761388
+        ]
+      },
+      "id": 82
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Königswiesen",
+        "addr:housenumber": "1",
+        "addr:postcode": "4280",
+        "addr:street": "Florianiweg",
+        "alt_name": "0260",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Königswiesen",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.8362018,
+          48.4066086
+        ]
+      },
+      "id": 83
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Grünburg",
+        "addr:housenumber": "33",
+        "addr:postcode": "4594",
+        "addr:street": "Hauptstraße",
+        "alt_name": "0520",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Grünburg",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.262787,
+          47.9703799
+        ]
+      },
+      "id": 84
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Haag am Hausruck",
+        "addr:housenumber": "20b",
+        "addr:postcode": "4680",
+        "addr:street": "Starhemberg",
+        "alt_name": "0430",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Haag am Hausruck",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.6438908,
+          48.187691
+        ]
+      },
+      "id": 85
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Linz",
+        "addr:housenumber": "3",
+        "addr:postcode": "4031",
+        "addr:street": "voest apline straße",
+        "alt_name": "1980",
+        "ambulance_station:emergency_doctor": "yes",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Betriebsrettung voestalpine",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.339743,
+          48.2701198
+        ]
+      },
+      "id": 86
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Obernberg am Inn",
+        "addr:housenumber": "6",
+        "addr:postcode": "4982",
+        "addr:street": "Kirchenplatz",
+        "alt_name": "0830",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Obernberg",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3347146,
+          48.3197845
+        ]
+      },
+      "id": 87
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Peilstein im Mühlkreis",
+        "addr:housenumber": "3",
+        "addr:postcode": "4153",
+        "addr:street": "Richterweg",
+        "alt_name": "0960",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Peilstein",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.8916865,
+          48.6198284
+        ]
+      },
+      "id": 88
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Sierning",
+        "addr:housenumber": "5",
+        "addr:postcode": "4522",
+        "addr:street": "Wallernstraße",
+        "alt_name": "1140",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Sierning",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.3105278,
+          48.0420072
+        ]
+      },
+      "id": 89
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Frankenburg am Hausruck",
+        "addr:housenumber": null,
+        "addr:postcode": "4873",
+        "addr:street": "Hauptstraße",
+        "alt_name": "1390",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Frankenburg",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4834863,
+          48.0675062
+        ]
+      },
+      "id": 90
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Linz",
+        "addr:housenumber": "1-3",
+        "addr:postcode": "4020",
+        "addr:street": "Meggauerstraße",
+        "alt_name": "ASB Linz Keferfeld",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Arbeiter-Samariter-Bund Österreichs",
+        "brand:short": "ASB",
+        "emergency": "ambulance_station",
+        "name": "Samariterbund Linz-Keferfeld",
+        "operator": "Arbeiter-Samariter-Bund Österreichs Gruppe Linz",
+        "short_name": "ASB"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.2816796,
+          48.2697043
+        ]
+      },
+      "id": 91
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Linz",
+        "addr:housenumber": "69",
+        "addr:postcode": "4040",
+        "addr:street": "Altenberger Straße",
+        "alt_name": "1940",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Linz Nord",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.3179388,
+          48.3362799
+        ]
+      },
+      "id": 92
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Aigen-Schlägl",
+        "addr:housenumber": "19",
+        "addr:postcode": "4160",
+        "addr:street": "Hauptstraße",
+        "alt_name": "0920",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Aigen im Mühlkreis",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.9689961,
+          48.6438664
+        ]
+      },
+      "id": 93
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Ulrichsberg",
+        "addr:housenumber": "6",
+        "addr:postcode": "4161",
+        "addr:street": "Steinwände",
+        "alt_name": "0965",
+        "ambulance_station:emergency_doctor": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Ortsstelle Ulrichsberg",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Oberösterreich",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.90528,
+          48.677551
+        ]
+      },
+      "id": 94
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "icons": [
+    {
+      "group": "rd",
+      "name": "oerk",
+      "file": "rd/oerk.png",
+      "label": "ÖRK",
+      "symbol": "#pin-ambulance",
+      "fillVar": "#FF0000",
+      "iconVar": "#FFFFFF"
+    },
+    {
+      "group": "rd",
+      "name": "brk",
+      "file": "rd/brk.png",
+      "label": "BRK",
+      "symbol": "#pin-ambulance",
+      "fillVar": "#E60005",
+      "iconVar": "#FFFFFF"
+    },
+    {
+      "group": "rd",
+      "name": "asb",
+      "file": "rd/asb.png",
+      "label": "ASB",
+      "symbol": "#pin-ambulance",
+      "fillVar": "#FFD200",
+      "iconVar": "#111111"
+    },
+    {
+      "group": "rd",
+      "name": "gk",
+      "file": "rd/gk.png",
+      "label": "GK",
+      "symbol": "#pin-ambulance",
+      "fillVar": "#00A651",
+      "iconVar": "#FFFFFF"
+    },
+    {
+      "group": "rd",
+      "name": "mhd",
+      "file": "rd/mhd.png",
+      "label": "MHD",
+      "symbol": "#pin-ambulance",
+      "fillVar": "#FFFFFF",
+      "iconVar": "#111111"
+    },
+    {
+      "group": "rd",
+      "name": "ims",
+      "file": "rd/ims.png",
+      "label": "IMS",
+      "symbol": "#pin-ambulance",
+      "fillVar": "#66CCFF",
+      "iconVar": "#111111"
+    },
+    {
+      "group": "rd",
+      "name": "stadler",
+      "file": "rd/stadler.png",
+      "label": "Stadler",
+      "symbol": "#pin-ambulance",
+      "fillVar": "#003A8C",
+      "iconVar": "#FFFFFF"
+    },
+    {
+      "group": "rd",
+      "name": "ma70",
+      "file": "rd/ma70.png",
+      "label": "MA70",
+      "symbol": "#pin-ma70",
+      "fillVar": "",
+      "iconVar": ""
+    },
+    {
+      "group": "rd",
+      "name": "juh",
+      "file": "rd/juh.png",
+      "label": "JUH",
+      "symbol": "#pin-ambulance",
+      "fillVar": "#FF6600",
+      "iconVar": "#FFFFFF"
+    }
+  ]
+}
