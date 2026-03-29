@@ -10,7 +10,18 @@ const protocol = new pmtiles.Protocol();
 maplibregl.addProtocol('pmtiles', protocol.tile);
 
 const DEFAULT_GLYPHS = '/assets/fonts/{fontstack}/{range}.pbf';
-const DEFAULT_SPRITE = '/assets/sprites/oe5ith-markers';
+const BASE_OSM_SOURCE = {
+  type: 'raster',
+  tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+  tileSize: 256,
+  attribution: '© OpenStreetMap-Mitwirkende',
+  maxzoom: 19,
+};
+const BASE_OSM_LAYER = {
+  id: 'osm',
+  type: 'raster',
+  source: 'osm',
+};
 
 const map = new maplibregl.Map({
   container: 'map',
@@ -20,49 +31,16 @@ const map = new maplibregl.Map({
   style: {
     version: 8,
     glyphs: DEFAULT_GLYPHS,
-    sprite: DEFAULT_SPRITE,
     sources: {
-      osm: {
-        type: 'raster',
-        tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
-        tileSize: 256,
-        attribution: '© OpenStreetMap-Mitwirkende',
-        maxzoom: 19,
-      },
+      osm: BASE_OSM_SOURCE,
     },
-    layers: [
-      {
-        id: 'osm',
-        type: 'raster',
-        source: 'osm',
-      },
-    ],
+    layers: [BASE_OSM_LAYER],
   },
 });
 
 map.addControl(new maplibregl.NavigationControl(), 'top-right');
 
 let overlayCatalog = [];
-let activeOverlay = null;
-let activeSources = [];
-let activeLayers = [];
-
-function removeActiveOverlay() {
-  for (const layerId of activeLayers.slice().reverse()) {
-    if (map.getLayer(layerId)) {
-      map.removeLayer(layerId);
-    }
-  }
-  for (const sourceId of activeSources) {
-    if (map.getSource(sourceId)) {
-      map.removeSource(sourceId);
-    }
-  }
-  activeLayers = [];
-  activeSources = [];
-  activeOverlay = null;
-}
-
 async function fetchOverlayCatalog() {
   const response = await fetch('/api/overlays');
   if (!response.ok) {
@@ -94,11 +72,10 @@ function cloneStyleLayer(layer) {
 }
 
 function normalizeOverlayLayers(style) {
-  const sourceIds = Object.keys(style.sources || {});
   const layers = [];
 
   for (const layer of style.layers || []) {
-    if (!layer.source || !sourceIds.includes(layer.source)) {
+    if (!layer.source || !style.sources || !style.sources[layer.source]) {
       continue;
     }
     if (layer.type === 'background' || layer.source === 'osm') {
@@ -107,39 +84,49 @@ function normalizeOverlayLayers(style) {
     layers.push(cloneStyleLayer(layer));
   }
 
-  return { sourceIds, layers };
+  return layers;
+}
+
+function composeMapStyle(overlayStyle) {
+  const mergedStyle = {
+    version: 8,
+    glyphs: overlayStyle.glyphs || DEFAULT_GLYPHS,
+    sources: {
+      osm: BASE_OSM_SOURCE,
+      ...(overlayStyle.sources || {}),
+    },
+    layers: [BASE_OSM_LAYER, ...normalizeOverlayLayers(overlayStyle)],
+  };
+  if (overlayStyle.sprite) {
+    mergedStyle.sprite = overlayStyle.sprite;
+  }
+  return mergedStyle;
 }
 
 async function applyOverlay(styleFile) {
-  removeActiveOverlay();
-
   if (!styleFile) {
+    map.setStyle({
+      version: 8,
+      glyphs: DEFAULT_GLYPHS,
+      sources: { osm: BASE_OSM_SOURCE },
+      layers: [BASE_OSM_LAYER],
+    });
     setStatus('Kein Overlay ausgewählt.');
     return;
   }
 
   const style = await fetchOverlayStyle(styleFile);
-  const { sourceIds, layers } = normalizeOverlayLayers(style);
-
-  for (const [sourceId, sourceDef] of Object.entries(style.sources || {})) {
-    map.addSource(sourceId, sourceDef);
-    activeSources.push(sourceId);
-  }
-
-  for (const layer of layers) {
-    map.addLayer(layer);
-    activeLayers.push(layer.id);
-  }
-
-  activeOverlay = style.metadata?.localTestServer || { styleFile };
+  map.setStyle(composeMapStyle(style), { diff: false });
+  const activeOverlay = style.metadata?.localTestServer || { styleFile };
   setStatus(
     `Overlay geladen: ${style.metadata?.folder || styleFile}`,
     JSON.stringify(
       {
         styleFile,
-        sourceCount: activeSources.length,
-        layerCount: activeLayers.length,
+        sourceCount: Object.keys(style.sources || {}).length,
+        layerCount: normalizeOverlayLayers(style).length,
         pmtilesFile: activeOverlay.pmtilesFile || null,
+        sprite: style.sprite || null,
       },
       null,
       2,
