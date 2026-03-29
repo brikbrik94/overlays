@@ -215,22 +215,19 @@ def build_rd_icon_expression() -> List[Any]:
         ],
     ]
     return [
-        "let", "org", org_text,
-        [
-            "case",
-            ["==", ["get", "emergency"], "mountain_rescue"], "brd-pin",
-            expr_truthy("ambulance_station:emergency_doctor"), "nef-pin",
-            ["any", ["in", "bayerisches rotes kreuz", ["var", "org"]], ["in", " brk", ["var", "org"]]], "rd-brk",
-            ["any", ["in", "österreichisches rotes kreuz", ["var", "org"]], ["in", " oerk", ["var", "org"]], ["in", " örk", ["var", "org"]]], "rd-oerk",
-            ["any", ["in", "samariter", ["var", "org"]], ["in", " asb", ["var", "org"]]], "rd-asb",
-            ["any", ["in", "malteser", ["var", "org"]], ["in", " mhd", ["var", "org"]]], "rd-mhd",
-            ["any", ["in", "johanniter", ["var", "org"]], ["in", " juh", ["var", "org"]]], "rd-juh",
-            ["in", "stadler", ["var", "org"]], "rd-stadler",
-            ["any", ["in", "grünes kreuz", ["var", "org"]], ["in", "gruenes kreuz", ["var", "org"]], ["in", " gk", ["var", "org"]]], "rd-gk",
-            ["any", ["in", "ma70", ["var", "org"]], ["in", "berufsrettung wien", ["var", "org"]]], "rd-ma70",
-            ["in", "ims", ["var", "org"]], "rd-ims",
-            "rd-pin",
-        ],
+        "case",
+        ["==", ["get", "emergency"], "mountain_rescue"], "brd-pin",
+        expr_truthy("ambulance_station:emergency_doctor"), "nef-pin",
+        ["any", ["in", "bayerisches rotes kreuz", org_text], ["in", " brk", org_text]], "rd-brk",
+        ["any", ["in", "österreichisches rotes kreuz", org_text], ["in", " oerk", org_text], ["in", " örk", org_text]], "rd-oerk",
+        ["any", ["in", "samariter", org_text], ["in", " asb", org_text]], "rd-asb",
+        ["any", ["in", "malteser", org_text], ["in", " mhd", org_text]], "rd-mhd",
+        ["any", ["in", "johanniter", org_text], ["in", " juh", org_text]], "rd-juh",
+        ["in", "stadler", org_text], "rd-stadler",
+        ["any", ["in", "grünes kreuz", org_text], ["in", "gruenes kreuz", org_text], ["in", " gk", org_text]], "rd-gk",
+        ["any", ["in", "ma70", org_text], ["in", "berufsrettung wien", org_text]], "rd-ma70",
+        ["in", "ims", org_text], "rd-ims",
+        "rd-pin",
     ]
 
 
