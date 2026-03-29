@@ -104,7 +104,6 @@ def href_of_use(group: ET.Element) -> str:
 
 def build_icon_svg(root: ET.Element, defs: ET.Element | None, group: ET.Element) -> ET.ElementTree:
     out_root = ET.Element(qname("svg"), {
-        "xmlns": SVG_NS,
         "width": "64",
         "height": "72",
         "viewBox": "0 0 64 72",
