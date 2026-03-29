@@ -1,24 +1,22 @@
 {
   "version": 8,
-  "name": "OE5ITH NAH-Stützpunkte (CI)",
+  "name": "OE5ITH NAH-Stützpunkte",
   "metadata": {
-    "generator": "build_hosted_overlays.py",
+    "generator": "manual-minimal",
     "folder": "NAH-Stützpunkte",
     "sourceLayers": [
       "nah_bayern",
       "nah_zonen_oesterreich",
       "nah_oesterreich",
       "nah_oesterreich_clean"
-    ],
-    "ci": {
-      "topbarHeight": 60,
-      "accent": "#3b82f6"
-    }
+    ]
   },
+  "glyphs": "../assets/fonts/{fontstack}/{range}.pbf",
+  "sprite": "../assets/sprites/oe5ith-markers",
   "sources": {
     "folder": {
       "type": "vector",
-      "url": "pmtiles://https://tiles.oe5ith.at/pmtiles/NAH-Stützpunkte.pmtiles",
+      "url": "pmtiles://../pmtiles/NAH-Stützpunkte.pmtiles",
       "minzoom": 0,
       "maxzoom": 15
     }
@@ -32,63 +30,27 @@
       }
     },
     {
-      "id": "nah-stuetzpunkte-nah_bayern-fill",
+      "id": "nah-stuetzpunkte-zonen-fill",
       "type": "fill",
       "source": "folder",
-      "source-layer": "nah_bayern",
-      "filter": [
-        "match",
-        [
-          "geometry-type"
-        ],
-        [
-          "Polygon",
-          "MultiPolygon"
-        ],
-        true,
-        false
-      ],
+      "source-layer": "nah_zonen_oesterreich",
+      "filter": ["match", ["geometry-type"], ["Polygon", "MultiPolygon"], true, false],
       "paint": {
         "fill-color": "#3b82f6",
-        "fill-opacity": 0.2,
-        "fill-outline-color": "#333333"
+        "fill-opacity": 0.15,
+        "fill-outline-color": "#3b82f6"
       }
     },
     {
-      "id": "nah-stuetzpunkte-nah_bayern-line",
+      "id": "nah-stuetzpunkte-zonen-line",
       "type": "line",
       "source": "folder",
-      "source-layer": "nah_bayern",
-      "filter": [
-        "match",
-        [
-          "geometry-type"
-        ],
-        [
-          "LineString",
-          "MultiLineString",
-          "Polygon",
-          "MultiPolygon"
-        ],
-        true,
-        false
-      ],
+      "source-layer": "nah_zonen_oesterreich",
+      "filter": ["match", ["geometry-type"], ["LineString", "MultiLineString", "Polygon", "MultiPolygon"], true, false],
       "paint": {
         "line-color": "#3b82f6",
-        "line-width": [
-          "interpolate",
-          [
-            "linear"
-          ],
-          [
-            "zoom"
-          ],
-          6,
-          1.5,
-          12,
-          3.5
-        ],
-        "line-opacity": 0.9
+        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 1.2, 12, 2.5],
+        "line-opacity": 0.8
       }
     },
     {
@@ -96,251 +58,11 @@
       "type": "symbol",
       "source": "folder",
       "source-layer": "nah_bayern",
-      "filter": [
-        "match",
-        [
-          "geometry-type"
-        ],
-        [
-          "Point",
-          "MultiPoint"
-        ],
-        true,
-        false
-      ],
+      "filter": ["==", ["geometry-type"], "Point"],
       "layout": {
         "icon-image": "nah-pin",
-        "icon-size": [
-          "interpolate",
-          [
-            "linear"
-          ],
-          [
-            "zoom"
-          ],
-          6,
-          0.5,
-          12,
-          0.9
-        ],
-        "icon-allow-overlap": true,
-        "text-field": [
-          "coalesce",
-          [
-            "get",
-            "alt_name"
-          ],
-          [
-            "get",
-            "short_name"
-          ],
-          [
-            "get",
-            "name"
-          ],
-          ""
-        ],
-        "text-size": 11,
-        "text-font": [
-          "Segoe UI Regular",
-          "Arial Unicode MS Regular"
-        ],
-        "text-offset": [
-          0,
-          1.2
-        ],
-        "text-anchor": "top"
-      },
-      "paint": {
-        "text-color": "#e0e0e0",
-        "text-halo-color": "#1a1a1a",
-        "text-halo-width": 1
-      }
-    },
-    {
-      "id": "nah-stuetzpunkte-nah_zonen_oesterreich-fill",
-      "type": "fill",
-      "source": "folder",
-      "source-layer": "nah_zonen_oesterreich",
-      "filter": [
-        "match",
-        [
-          "geometry-type"
-        ],
-        [
-          "Polygon",
-          "MultiPolygon"
-        ],
-        true,
-        false
-      ],
-      "paint": {
-        "fill-color": "#3b82f6",
-        "fill-opacity": 0.2,
-        "fill-outline-color": "#333333"
-      }
-    },
-    {
-      "id": "nah-stuetzpunkte-nah_zonen_oesterreich-line",
-      "type": "line",
-      "source": "folder",
-      "source-layer": "nah_zonen_oesterreich",
-      "filter": [
-        "match",
-        [
-          "geometry-type"
-        ],
-        [
-          "LineString",
-          "MultiLineString",
-          "Polygon",
-          "MultiPolygon"
-        ],
-        true,
-        false
-      ],
-      "paint": {
-        "line-color": "#3b82f6",
-        "line-width": [
-          "interpolate",
-          [
-            "linear"
-          ],
-          [
-            "zoom"
-          ],
-          6,
-          1.5,
-          12,
-          3.5
-        ],
-        "line-opacity": 0.9
-      }
-    },
-    {
-      "id": "nah-stuetzpunkte-nah_zonen_oesterreich-symbols",
-      "type": "symbol",
-      "source": "folder",
-      "source-layer": "nah_zonen_oesterreich",
-      "filter": [
-        "match",
-        [
-          "geometry-type"
-        ],
-        [
-          "Point",
-          "MultiPoint"
-        ],
-        true,
-        false
-      ],
-      "layout": {
-        "icon-image": "nah-pin",
-        "icon-size": [
-          "interpolate",
-          [
-            "linear"
-          ],
-          [
-            "zoom"
-          ],
-          6,
-          0.5,
-          12,
-          0.9
-        ],
-        "icon-allow-overlap": true,
-        "text-field": [
-          "coalesce",
-          [
-            "get",
-            "alt_name"
-          ],
-          [
-            "get",
-            "short_name"
-          ],
-          [
-            "get",
-            "name"
-          ],
-          ""
-        ],
-        "text-size": 11,
-        "text-font": [
-          "Segoe UI Regular",
-          "Arial Unicode MS Regular"
-        ],
-        "text-offset": [
-          0,
-          1.2
-        ],
-        "text-anchor": "top"
-      },
-      "paint": {
-        "text-color": "#e0e0e0",
-        "text-halo-color": "#1a1a1a",
-        "text-halo-width": 1
-      }
-    },
-    {
-      "id": "nah-stuetzpunkte-nah_oesterreich-fill",
-      "type": "fill",
-      "source": "folder",
-      "source-layer": "nah_oesterreich",
-      "filter": [
-        "match",
-        [
-          "geometry-type"
-        ],
-        [
-          "Polygon",
-          "MultiPolygon"
-        ],
-        true,
-        false
-      ],
-      "paint": {
-        "fill-color": "#3b82f6",
-        "fill-opacity": 0.2,
-        "fill-outline-color": "#333333"
-      }
-    },
-    {
-      "id": "nah-stuetzpunkte-nah_oesterreich-line",
-      "type": "line",
-      "source": "folder",
-      "source-layer": "nah_oesterreich",
-      "filter": [
-        "match",
-        [
-          "geometry-type"
-        ],
-        [
-          "LineString",
-          "MultiLineString",
-          "Polygon",
-          "MultiPolygon"
-        ],
-        true,
-        false
-      ],
-      "paint": {
-        "line-color": "#3b82f6",
-        "line-width": [
-          "interpolate",
-          [
-            "linear"
-          ],
-          [
-            "zoom"
-          ],
-          6,
-          1.5,
-          12,
-          3.5
-        ],
-        "line-opacity": 0.9
+        "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.5, 12, 0.9],
+        "icon-allow-overlap": true
       }
     },
     {
@@ -348,125 +70,11 @@
       "type": "symbol",
       "source": "folder",
       "source-layer": "nah_oesterreich",
-      "filter": [
-        "match",
-        [
-          "geometry-type"
-        ],
-        [
-          "Point",
-          "MultiPoint"
-        ],
-        true,
-        false
-      ],
+      "filter": ["==", ["geometry-type"], "Point"],
       "layout": {
         "icon-image": "nah-pin",
-        "icon-size": [
-          "interpolate",
-          [
-            "linear"
-          ],
-          [
-            "zoom"
-          ],
-          6,
-          0.5,
-          12,
-          0.9
-        ],
-        "icon-allow-overlap": true,
-        "text-field": [
-          "coalesce",
-          [
-            "get",
-            "alt_name"
-          ],
-          [
-            "get",
-            "short_name"
-          ],
-          [
-            "get",
-            "name"
-          ],
-          ""
-        ],
-        "text-size": 11,
-        "text-font": [
-          "Segoe UI Regular",
-          "Arial Unicode MS Regular"
-        ],
-        "text-offset": [
-          0,
-          1.2
-        ],
-        "text-anchor": "top"
-      },
-      "paint": {
-        "text-color": "#e0e0e0",
-        "text-halo-color": "#1a1a1a",
-        "text-halo-width": 1
-      }
-    },
-    {
-      "id": "nah-stuetzpunkte-nah_oesterreich_clean-fill",
-      "type": "fill",
-      "source": "folder",
-      "source-layer": "nah_oesterreich_clean",
-      "filter": [
-        "match",
-        [
-          "geometry-type"
-        ],
-        [
-          "Polygon",
-          "MultiPolygon"
-        ],
-        true,
-        false
-      ],
-      "paint": {
-        "fill-color": "#3b82f6",
-        "fill-opacity": 0.2,
-        "fill-outline-color": "#333333"
-      }
-    },
-    {
-      "id": "nah-stuetzpunkte-nah_oesterreich_clean-line",
-      "type": "line",
-      "source": "folder",
-      "source-layer": "nah_oesterreich_clean",
-      "filter": [
-        "match",
-        [
-          "geometry-type"
-        ],
-        [
-          "LineString",
-          "MultiLineString",
-          "Polygon",
-          "MultiPolygon"
-        ],
-        true,
-        false
-      ],
-      "paint": {
-        "line-color": "#3b82f6",
-        "line-width": [
-          "interpolate",
-          [
-            "linear"
-          ],
-          [
-            "zoom"
-          ],
-          6,
-          1.5,
-          12,
-          3.5
-        ],
-        "line-opacity": 0.9
+        "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.5, 12, 0.9],
+        "icon-allow-overlap": true
       }
     },
     {
@@ -474,68 +82,12 @@
       "type": "symbol",
       "source": "folder",
       "source-layer": "nah_oesterreich_clean",
-      "filter": [
-        "match",
-        [
-          "geometry-type"
-        ],
-        [
-          "Point",
-          "MultiPoint"
-        ],
-        true,
-        false
-      ],
+      "filter": ["==", ["geometry-type"], "Point"],
       "layout": {
         "icon-image": "nah-pin",
-        "icon-size": [
-          "interpolate",
-          [
-            "linear"
-          ],
-          [
-            "zoom"
-          ],
-          6,
-          0.5,
-          12,
-          0.9
-        ],
-        "icon-allow-overlap": true,
-        "text-field": [
-          "coalesce",
-          [
-            "get",
-            "alt_name"
-          ],
-          [
-            "get",
-            "short_name"
-          ],
-          [
-            "get",
-            "name"
-          ],
-          ""
-        ],
-        "text-size": 11,
-        "text-font": [
-          "Segoe UI Regular",
-          "Arial Unicode MS Regular"
-        ],
-        "text-offset": [
-          0,
-          1.2
-        ],
-        "text-anchor": "top"
-      },
-      "paint": {
-        "text-color": "#e0e0e0",
-        "text-halo-color": "#1a1a1a",
-        "text-halo-width": 1
+        "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.5, 12, 0.9],
+        "icon-allow-overlap": true
       }
     }
-  ],
-  "glyphs": "https://tiles.oe5ith.at/assets/fonts/{fontstack}/{range}.pbf",
-  "sprite": "https://tiles.oe5ith.at/assets/sprites/oe5ith-markers"
+  ]
 }
