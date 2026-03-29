@@ -18,7 +18,7 @@ from urllib.parse import parse_qs, urlparse
 
 VIEWER_DIR = Path(__file__).resolve().parent / "viewer"
 DEFAULT_BUNDLE_DIR = Path(__file__).resolve().parent / "dist"
-ASSETS_DIR = Path(__file__).resolve().parent / "assets"
+REPO_ASSETS_DIR = Path(__file__).resolve().parent / "assets"
 
 
 class OverlayRequestHandler(BaseHTTPRequestHandler):
@@ -151,10 +151,15 @@ class OverlayRequestHandler(BaseHTTPRequestHandler):
         self.serve_file(bundle_path)
 
     def safe_assets_path(self, relative: str) -> Path:
-        candidate = (ASSETS_DIR / relative).resolve()
-        assets_root = ASSETS_DIR.resolve()
-        if assets_root == candidate or assets_root in candidate.parents:
-            return candidate
+        roots = [
+            (self.bundle_dir / "assets").resolve(),
+            REPO_ASSETS_DIR.resolve(),
+        ]
+        for assets_root in roots:
+            candidate = (assets_root / relative).resolve()
+            if assets_root == candidate or assets_root in candidate.parents:
+                if candidate.exists():
+                    return candidate
         raise ValueError("Ungültiger Pfad außerhalb des Assets-Verzeichnisses")
 
     def safe_bundle_path(self, relative: str) -> Path:

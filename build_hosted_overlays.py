@@ -298,6 +298,20 @@ def point_icon_for_bundle(bundle: BundleSpec) -> Any:
     return ICON_BY_FOLDER.get(bundle.slug, "fallback-pin")
 
 
+def build_pmtiles_source_url(base_url: str, pmtiles_relpath: Path) -> str:
+    rel = pmtiles_relpath.as_posix()
+    if base_url:
+        return f"pmtiles://{base_url.rstrip('/')}/{rel}"
+    return f"pmtiles://../{rel}"
+
+
+def build_public_url(base_url: str, relpath: Path) -> str:
+    rel = relpath.as_posix()
+    if base_url:
+        return f"{base_url.rstrip('/')}/{rel}"
+    return rel
+
+
 def build_style(bundle: BundleSpec, base_url: str, sprite_url: Optional[str], glyphs_url: Optional[str]) -> Dict[str, Any]:
     if bundle.slug == "zonen":
         return build_zonen_style(bundle, base_url, sprite_url, glyphs_url)
@@ -310,7 +324,7 @@ def build_style(bundle: BundleSpec, base_url: str, sprite_url: Optional[str], gl
     if template is not None:
         return rewrite_template_style(bundle, template, base_url, sprite_url, glyphs_url)
 
-    pmtiles_url = f"pmtiles://{base_url.rstrip('/')}/{bundle.pmtiles_relpath.as_posix()}"
+    pmtiles_url = build_pmtiles_source_url(base_url, bundle.pmtiles_relpath)
     style: Dict[str, Any] = {
         "version": 8,
         "name": f"OE5ITH {bundle.title} (CI)",
@@ -422,7 +436,7 @@ def add_zonen_line_layer(style_layers: List[Dict[str, Any]], base_id: str, sourc
 
 
 def build_zonen_style(bundle: BundleSpec, base_url: str, sprite_url: Optional[str], glyphs_url: Optional[str]) -> Dict[str, Any]:
-    pmtiles_url = f"pmtiles://{base_url.rstrip('/')}/{bundle.pmtiles_relpath.as_posix()}"
+    pmtiles_url = build_pmtiles_source_url(base_url, bundle.pmtiles_relpath)
     color_mapping = load_zonen_color_mapping()
     style: Dict[str, Any] = {
         "version": 8,
@@ -497,7 +511,7 @@ def build_polygon_bundle_style(
     color_by_layer: Dict[str, str],
     metadata_extra: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
-    pmtiles_url = f"pmtiles://{base_url.rstrip('/')}/{bundle.pmtiles_relpath.as_posix()}"
+    pmtiles_url = build_pmtiles_source_url(base_url, bundle.pmtiles_relpath)
     metadata: Dict[str, Any] = {
         "generator": "build_hosted_overlays.py",
         "folder": bundle.title,
@@ -629,7 +643,7 @@ def apply_zonen_post_processor(style: Dict[str, Any]) -> Dict[str, Any]:
 
 def rewrite_template_style(bundle: BundleSpec, template: Dict[str, Any], base_url: str, sprite_url: Optional[str], glyphs_url: Optional[str]) -> Dict[str, Any]:
     style = copy.deepcopy(template)
-    pmtiles_url = f"pmtiles://{base_url.rstrip('/')}/{bundle.pmtiles_relpath.as_posix()}"
+    pmtiles_url = build_pmtiles_source_url(base_url, bundle.pmtiles_relpath)
 
     style["name"] = template.get("name") or f"OE5ITH {bundle.title} (CI)"
     style.setdefault("metadata", {})["generator"] = "build_hosted_overlays.py"
@@ -664,8 +678,27 @@ def copy_directory_contents(src: Path, dst: Path) -> None:
 
 def copy_static_assets_to_dist(repo_root: Path, out_dir: Path) -> None:
     assets_root = repo_root / "assets"
-    copy_directory_contents(assets_root / "sprites", out_dir / "assets" / "sprites")
     copy_directory_contents(assets_root / "mappings", out_dir / "assets" / "mappings")
+
+
+def clean_output_dir_preserving_sprites(out_dir: Path) -> None:
+    if not out_dir.exists():
+        return
+    preserve_dir = out_dir / "assets" / "sprites"
+    for entry in out_dir.iterdir():
+        if preserve_dir.exists() and entry.resolve() == preserve_dir.resolve().parent:
+            for nested in entry.iterdir():
+                if nested.resolve() == preserve_dir.resolve():
+                    continue
+                if nested.is_dir():
+                    shutil.rmtree(nested)
+                else:
+                    nested.unlink()
+            continue
+        if entry.is_dir():
+            shutil.rmtree(entry)
+        else:
+            entry.unlink()
 
 def write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -687,16 +720,19 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Build deployable PMTiles + styles from a GeoJSON folder tree.")
     parser.add_argument("--root", default="geojson", help="GeoJSON root directory.")
     parser.add_argument("--out", default="dist", help="Output directory for hosted bundle.")
-    parser.add_argument("--base-url", default="https://tiles.oe5ith.at", help="Public base URL where the bundle will be hosted.")
-    parser.add_argument("--sprite-url", default="https://tiles.oe5ith.at/assets/sprites/oe5ith-markers", help="Sprite base URL for MapLibre styles.")
-    parser.add_argument("--glyphs-url", default="https://tiles.oe5ith.at/assets/fonts/{fontstack}/{range}.pbf", help="Glyphs URL for MapLibre styles.")
+    parser.add_argument("--base-url", default="", help="Optional public base URL where the bundle will be hosted.")
+    parser.add_argument("--sprite-url", default="../assets/sprites/oe5ith-markers/sprite", help="Sprite URL for MapLibre styles.")
+    parser.add_argument("--glyphs-url", default="../assets/fonts/{fontstack}/{range}.pbf", help="Glyphs URL for MapLibre styles.")
     parser.add_argument("--skip-pmtiles", action="store_true", help="Do not run tippecanoe, only generate manifests/styles/index.")
     parser.add_argument("--dry-run", action="store_true", help="Print tippecanoe commands without executing them.")
+    parser.add_argument("--clean", action="store_true", help="Remove output directory before rebuilding PMTiles/manifests/styles.")
     parser.add_argument("--extra", nargs=argparse.REMAINDER, default=[], help="Extra arguments passed through to tippecanoe.")
     args = parser.parse_args()
 
     root = Path(args.root).expanduser().resolve()
     out_dir = Path(args.out).expanduser().resolve()
+    if args.clean and out_dir.exists():
+        clean_output_dir_preserving_sprites(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
     copy_static_assets_to_dist(REPO_ROOT, out_dir)
@@ -729,10 +765,10 @@ def main() -> int:
         index_entries.append({
             "folder": bundle.title,
             "styleFile": bundle.style_relpath.as_posix(),
-            "styleUrl": f"{args.base_url.rstrip('/')}/{bundle.style_relpath.as_posix()}",
+            "styleUrl": build_public_url(args.base_url, bundle.style_relpath),
             "manifestFile": bundle.manifest_relpath.as_posix(),
             "pmtilesFile": bundle.pmtiles_relpath.as_posix(),
-            "pmtilesUrl": f"{args.base_url.rstrip('/')}/{bundle.pmtiles_relpath.as_posix()}",
+            "pmtilesUrl": build_public_url(args.base_url, bundle.pmtiles_relpath),
             "sourceLayerCount": len(bundle.layers),
         })
 
