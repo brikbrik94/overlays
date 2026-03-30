@@ -1,1 +1,444 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"@id": "way/51070160", "addr:city": "Salzburg", "addr:housename": "Rotes Kreuz Zentrale", "addr:housenumber": "32", "addr:postcode": "5020", "addr:street": "Sterneckstra\u00dfe", "ambulance_station:patient_transport": "yes", "brand": "\u00d6sterreichisches Rotes Kreuz", "brand:short": "\u00d6RK", "brand:wikidata": "Q168276", "brand:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "building": "yes", "construction_date": "2014-01-01;1996-01-01", "emergency": "ambulance_station", "int_name": "Red Cross Salzburg", "name": "Rotes Kreuz Bezirksstelle Salzburg Stadt Landesverband Salzburg", "operator": "\u00d6sterreichisches Rotes Kreuz", "short_name": "\u00d6RK", "website": "https://www.roteskreuz.at/salzburg"}, "geometry": {"type": "Point", "coordinates": [13.057320948256008, 47.80872873659468]}}, {"type": "Feature", "properties": {"@id": "way/82600629", "addr:city": "Abtenau", "addr:housenumber": "227", "addr:postcode": "5441", "addr:street": "Markt", "alt_name": "Rotes Kreuz \u00d6sterreich Bezirksstelle Lammertal", "ambulance_station:patient_transport": "yes", "brand": "\u00d6sterreichisches Rotes Kreuz", "brand:wikidata": "Q168276", "brand:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "building": "yes", "contact:email": "bezirksstelle.abtenau@s.roteskreuz.at", "emergency": "ambulance_station", "name": "Rotes Kreuz Bezirksstelle Abtenau", "operator": "\u00d6sterreichisches Rotes Kreuz, Landesverband Salzburg", "short_name": "\u00d6RK"}, "geometry": {"type": "Point", "coordinates": [13.3474279017769, 47.56528002549506]}}, {"type": "Feature", "properties": {"@id": "way/93089209", "addr:city": "Bad Hofgastein", "addr:country": "AT", "addr:housenumber": "1", "addr:postcode": "5630", "addr:street": "Zittrauergasse", "ambulance_station:emergency_doctor": "yes", "ambulance_station:patient_transport": "yes", "brand": "\u00d6sterreichisches Rotes Kreuz", "brand:wikidata": "Q168276", "brand:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "building": "yes", "emergency": "ambulance_station", "name": "Rotes Kreuz Bezirksstelle Gastein", "operator": "\u00d6sterreichisches Rotes Kreuz, Landesverband Salzburg", "operator:wikidata": "Q105577291", "short_name": "\u00d6RK", "website": "https://www.roteskreuz.at/salzburg/gastein/bezirksstelle-gastein"}, "geometry": {"type": "Point", "coordinates": [13.11352261838746, 47.14928637999987]}}, {"type": "Feature", "properties": {"@id": "way/99237999", "addr:city": "Sankt Johann im Pongau", "addr:country": "AT", "addr:housenumber": "17", "addr:postcode": "5600", "addr:street": "Reinbachsiedlung", "ambulance_station:patient_transport": "yes", "brand": "\u00d6sterreichisches Rotes Kreuz", "brand:wikidata": "Q168276", "brand:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "building": "yes", "construction_date": "2018-01-01;1989-01-01", "emergency": "ambulance_station", "name": "Rotes Kreuz Bezirksstelle St. Johann", "operator": "\u00d6sterreichisches Rotes Kreuz", "short_name": "\u00d6RK", "website": "https://www.roteskreuz.at/salzburg/pongau/st-johann-im-pongau"}, "geometry": {"type": "Point", "coordinates": [13.1905453, 47.341532550000004]}}, {"type": "Feature", "properties": {"@id": "way/100984307", "addr:city": "Radstadt", "addr:housenumber": "13", "addr:postcode": "5550", "addr:street": "Tauernstra\u00dfe", "ambulance_station:emergency_doctor": "yes", "ambulance_station:patient_transport": "yes", "brand": "\u00d6sterreichisches Rotes Kreuz", "brand:wikidata": "Q168276", "brand:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "building": "yes", "building:levels": "3", "construction_date": "2007-01-01", "description": "Notfall-Rettungsdienst", "email": "bezirksstelle.radstadt@s.roteskreuz.at", "emergency": "ambulance_station", "name": "Rotes Kreuz Bezirksstelle Radstadt", "operator": "\u00d6sterreichisches Rotes Kreuz, Landesverband Salzburg", "operator:wikidata": "Q105577291", "operator:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "phone": "+4364524244", "short_name": "\u00d6RK", "website": "https://www.roteskreuz.at/salzburg/radstadt/bezirksstelle-radstadt"}, "geometry": {"type": "Point", "coordinates": [13.474049327992166, 47.38214680520793]}}, {"type": "Feature", "properties": {"@id": "way/158982798", "addr:city": "Hallein", "addr:country": "AT", "addr:housenumber": "2", "addr:postcode": "5400", "addr:street": "Wiestal Landesstra\u00dfe", "alt_name": "Rotes Kreuz \u00d6sterreich Bezirksstelle Tennengau", "ambulance_station:patient_transport": "yes", "brand": "\u00d6sterreichisches Rotes Kreuz", "brand:wikidata": "Q168276", "brand:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "building": "yes", "emergency": "ambulance_station", "name": "Rotes Kreuz Bezirksstelle Hallein", "operator": "\u00d6sterreichisches Rotes Kreuz", "short_name": "\u00d6RK", "website": "https://www.roteskreuz.at/salzburg/tennengau/tennengau"}, "geometry": {"type": "Point", "coordinates": [13.102238181173556, 47.68513244180568]}}, {"type": "Feature", "properties": {"@id": "way/164106904", "addr:city": "Mattsee", "addr:country": "AT", "addr:housenumber": "15", "addr:postcode": "5163", "addr:street": "Fischinger Stra\u00dfe", "ambulance_station:patient_transport": "yes", "brand": "\u00d6sterreichisches Rotes Kreuz", "brand:wikidata": "Q168276", "brand:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "building": "yes", "emergency": "ambulance_station", "name": "Rotes Kreuz Dienststelle Mattsee", "operator": "\u00d6sterreichisches Rotes Kreuz, Landesverband Salzburg", "short_name": "\u00d6RK"}, "geometry": {"type": "Point", "coordinates": [13.099869923418142, 47.97209698130696]}}, {"type": "Feature", "properties": {"@id": "way/256422005", "addr:city": "Bischofshofen", "addr:country": "AT", "addr:housenumber": "56c", "addr:postcode": "5500", "addr:street": "Gasteiner Stra\u00dfe", "ambulance_station:patient_transport": "yes", "brand": "\u00d6sterreichisches Rotes Kreuz", "brand:wikidata": "Q168276", "brand:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "building": "yes", "construction_date": "2011-01-01;1974-01-01", "emergency": "ambulance_station", "name": "Rotes Kreuz Dienststelle Bischofshofen", "opening_hours": "24/7", "operator": "\u00d6sterreichisches Rotes Kreuz, Landesverband Salzburg", "operator:wikidata": "Q105577291", "operator:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "short_name": "\u00d6RK", "website": "https://www.roteskreuz.at/salzburg/pongau/bischofshofen"}, "geometry": {"type": "Point", "coordinates": [13.21580132108898, 47.40868697742308]}}, {"type": "Feature", "properties": {"@id": "way/289442271", "addr:city": "Hof bei Salzburg", "addr:country": "AT", "addr:housenumber": "10", "addr:place": "Baderluck", "addr:postcode": "5322", "ambulance_station:patient_transport": "yes", "at_bev:addr_date": "2017-10-01", "brand": "\u00d6sterreichisches Rotes Kreuz", "brand:wikidata": "Q168276", "brand:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "building": "yes", "emergency": "ambulance_station", "name": "Rotes Kreuz Dienststelle Hof", "operator": "\u00d6sterreichisches Rotes Kreuz, Landesverband Salzburg", "short_name": "\u00d6RK"}, "geometry": {"type": "Point", "coordinates": [13.237293719402143, 47.811323217521384]}}, {"type": "Feature", "properties": {"@id": "way/622325893", "ambulance_station:patient_transport": "yes", "brand": "\u00d6sterreichisches Rotes Kreuz", "brand:wikidata": "Q168276", "brand:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "building": "yes", "construction_date": "2018-05-01;1970-01-01", "emergency": "ambulance_station", "loc_name": "Dienststelle Stra\u00dfwalchen", "name": "Rotes Kreuz Dienststelle Stra\u00dfwalchen", "operator": "\u00d6sterreichisches Rotes Kreuz, Landesverband Salzburg", "operator:wikidata": "Q105577291", "short_name": "\u00d6RK"}, "geometry": {"type": "Point", "coordinates": [13.244665312080908, 47.97651278098057]}}, {"type": "Feature", "properties": {"@id": "way/1184279318", "addr:city": "Seekirchen am Wallersee", "addr:country": "AT", "addr:housenumber": "33", "addr:postcode": "5201", "addr:street": "M\u00fchlbachstra\u00dfe", "ambulance_station:patient_transport": "yes", "brand": "\u00d6sterreichisches Rotes Kreuz", "brand:wikidata": "Q168276", "brand:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "building": "yes", "email": "seekirchen@s.roteskreuz.at", "emergency": "ambulance_station", "name": "Rotes Kreuz Dienststelle Seekirchen-Eugendorf", "opening_hours": "Mo-Su open \"24h\"", "operator": "\u00d6sterreichisches Rotes Kreuz, Landesverband Salzburg", "phone": "+43 6212 2144", "short_name": "\u00d6RK", "website": "https://www.roteskreuz.at/salzburg/flachgau/seekirchen-eugendorf"}, "geometry": {"type": "Point", "coordinates": [13.118627008708215, 47.895858707821915]}}, {"type": "Feature", "properties": {"@id": "way/1309810048", "area": "yes", "building": "yes", "emergency": "ambulance_station"}, "geometry": {"type": "Point", "coordinates": [13.27409754221831, 47.985017632536305]}}, {"type": "Feature", "properties": {"@id": "node/920294841", "addr:city": "Strobl", "addr:housenumber": "3", "addr:postcode": "5350", "addr:street": "Alte Bundesstra\u00dfe", "ambulance_station:patient_transport": "yes", "brand": "\u00d6sterreichisches Rotes Kreuz", "brand:wikidata": "Q168276", "brand:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "construction_date": "2001-11-01;1978-01-01", "emergency": "ambulance_station", "name": "Rotes Kreuz Dienststelle Strobl", "operator": "\u00d6sterreichisches Rotes Kreuz, Landesverband Salzburg", "operator:wikidata": "Q105577291", "short_name": "\u00d6RK", "website": "https://www.roteskreuz.at/salzburg/flachgau/strobl"}, "geometry": {"type": "Point", "coordinates": [13.4956153, 47.7134079]}}, {"type": "Feature", "properties": {"@id": "node/3941676337", "addr:city": "Lamprechtshausen", "addr:country": "AT", "addr:housenumber": "1", "addr:postcode": "5112", "addr:street": "Schulstra\u00dfe", "ambulance_station:patient_transport": "yes", "brand": "\u00d6sterreichisches Rotes Kreuz", "brand:wikidata": "Q168276", "brand:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "emergency": "ambulance_station", "name": "Rotes Kreuz Dienststelle Lamprechtshausen", "operator": "\u00d6sterreichisches Rotes Kreuz, Landesverband Salzburg", "phone": "+43 6274 6626", "short_name": "\u00d6RK", "website": "https://www.roteskreuz.at/salzburg/flachgau/lamprechtshausen"}, "geometry": {"type": "Point", "coordinates": [12.9567458, 47.9925977]}}, {"type": "Feature", "properties": {"@id": "node/4200886488", "addr:city": "Golling an der Salzach", "addr:country": "AT", "addr:housenumber": "252", "addr:postcode": "5440", "addr:street": "Markt", "ambulance_station:patient_transport": "yes", "brand": "\u00d6sterreichisches Rotes Kreuz", "brand:wikidata": "Q168276", "brand:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "emergency": "ambulance_station", "name": "Rotes Kreuz Dienststelle Golling", "operator": "\u00d6sterreichisches Rotes Kreuz, Landesverband Salzburg", "short_name": "\u00d6RK", "website": "https://www.roteskreuz.at/salzburg/tennengau/golling"}, "geometry": {"type": "Point", "coordinates": [13.1670814, 47.5965881]}}, {"type": "Feature", "properties": {"@id": "node/5745981355", "addr:city": "Werfen", "addr:country": "AT", "addr:housenumber": "8", "addr:postcode": "5450", "addr:street": "Markt", "ambulance_station:patient_transport": "yes", "at_bev:addr_date": "2017-10-01", "brand": "\u00d6sterreichisches Rotes Kreuz", "brand:wikidata": "Q168276", "brand:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "emergency": "ambulance_station", "name": "Rotes Kreuz Dienststelle Werfen", "operator": "\u00d6sterreichisches Rotes Kreuz, Landesverband Salzburg", "operator:wikidata": "Q105577291", "short_name": "\u00d6RK"}, "geometry": {"type": "Point", "coordinates": [13.1869465, 47.47895]}}, {"type": "Feature", "properties": {"@id": "node/8474809442", "addr:city": "Salzburg", "addr:housenumber": "18A", "addr:postcode": "5020", "addr:street": "Michael-Walz-Gasse", "ambulance_station:patient_transport": "yes", "brand": "Arbeiter Samariterbund \u00d6sterreichs", "brand:wikidata": "Q627072", "emergency": "ambulance_station", "name": "Samariterbund Salzburg", "operator": "Arbeiter-Samariter-Bund \u00d6sterreichs", "website": "https://www.samariterbund.eu/"}, "geometry": {"type": "Point", "coordinates": [13.0101813, 47.8012831]}}, {"type": "Feature", "properties": {"@id": "node/9150227381", "addr:city": "Schwarzach im Pongau", "addr:housenumber": "10", "addr:postcode": "5620", "addr:street": "Baderstra\u00dfe", "ambulance_station:emergency_doctor": "yes", "ambulance_station:patient_transport": "yes", "brand": "\u00d6sterreichisches Rotes Kreuz", "brand:wikidata": "Q168276", "brand:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "construction_date": "2020-11-01;1984-01-01", "emergency": "ambulance_station", "name": "Rotes Kreuz Dienststelle Schwarzach", "operator": "\u00d6sterreichisches Rotes Kreuz", "operator:wikidata": "Q168276", "operator:wikipedia": "de:\u00d6sterreichisches Rotes Kreuz", "short_name": "\u00d6RK", "website": "https://www.roteskreuz.at/salzburg/pongau/schwarzach"}, "geometry": {"type": "Point", "coordinates": [13.1564359, 47.3211679]}}, {"type": "Feature", "properties": {"@id": "node/10998083085", "addr:city": "Salzburg", "addr:housenumber": "48", "addr:postcode": "5020", "addr:street": "M\u00fcllner Hauptstra\u00dfe", "ambulance_station:emergency_doctor": "yes", "brand": "\u00d6sterreichisches Rotes Kreuz", "brand:wikidata": "Q168276", "emergency": "ambulance_station", "name": "Rotes Kreuz Notarztst\u00fctzpunkt Salzburg", "operator": "\u00d6sterreichisches Rotes Kreuz Landesverband Salzburg", "short_name": "\u00d6RK", "website": "https://www.roteskreuz.at/salzburg/notfalldienst"}, "geometry": {"type": "Point", "coordinates": [13.0282134, 47.8056284]}}]}
+{
+  "type": "FeatureCollection",
+  "name": "RD-SBG",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Salzburg",
+        "addr:housenumber": "32",
+        "addr:postcode": "5020",
+        "addr:street": "Sterneckstraße",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Bezirksstelle Salzburg Stadt Landesverband Salzburg",
+        "operator": "Österreichisches Rotes Kreuz",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.057320948256008,
+          47.80872873659468
+        ]
+      },
+      "id": 1
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Abtenau",
+        "addr:housenumber": "227",
+        "addr:postcode": "5441",
+        "addr:street": "Markt",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Bezirksstelle Abtenau",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Salzburg",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3474279017769,
+          47.56528002549506
+        ]
+      },
+      "id": 2
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Bad Hofgastein",
+        "addr:housenumber": "1",
+        "addr:postcode": "5630",
+        "addr:street": "Zittrauergasse",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Bezirksstelle Gastein",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Salzburg",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.11352261838746,
+          47.14928637999987
+        ]
+      },
+      "id": 3
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Sankt Johann im Pongau",
+        "addr:housenumber": "17",
+        "addr:postcode": "5600",
+        "addr:street": "Reinbachsiedlung",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Bezirksstelle St. Johann",
+        "operator": "Österreichisches Rotes Kreuz",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.1905453,
+          47.34153255
+        ]
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Radstadt",
+        "addr:housenumber": "13",
+        "addr:postcode": "5550",
+        "addr:street": "Tauernstraße",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Bezirksstelle Radstadt",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Salzburg",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.474049327992166,
+          47.38214680520793
+        ]
+      },
+      "id": 5
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Hallein",
+        "addr:housenumber": "2",
+        "addr:postcode": "5400",
+        "addr:street": "Wiestal Landesstraße",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Bezirksstelle Hallein",
+        "operator": "Österreichisches Rotes Kreuz",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.102238181173556,
+          47.68513244180568
+        ]
+      },
+      "id": 6
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Mattsee",
+        "addr:housenumber": "15",
+        "addr:postcode": "5163",
+        "addr:street": "Fischinger Straße",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Dienststelle Mattsee",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Salzburg",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.099869923418142,
+          47.97209698130696
+        ]
+      },
+      "id": 7
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Bischofshofen",
+        "addr:housenumber": "56c",
+        "addr:postcode": "5500",
+        "addr:street": "Gasteiner Straße",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Dienststelle Bischofshofen",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Salzburg",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.21580132108898,
+          47.40868697742308
+        ]
+      },
+      "id": 8
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Hof bei Salzburg",
+        "addr:housenumber": "10",
+        "addr:postcode": "5322",
+        "addr:street": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Dienststelle Hof",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Salzburg",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.237293719402143,
+          47.811323217521384
+        ]
+      },
+      "id": 9
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": null,
+        "addr:housenumber": null,
+        "addr:postcode": null,
+        "addr:street": null,
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Dienststelle Straßwalchen",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Salzburg",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.244665312080908,
+          47.97651278098057
+        ]
+      },
+      "id": 10
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Seekirchen am Wallersee",
+        "addr:housenumber": "33",
+        "addr:postcode": "5201",
+        "addr:street": "Mühlbachstraße",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Dienststelle Seekirchen-Eugendorf",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Salzburg",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.118627008708215,
+          47.895858707821915
+        ]
+      },
+      "id": 11
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Strobl",
+        "addr:housenumber": "3",
+        "addr:postcode": "5350",
+        "addr:street": "Alte Bundesstraße",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Dienststelle Strobl",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Salzburg",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.4956153,
+          47.7134079
+        ]
+      },
+      "id": 13
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Lamprechtshausen",
+        "addr:housenumber": "1",
+        "addr:postcode": "5112",
+        "addr:street": "Schulstraße",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Dienststelle Lamprechtshausen",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Salzburg",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.9567458,
+          47.9925977
+        ]
+      },
+      "id": 14
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Golling an der Salzach",
+        "addr:housenumber": "252",
+        "addr:postcode": "5440",
+        "addr:street": "Markt",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Dienststelle Golling",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Salzburg",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.1670814,
+          47.5965881
+        ]
+      },
+      "id": 15
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Werfen",
+        "addr:housenumber": "8",
+        "addr:postcode": "5450",
+        "addr:street": "Markt",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Dienststelle Werfen",
+        "operator": "Österreichisches Rotes Kreuz, Landesverband Salzburg",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.1869465,
+          47.47895
+        ]
+      },
+      "id": 16
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Salzburg",
+        "addr:housenumber": "18A",
+        "addr:postcode": "5020",
+        "addr:street": "Michael-Walz-Gasse",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Arbeiter Samariterbund Österreichs",
+        "brand:short": "ASB",
+        "emergency": "ambulance_station",
+        "name": "Samariterbund Salzburg",
+        "operator": "Arbeiter-Samariter-Bund Österreichs",
+        "short_name": "ASB"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.0101813,
+          47.8012831
+        ]
+      },
+      "id": 17
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Schwarzach im Pongau",
+        "addr:housenumber": "10",
+        "addr:postcode": "5620",
+        "addr:street": "Baderstraße",
+        "ambulance_station:patient_transport": "yes",
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Dienststelle Schwarzach",
+        "operator": "Österreichisches Rotes Kreuz",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.1564359,
+          47.3211679
+        ]
+      },
+      "id": 18
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "addr:city": "Salzburg",
+        "addr:housenumber": "48",
+        "addr:postcode": "5020",
+        "addr:street": "Müllner Hauptstraße",
+        "ambulance_station:patient_transport": null,
+        "brand": "Österreichisches Rotes Kreuz",
+        "brand:short": "ÖRK",
+        "emergency": "ambulance_station",
+        "name": "Rotes Kreuz Notarztstützpunkt Salzburg",
+        "operator": "Österreichisches Rotes Kreuz Landesverband Salzburg",
+        "short_name": "ÖRK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.0282134,
+          47.8056284
+        ]
+      },
+      "id": 19
+    }
+  ]
+}

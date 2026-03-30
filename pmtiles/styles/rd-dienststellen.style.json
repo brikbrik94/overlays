@@ -147,10 +147,10 @@
       }
     },
     {
-      "id": "rd-dienststellen-rd_oo_nef-symbols",
+      "id": "rd-dienststellen-rd_sbg-symbols",
       "type": "symbol",
       "source": "folder",
-      "source-layer": "rd_oo_nef",
+      "source-layer": "rd_sbg",
       "filter": [
         "==",
         [
