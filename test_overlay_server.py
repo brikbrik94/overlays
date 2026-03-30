@@ -139,6 +139,9 @@ class OverlayRequestHandler(BaseHTTPRequestHandler):
                     layout["icon-image"] = ["coalesce", ["get", "pin"], "fallback-pin"]
                     layout["icon-size"] = ["interpolate", ["linear"], ["zoom"], 6, 0.35, 12, 0.65]
                     layout["icon-allow-overlap"] = True
+                    layout["icon-ignore-placement"] = True
+                    for key in ["text-field", "text-size", "text-font", "text-offset", "text-anchor", "text-optional"]:
+                        layout.pop(key, None)
             normalized_layers.append(layer)
 
         style["layers"] = normalized_layers

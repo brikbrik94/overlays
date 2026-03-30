@@ -339,6 +339,7 @@ def add_symbol_layer(style_layers: List[Dict[str, Any]], base_id: str, source_la
             "text-font": DEFAULT_FONT_STACK,
             "text-offset": [0, 1.2],
             "text-anchor": "top",
+            "text-optional": True,
         },
         "paint": {
             "text-color": TEXT,
