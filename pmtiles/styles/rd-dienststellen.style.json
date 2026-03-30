@@ -58,33 +58,8 @@
           [
             "linear"
           ],
-          "rd-brk",
           [
-            "any",
-            [
-              "in",
-              "österreichisches rotes kreuz",
-              [
-                "var",
-                "org"
-              ]
-            ],
-            [
-              "in",
-              " oerk",
-              [
-                "var",
-                "org"
-              ]
-            ],
-            [
-              "in",
-              " örk",
-              [
-                "var",
-                "org"
-              ]
-            ]
+            "zoom"
           ],
           6,
           0.35,
@@ -194,33 +169,8 @@
           [
             "linear"
           ],
-          "rd-brk",
           [
-            "any",
-            [
-              "in",
-              "österreichisches rotes kreuz",
-              [
-                "var",
-                "org"
-              ]
-            ],
-            [
-              "in",
-              " oerk",
-              [
-                "var",
-                "org"
-              ]
-            ],
-            [
-              "in",
-              " örk",
-              [
-                "var",
-                "org"
-              ]
-            ]
+            "zoom"
           ],
           6,
           0.35,
@@ -231,10 +181,10 @@
       }
     },
     {
-      "id": "rd-dienststellen-rd_stmk-symbols",
+      "id": "rd-dienststellen-rd_oo_sew-symbols",
       "type": "symbol",
       "source": "folder",
-      "source-layer": "rd_stmk",
+      "source-layer": "rd_oo_sew",
       "filter": [
         "==",
         [
