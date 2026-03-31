@@ -16,12 +16,12 @@
       "accent": "#3b82f6"
     }
   },
-  "glyphs": "https://tiles.oe5ith.at/assets/fonts/{fontstack}/{range}.pbf",
-  "sprite": "https://tiles.oe5ith.at/assets/sprites/oe5ith-markers",
+  "glyphs": "../assets/fonts/{fontstack}/{range}.pbf",
+  "sprite": "../assets/sprites/oe5ith-markers",
   "sources": {
     "folder": {
       "type": "vector",
-      "url": "pmtiles://https://tiles.oe5ith.at/pmtiles/Leitstellen-Bereiche.pmtiles",
+      "url": "pmtiles://../pmtiles/Leitstellen-Bereiche.pmtiles",
       "minzoom": 0,
       "maxzoom": 15
     }

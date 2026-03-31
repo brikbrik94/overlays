@@ -18,7 +18,7 @@ from urllib.parse import parse_qs, urlparse
 
 VIEWER_DIR = Path(__file__).resolve().parent / "viewer"
 DEFAULT_BUNDLE_DIR = Path(__file__).resolve().parent / "dist"
-ASSETS_DIR = Path(__file__).resolve().parent / "assets"
+REPO_ASSETS_DIR = Path(__file__).resolve().parent / "assets"
 
 
 class OverlayRequestHandler(BaseHTTPRequestHandler):
@@ -107,11 +107,45 @@ class OverlayRequestHandler(BaseHTTPRequestHandler):
 
         try:
             style = json.loads(style_path.read_text(encoding="utf-8"))
+            style = self.sanitize_rd_style(style, style_file)
             style = self.rewrite_style_for_local_bundle(style, style_file)
         except Exception as exc:
             return self.send_json({"error": str(exc)}, status=HTTPStatus.INTERNAL_SERVER_ERROR)
 
         self.send_json(style)
+
+    def sanitize_rd_style(self, style: Dict[str, Any], style_file: str) -> Dict[str, Any]:
+        if not style_file.endswith("rd-dienststellen.style.json"):
+            return style
+
+        layers = style.get("layers")
+        if not isinstance(layers, list):
+            return style
+
+        seen_ids = set()
+        normalized_layers = []
+        for layer in layers:
+            if not isinstance(layer, dict):
+                continue
+            layer_id = str(layer.get("id", ""))
+            if layer_id and layer_id in seen_ids:
+                continue
+            if layer_id:
+                seen_ids.add(layer_id)
+
+            if layer.get("type") == "symbol" and layer.get("source") == "folder":
+                layout = layer.setdefault("layout", {})
+                if isinstance(layout, dict):
+                    layout["icon-image"] = ["coalesce", ["get", "pin"], "fallback-pin"]
+                    layout["icon-size"] = ["interpolate", ["linear"], ["zoom"], 6, 0.35, 12, 0.65]
+                    layout["icon-allow-overlap"] = True
+                    layout["icon-ignore-placement"] = True
+                    for key in ["text-field", "text-size", "text-font", "text-offset", "text-anchor", "text-optional"]:
+                        layout.pop(key, None)
+            normalized_layers.append(layer)
+
+        style["layers"] = normalized_layers
+        return style
 
     def rewrite_style_for_local_bundle(self, style: Dict[str, Any], style_file: str) -> Dict[str, Any]:
         entries = self.read_index()
@@ -151,10 +185,15 @@ class OverlayRequestHandler(BaseHTTPRequestHandler):
         self.serve_file(bundle_path)
 
     def safe_assets_path(self, relative: str) -> Path:
-        candidate = (ASSETS_DIR / relative).resolve()
-        assets_root = ASSETS_DIR.resolve()
-        if assets_root == candidate or assets_root in candidate.parents:
-            return candidate
+        roots = [
+            (self.bundle_dir / "assets").resolve(),
+            REPO_ASSETS_DIR.resolve(),
+        ]
+        for assets_root in roots:
+            candidate = (assets_root / relative).resolve()
+            if assets_root == candidate or assets_root in candidate.parents:
+                if candidate.exists():
+                    return candidate
         raise ValueError("Ungültiger Pfad außerhalb des Assets-Verzeichnisses")
 
     def safe_bundle_path(self, relative: str) -> Path:
