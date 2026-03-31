@@ -60,7 +60,7 @@
       "source-layer": "nah_bayern",
       "filter": ["==", ["geometry-type"], "Point"],
       "layout": {
-        "icon-image": "nah-pin",
+        "icon-image": ["coalesce", ["get", "pin"], "nah-pin"],
         "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.5, 12, 0.9],
         "icon-allow-overlap": true
       }
@@ -72,7 +72,7 @@
       "source-layer": "nah_oesterreich",
       "filter": ["==", ["geometry-type"], "Point"],
       "layout": {
-        "icon-image": "nah-pin",
+        "icon-image": ["coalesce", ["get", "pin"], "nah-pin"],
         "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.5, 12, 0.9],
         "icon-allow-overlap": true
       }
@@ -84,7 +84,7 @@
       "source-layer": "nah_oesterreich_clean",
       "filter": ["==", ["geometry-type"], "Point"],
       "layout": {
-        "icon-image": "nah-pin",
+        "icon-image": ["coalesce", ["get", "pin"], "nah-pin"],
         "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.5, 12, 0.9],
         "icon-allow-overlap": true
       }
