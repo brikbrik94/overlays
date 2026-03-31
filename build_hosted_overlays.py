@@ -184,7 +184,11 @@ def build_tippecanoe_command(out_pmtiles: Path, specs: Sequence[LayerSpec], extr
     )
     if not has_zoom_config:
         cmd.extend(["-Z", "0", "-z", str(DEFAULT_MAXZOOM)])
-    if "--drop-densest-as-needed" not in extra_args and "--drop-fraction-as-needed" not in extra_args:
+    has_drop_strategy = any(
+        arg in {"--drop-densest-as-needed", "--drop-fraction-as-needed", "--no-feature-limit", "--no-tile-size-limit"}
+        for arg in extra_args
+    )
+    if not has_drop_strategy:
         cmd.append("--drop-densest-as-needed")
     cmd.extend(extra_args)
     for spec in specs:
@@ -777,7 +781,12 @@ def build_pmtiles(bundle: BundleSpec, out_dir: Path, extra_args: Sequence[str], 
                 enriched_file = temp_root / f"{spec.layer}.geojson"
                 build_rd_enriched_geojson(spec.file, enriched_file)
                 enriched_specs.append(LayerSpec(layer=spec.layer, file=enriched_file, geom_type=spec.geom_type))
-            cmd = build_tippecanoe_command(out_pmtiles, enriched_specs, extra_args)
+            rd_extra_args = list(extra_args)
+            if "--no-feature-limit" not in rd_extra_args:
+                rd_extra_args.append("--no-feature-limit")
+            if "--no-tile-size-limit" not in rd_extra_args:
+                rd_extra_args.append("--no-tile-size-limit")
+            cmd = build_tippecanoe_command(out_pmtiles, enriched_specs, rd_extra_args)
             print(f"\n=== {bundle.title} ===")
             print(f"PMTiles: {out_pmtiles}")
             print(">>", " ".join(cmd))
