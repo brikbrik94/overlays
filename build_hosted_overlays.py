@@ -20,6 +20,7 @@ import json
 import re
 import shutil
 import subprocess
+import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence
@@ -177,9 +178,17 @@ def collect_bundle_spec(root: Path, bundle_dir: Path) -> BundleSpec:
 
 def build_tippecanoe_command(out_pmtiles: Path, specs: Sequence[LayerSpec], extra_args: Sequence[str]) -> List[str]:
     cmd = ["tippecanoe", "-o", str(out_pmtiles)]
-    if "-z" not in extra_args and "-zg" not in extra_args:
-        cmd.append("-zg")
-    if "--drop-densest-as-needed" not in extra_args and "--drop-fraction-as-needed" not in extra_args:
+    has_zoom_config = any(
+        arg in {"-zg", "-z", "-Z", "--maximum-zoom", "--minimum-zoom"}
+        for arg in extra_args
+    )
+    if not has_zoom_config:
+        cmd.extend(["-Z", "0", "-z", str(DEFAULT_MAXZOOM)])
+    has_drop_strategy = any(
+        arg in {"--drop-densest-as-needed", "--drop-fraction-as-needed", "--no-feature-limit", "--no-tile-size-limit"}
+        for arg in extra_args
+    )
+    if not has_drop_strategy:
         cmd.append("--drop-densest-as-needed")
     cmd.extend(extra_args)
     for spec in specs:
@@ -200,12 +209,66 @@ def expr_truthy(prop: str) -> List[Any]:
 
 
 def build_rd_icon_expression() -> List[Any]:
-    return [
-        "case",
-        ["==", ["get", "emergency"], "mountain_rescue"], "brd-pin",
-        expr_truthy("ambulance_station:emergency_doctor"), "nef-pin",
-        "rd-pin",
-    ]
+    return ["coalesce", ["get", "pin"], "fallback-pin"]
+
+
+def truthy_value(value: Any) -> bool:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, (int, float)):
+        return value != 0
+    if isinstance(value, str):
+        return value.strip().lower() in {"1", "true", "yes", "y", "ja"}
+    return False
+
+
+def derive_rd_pin(properties: Dict[str, Any]) -> str:
+    emergency = str(properties.get("emergency", "")).strip().lower()
+    if emergency == "mountain_rescue":
+        return "brd-pin"
+
+    if emergency != "ambulance_station":
+        return "fallback-pin"
+
+    has_nef = truthy_value(properties.get("ambulance_station:emergency_doctor"))
+    has_rd = truthy_value(properties.get("ambulance_station:patient_transport"))
+    if has_nef:
+        pin_prefix = "nef"
+    elif has_rd:
+        pin_prefix = "rd"
+    else:
+        return "fallback-pin"
+
+    brand_short = str(properties.get("brand:short", "")).strip().lower()
+    suffix_by_brand_short = {
+        "brk": "brk",
+        "örk": "oerk",
+        "oerk": "oerk",
+        "asb": "asb",
+        "mhd": "mhd",
+        "juh": "juh",
+        "gk": "gk",
+        "ma70": "ma70",
+        "ims": "ims",
+        "stadler": "stadler",
+    }
+    suffix = suffix_by_brand_short.get(brand_short)
+    if not suffix:
+        return "fallback-pin"
+    return f"{pin_prefix}-{suffix}"
+
+
+def build_rd_enriched_geojson(src: Path, dst: Path) -> None:
+    payload = json.loads(src.read_text(encoding="utf-8"))
+    for feature in payload.get("features", []):
+        if not isinstance(feature, dict):
+            continue
+        props = feature.setdefault("properties", {})
+        if not isinstance(props, dict):
+            props = {}
+            feature["properties"] = props
+        props["pin"] = derive_rd_pin(props)
+    dst.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
 
 
 def add_background_layer(style_layers: List[Dict[str, Any]]) -> None:
@@ -272,13 +335,15 @@ def add_symbol_layer(style_layers: List[Dict[str, Any]], base_id: str, source_la
         "filter": geometry_filter("Point", "MultiPoint"),
         "layout": {
             "icon-image": icon_image,
-            "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.5, 12, 0.9],
+            "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.35, 12, 0.65],
             "icon-allow-overlap": True,
+            "icon-ignore-placement": True,
             "text-field": ["coalesce", ["get", "alt_name"], ["get", "short_name"], ["get", "name"], ""],
             "text-size": 11,
             "text-font": DEFAULT_FONT_STACK,
             "text-offset": [0, 1.2],
             "text-anchor": "top",
+            "text-optional": True,
         },
         "paint": {
             "text-color": TEXT,
@@ -298,6 +363,20 @@ def point_icon_for_bundle(bundle: BundleSpec) -> Any:
     return ICON_BY_FOLDER.get(bundle.slug, "fallback-pin")
 
 
+def build_pmtiles_source_url(base_url: str, pmtiles_relpath: Path) -> str:
+    rel = pmtiles_relpath.as_posix()
+    if base_url:
+        return f"pmtiles://{base_url.rstrip('/')}/{rel}"
+    return f"pmtiles://../{rel}"
+
+
+def build_public_url(base_url: str, relpath: Path) -> str:
+    rel = relpath.as_posix()
+    if base_url:
+        return f"{base_url.rstrip('/')}/{rel}"
+    return rel
+
+
 def build_style(bundle: BundleSpec, base_url: str, sprite_url: Optional[str], glyphs_url: Optional[str]) -> Dict[str, Any]:
     if bundle.slug == "zonen":
         return build_zonen_style(bundle, base_url, sprite_url, glyphs_url)
@@ -310,7 +389,7 @@ def build_style(bundle: BundleSpec, base_url: str, sprite_url: Optional[str], gl
     if template is not None:
         return rewrite_template_style(bundle, template, base_url, sprite_url, glyphs_url)
 
-    pmtiles_url = f"pmtiles://{base_url.rstrip('/')}/{bundle.pmtiles_relpath.as_posix()}"
+    pmtiles_url = build_pmtiles_source_url(base_url, bundle.pmtiles_relpath)
     style: Dict[str, Any] = {
         "version": 8,
         "name": f"OE5ITH {bundle.title} (CI)",
@@ -422,7 +501,7 @@ def add_zonen_line_layer(style_layers: List[Dict[str, Any]], base_id: str, sourc
 
 
 def build_zonen_style(bundle: BundleSpec, base_url: str, sprite_url: Optional[str], glyphs_url: Optional[str]) -> Dict[str, Any]:
-    pmtiles_url = f"pmtiles://{base_url.rstrip('/')}/{bundle.pmtiles_relpath.as_posix()}"
+    pmtiles_url = build_pmtiles_source_url(base_url, bundle.pmtiles_relpath)
     color_mapping = load_zonen_color_mapping()
     style: Dict[str, Any] = {
         "version": 8,
@@ -497,7 +576,7 @@ def build_polygon_bundle_style(
     color_by_layer: Dict[str, str],
     metadata_extra: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
-    pmtiles_url = f"pmtiles://{base_url.rstrip('/')}/{bundle.pmtiles_relpath.as_posix()}"
+    pmtiles_url = build_pmtiles_source_url(base_url, bundle.pmtiles_relpath)
     metadata: Dict[str, Any] = {
         "generator": "build_hosted_overlays.py",
         "folder": bundle.title,
@@ -629,7 +708,7 @@ def apply_zonen_post_processor(style: Dict[str, Any]) -> Dict[str, Any]:
 
 def rewrite_template_style(bundle: BundleSpec, template: Dict[str, Any], base_url: str, sprite_url: Optional[str], glyphs_url: Optional[str]) -> Dict[str, Any]:
     style = copy.deepcopy(template)
-    pmtiles_url = f"pmtiles://{base_url.rstrip('/')}/{bundle.pmtiles_relpath.as_posix()}"
+    pmtiles_url = build_pmtiles_source_url(base_url, bundle.pmtiles_relpath)
 
     style["name"] = template.get("name") or f"OE5ITH {bundle.title} (CI)"
     style.setdefault("metadata", {})["generator"] = "build_hosted_overlays.py"
@@ -664,8 +743,27 @@ def copy_directory_contents(src: Path, dst: Path) -> None:
 
 def copy_static_assets_to_dist(repo_root: Path, out_dir: Path) -> None:
     assets_root = repo_root / "assets"
-    copy_directory_contents(assets_root / "sprites", out_dir / "assets" / "sprites")
     copy_directory_contents(assets_root / "mappings", out_dir / "assets" / "mappings")
+
+
+def clean_output_dir_preserving_sprites(out_dir: Path) -> None:
+    if not out_dir.exists():
+        return
+    preserve_dir = out_dir / "assets" / "sprites"
+    for entry in out_dir.iterdir():
+        if preserve_dir.exists() and entry.resolve() == preserve_dir.resolve().parent:
+            for nested in entry.iterdir():
+                if nested.resolve() == preserve_dir.resolve():
+                    continue
+                if nested.is_dir():
+                    shutil.rmtree(nested)
+                else:
+                    nested.unlink()
+            continue
+        if entry.is_dir():
+            shutil.rmtree(entry)
+        else:
+            entry.unlink()
 
 def write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -675,6 +773,33 @@ def write_json(path: Path, payload: Any) -> None:
 def build_pmtiles(bundle: BundleSpec, out_dir: Path, extra_args: Sequence[str], dry_run: bool) -> None:
     out_pmtiles = out_dir / bundle.pmtiles_relpath
     out_pmtiles.parent.mkdir(parents=True, exist_ok=True)
+    if bundle.slug == "rd-dienststellen":
+        with tempfile.TemporaryDirectory(prefix="rd-pin-preprocess-") as temp_dir:
+            temp_root = Path(temp_dir)
+            enriched_specs: List[LayerSpec] = []
+            for spec in bundle.layers:
+                enriched_file = temp_root / f"{spec.layer}.geojson"
+                build_rd_enriched_geojson(spec.file, enriched_file)
+                enriched_specs.append(LayerSpec(layer=spec.layer, file=enriched_file, geom_type=spec.geom_type))
+            rd_extra_args = list(extra_args)
+            if "--no-feature-limit" not in rd_extra_args:
+                rd_extra_args.append("--no-feature-limit")
+            if "--no-tile-size-limit" not in rd_extra_args:
+                rd_extra_args.append("--no-tile-size-limit")
+            has_drop_rate = any(
+                arg == "-r" or arg.startswith("-r") or arg == "--drop-rate"
+                for arg in rd_extra_args
+            )
+            if not has_drop_rate:
+                rd_extra_args.extend(["-r", "1"])
+            cmd = build_tippecanoe_command(out_pmtiles, enriched_specs, rd_extra_args)
+            print(f"\n=== {bundle.title} ===")
+            print(f"PMTiles: {out_pmtiles}")
+            print(">>", " ".join(cmd))
+            if not dry_run:
+                subprocess.run(cmd, check=True)
+        return
+
     cmd = build_tippecanoe_command(out_pmtiles, bundle.layers, extra_args)
     print(f"\n=== {bundle.title} ===")
     print(f"PMTiles: {out_pmtiles}")
@@ -687,16 +812,19 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Build deployable PMTiles + styles from a GeoJSON folder tree.")
     parser.add_argument("--root", default="geojson", help="GeoJSON root directory.")
     parser.add_argument("--out", default="dist", help="Output directory for hosted bundle.")
-    parser.add_argument("--base-url", default="https://tiles.oe5ith.at", help="Public base URL where the bundle will be hosted.")
-    parser.add_argument("--sprite-url", default="https://tiles.oe5ith.at/assets/sprites/oe5ith-markers", help="Sprite base URL for MapLibre styles.")
-    parser.add_argument("--glyphs-url", default="https://tiles.oe5ith.at/assets/fonts/{fontstack}/{range}.pbf", help="Glyphs URL for MapLibre styles.")
+    parser.add_argument("--base-url", default="", help="Optional public base URL where the bundle will be hosted.")
+    parser.add_argument("--sprite-url", default="../assets/sprites/oe5ith-markers/sprite", help="Sprite URL for MapLibre styles.")
+    parser.add_argument("--glyphs-url", default="../assets/fonts/{fontstack}/{range}.pbf", help="Glyphs URL for MapLibre styles.")
     parser.add_argument("--skip-pmtiles", action="store_true", help="Do not run tippecanoe, only generate manifests/styles/index.")
     parser.add_argument("--dry-run", action="store_true", help="Print tippecanoe commands without executing them.")
+    parser.add_argument("--clean", action="store_true", help="Remove output directory before rebuilding PMTiles/manifests/styles.")
     parser.add_argument("--extra", nargs=argparse.REMAINDER, default=[], help="Extra arguments passed through to tippecanoe.")
     args = parser.parse_args()
 
     root = Path(args.root).expanduser().resolve()
     out_dir = Path(args.out).expanduser().resolve()
+    if args.clean and out_dir.exists():
+        clean_output_dir_preserving_sprites(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
     copy_static_assets_to_dist(REPO_ROOT, out_dir)
@@ -729,10 +857,10 @@ def main() -> int:
         index_entries.append({
             "folder": bundle.title,
             "styleFile": bundle.style_relpath.as_posix(),
-            "styleUrl": f"{args.base_url.rstrip('/')}/{bundle.style_relpath.as_posix()}",
+            "styleUrl": build_public_url(args.base_url, bundle.style_relpath),
             "manifestFile": bundle.manifest_relpath.as_posix(),
             "pmtilesFile": bundle.pmtiles_relpath.as_posix(),
-            "pmtilesUrl": f"{args.base_url.rstrip('/')}/{bundle.pmtiles_relpath.as_posix()}",
+            "pmtilesUrl": build_public_url(args.base_url, bundle.pmtiles_relpath),
             "sourceLayerCount": len(bundle.layers),
         })
 
