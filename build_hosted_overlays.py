@@ -786,6 +786,12 @@ def build_pmtiles(bundle: BundleSpec, out_dir: Path, extra_args: Sequence[str], 
                 rd_extra_args.append("--no-feature-limit")
             if "--no-tile-size-limit" not in rd_extra_args:
                 rd_extra_args.append("--no-tile-size-limit")
+            has_drop_rate = any(
+                arg == "-r" or arg.startswith("-r") or arg == "--drop-rate"
+                for arg in rd_extra_args
+            )
+            if not has_drop_rate:
+                rd_extra_args.extend(["-r", "1"])
             cmd = build_tippecanoe_command(out_pmtiles, enriched_specs, rd_extra_args)
             print(f"\n=== {bundle.title} ===")
             print(f"PMTiles: {out_pmtiles}")
