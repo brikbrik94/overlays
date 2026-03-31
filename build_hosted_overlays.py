@@ -234,12 +234,13 @@ def derive_rd_pin(properties: Dict[str, Any]) -> str:
     has_rd = truthy_value(properties.get("ambulance_station:patient_transport"))
     if has_nef:
         pin_prefix = "nef"
-    elif has_rd:
+    elif has_rd or emergency == "ambulance_station":
+        # Fallback für Datensätze (z.B. Teile von RD-BY), die
+        # `ambulance_station:patient_transport` nicht konsistent pflegen.
         pin_prefix = "rd"
     else:
         return "fallback-pin"
 
-    brand_short = str(properties.get("brand:short", "")).strip().lower()
     suffix_by_brand_short = {
         "brk": "brk",
         "örk": "oerk",
@@ -252,7 +253,31 @@ def derive_rd_pin(properties: Dict[str, Any]) -> str:
         "ims": "ims",
         "stadler": "stadler",
     }
+    brand_short = str(properties.get("brand:short", "")).strip().lower()
     suffix = suffix_by_brand_short.get(brand_short)
+    if not suffix:
+        provider_text = " ".join(
+            str(properties.get(key, "")).strip().lower()
+            for key in ("brand", "operator", "name", "short_name")
+        )
+        if "stadler" in provider_text:
+            suffix = "stadler"
+        elif "malteser" in provider_text:
+            suffix = "mhd"
+        elif "bayerisches rotes kreuz" in provider_text or " brk" in f" {provider_text} ":
+            suffix = "brk"
+        elif "österreichisches rotes kreuz" in provider_text or " oerk" in f" {provider_text} " or " örk" in f" {provider_text} ":
+            suffix = "oerk"
+        elif "samariter" in provider_text or " asb" in f" {provider_text} ":
+            suffix = "asb"
+        elif "johanniter" in provider_text or " juh" in f" {provider_text} ":
+            suffix = "juh"
+        elif "grünes kreuz" in provider_text or "gruenes kreuz" in provider_text or " gk" in f" {provider_text} ":
+            suffix = "gk"
+        elif "ma70" in provider_text or "berufsrettung wien" in provider_text:
+            suffix = "ma70"
+        elif " ims" in f" {provider_text} ":
+            suffix = "ims"
     if not suffix:
         return "fallback-pin"
     return f"{pin_prefix}-{suffix}"
