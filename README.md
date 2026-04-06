@@ -152,7 +152,7 @@ Die erzeugten Styles orientieren sich an der bereits vorhandenen dunklen CI-Opti
 Standardmäßig referenzieren die Styles:
 
 - Sprite: `https://tiles.oe5ith.at/assets/sprites/oe5ith-markers`
-- Glyphs: `https://tiles.oe5ith.at/assets/fonts/{fontstack}/{range}.pbf`
+- Glyphs: `https://tiles.oe5ith.at/assets/fonts/Open-Sans-Regular/{range}.pbf`
 
 Diese URLs kannst du per CLI überschreiben.
 
