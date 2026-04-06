@@ -23,7 +23,7 @@ import subprocess
 import tempfile
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional, Sequence
+from typing import Any, Dict, Iterable, List, Optional, Sequence, Set, Tuple
 
 
 ACCENT = "#3b82f6"
@@ -39,7 +39,7 @@ DEFAULT_SOURCE_ID = "folder"
 DEFAULT_FONT_STACK = ["Segoe UI Regular", "Arial Unicode MS Regular"]
 SYMBOL_FOLDERS = {"rd-dienststellen", "nah-stuetzpunkte"}
 ICON_BY_FOLDER = {
-    "nah-stuetzpunkte": "nah-pin",
+    "nah-stuetzpunkte": "fallback-pin",
 }
 ZONEN_FALLBACK_COLOR = "#6b7280"
 ANFAHRTSZEIT_COLOR_RAMP = ["#22c55e", "#84cc16", "#eab308", "#f59e0b", "#f97316", "#dc2626"]
@@ -51,6 +51,7 @@ class LayerSpec:
     layer: str
     file: Path
     geom_type: str
+    geom_types: Tuple[str, ...]
 
 
 @dataclass(frozen=True)
@@ -92,36 +93,104 @@ def sanitize_layer_name(value: str) -> str:
     return value or "layer"
 
 
-def detect_geom_type_from_geojson(path: Path) -> str:
-    data = json.loads(path.read_text(encoding="utf-8"))
+def normalize_geom_type(value: str) -> Optional[str]:
+    value = str(value).strip().lower()
+    if value in {"point", "multipoint"}:
+        return "point"
+    if value in {"linestring", "multilinestring"}:
+        return "line"
+    if value in {"polygon", "multipolygon"}:
+        return "polygon"
+    return None
 
-    def classify(kind: str) -> Optional[str]:
-        if kind in {"Point", "MultiPoint"}:
-            return "point"
-        if kind in {"LineString", "MultiLineString"}:
-            return "line"
-        if kind in {"Polygon", "MultiPolygon"}:
-            return "polygon"
-        return None
+
+def detect_geom_types_from_geojson(path: Path) -> Tuple[str, ...]:
+    data = json.loads(path.read_text(encoding="utf-8"))
+    detected: Set[str] = set()
 
     data_type = data.get("type")
     if data_type == "FeatureCollection":
         for feature in data.get("features") or []:
             geom = (feature or {}).get("geometry") or {}
-            detected = classify(geom.get("type", ""))
-            if detected:
-                return detected
+            mapped = normalize_geom_type(str(geom.get("type", "")))
+            if mapped:
+                detected.add(mapped)
     elif data_type == "Feature":
         geom = data.get("geometry") or {}
-        detected = classify(geom.get("type", ""))
-        if detected:
-            return detected
+        mapped = normalize_geom_type(str(geom.get("type", "")))
+        if mapped:
+            detected.add(mapped)
     elif isinstance(data_type, str):
-        detected = classify(data_type)
-        if detected:
-            return detected
+        mapped = normalize_geom_type(data_type)
+        if mapped:
+            detected.add(mapped)
 
+    if not detected:
+        return ("unknown",)
+    return tuple(sorted(detected))
+
+
+def detect_geom_type_from_geojson(path: Path) -> str:
+    geom_types = detect_geom_types_from_geojson(path)
+    if "point" in geom_types:
+        return "point"
+    if "line" in geom_types:
+        return "line"
+    if "polygon" in geom_types:
+        return "polygon"
     return "unknown"
+
+
+def load_geometry_manifest(root: Path) -> Dict[str, Tuple[str, ...]]:
+    manifest_path = root / "manifest.json"
+    if not manifest_path.exists():
+        return {}
+    payload = json.loads(manifest_path.read_text(encoding="utf-8"))
+    mapping: Dict[str, Tuple[str, ...]] = {}
+
+    def extract_geom_types(item: Dict[str, Any]) -> Tuple[str, ...]:
+        candidates = (
+            item.get("geometry_types"),
+            item.get("geom_types"),
+            item.get("types"),
+            item.get("geometries"),
+            item.get("geometry"),
+        )
+        found: Set[str] = set()
+        for candidate in candidates:
+            values: List[Any]
+            if isinstance(candidate, list):
+                values = candidate
+            elif isinstance(candidate, str):
+                values = [candidate]
+            else:
+                continue
+            for value in values:
+                normalized = normalize_geom_type(str(value))
+                if normalized:
+                    found.add(normalized)
+        return tuple(sorted(found))
+
+    def register(path_value: str, geom_types: Tuple[str, ...]) -> None:
+        rel = Path(path_value).as_posix().lstrip("./")
+        if rel.lower().endswith(".geojson") and geom_types:
+            mapping[rel] = geom_types
+
+    if isinstance(payload, dict):
+        if "files" in payload and isinstance(payload["files"], list):
+            for item in payload["files"]:
+                if not isinstance(item, dict):
+                    continue
+                path_value = item.get("path") or item.get("file") or item.get("name")
+                if not isinstance(path_value, str):
+                    continue
+                register(path_value, extract_geom_types(item))
+        else:
+            for path_value, item in payload.items():
+                if not isinstance(path_value, str) or not isinstance(item, dict):
+                    continue
+                register(path_value, extract_geom_types(item))
+    return mapping
 
 
 def discover_bundle_dirs(root: Path) -> List[Path]:
@@ -141,19 +210,30 @@ def ensure_unique_layers(layer_specs: Iterable[LayerSpec]) -> List[LayerSpec]:
         if count == 1:
             unique.append(item)
         else:
-            unique.append(LayerSpec(layer=f"{item.layer}_{count}", file=item.file, geom_type=item.geom_type))
+            unique.append(
+                LayerSpec(
+                    layer=f"{item.layer}_{count}",
+                    file=item.file,
+                    geom_type=item.geom_type,
+                    geom_types=item.geom_types,
+                )
+            )
     return unique
 
 
-def collect_bundle_spec(root: Path, bundle_dir: Path) -> BundleSpec:
+def collect_bundle_spec(root: Path, bundle_dir: Path, geometry_manifest: Optional[Dict[str, Tuple[str, ...]]] = None) -> BundleSpec:
     relative_dir = bundle_dir.relative_to(root)
+    geometry_manifest = geometry_manifest or {}
     layer_specs = []
     for geojson_file in sorted(bundle_dir.glob("*.geojson")):
+        rel_file = geojson_file.relative_to(root).as_posix()
+        geom_types = geometry_manifest.get(rel_file) or detect_geom_types_from_geojson(geojson_file)
         layer_specs.append(
             LayerSpec(
                 layer=sanitize_layer_name(geojson_file.stem),
                 file=geojson_file.resolve(),
-                geom_type=detect_geom_type_from_geojson(geojson_file),
+                geom_type=geom_types[0] if geom_types else "unknown",
+                geom_types=geom_types,
             )
         )
     layers = ensure_unique_layers(layer_specs)
@@ -188,8 +268,10 @@ def build_tippecanoe_command(out_pmtiles: Path, specs: Sequence[LayerSpec], extr
         arg in {"--drop-densest-as-needed", "--drop-fraction-as-needed", "--no-feature-limit", "--no-tile-size-limit"}
         for arg in extra_args
     )
+    has_unlimited_tiles = "--no-feature-limit" in extra_args and "--no-tile-size-limit" in extra_args
     if not has_drop_strategy:
-        cmd.append("--drop-densest-as-needed")
+        if not has_unlimited_tiles:
+            cmd.append("--drop-densest-as-needed")
     cmd.extend(extra_args)
     for spec in specs:
         cmd.extend(["-L", f"{spec.layer}:{spec.file}"])
@@ -209,6 +291,10 @@ def expr_truthy(prop: str) -> List[Any]:
 
 
 def build_rd_icon_expression() -> List[Any]:
+    return ["coalesce", ["get", "pin"], "fallback-pin"]
+
+
+def build_nah_icon_expression() -> List[Any]:
     return ["coalesce", ["get", "pin"], "fallback-pin"]
 
 
@@ -296,6 +382,53 @@ def build_rd_enriched_geojson(src: Path, dst: Path) -> None:
     dst.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
 
 
+def derive_nah_pin(properties: Dict[str, Any]) -> str:
+    emergency = str(properties.get("emergency", "")).strip().lower()
+    if emergency != "air_rescue_service":
+        return "fallback-pin"
+
+    provider_text = " ".join(
+        str(properties.get(key, "")).strip().lower()
+        for key in ("brand", "operator", "name", "short_name", "description", "alt_name")
+    )
+    provider_text = (
+        provider_text.replace("ö", "oe")
+        .replace("ä", "ae")
+        .replace("ü", "ue")
+        .replace("ß", "ss")
+    )
+
+    mapping_rules = [
+        ("nah-adac-luftrettung", (" adac ", "adac luftrettung")),
+        ("nah-drf-luftrettung", (" drf ", "drf luftrettung")),
+        ("nah-oeamtc-flugrettung", ("oeamtc", "christophorus flugrettungsverein")),
+        ("nah-martin-flugrettung", ("martin flugrettung", "heli austria")),
+        ("nah-schenk-air", ("schenkair", "schenk air")),
+        ("nah-ara-flugrettung", ("ara luftrettung",)),
+        ("nah-wucher-helicopter", ("wucher",)),
+        ("nah-shs-schider-helicopter-service", ("schider helicopter service", "shs")),
+        ("nah-bundesministerium-des-inneren", ("bundesministerium des inneren", "polizei", "libelle")),
+    ]
+    text = f" {provider_text} "
+    for pin, needles in mapping_rules:
+        if any(needle in text for needle in needles):
+            return pin
+    return "fallback-pin"
+
+
+def build_nah_enriched_geojson(src: Path, dst: Path) -> None:
+    payload = json.loads(src.read_text(encoding="utf-8"))
+    for feature in payload.get("features", []):
+        if not isinstance(feature, dict):
+            continue
+        props = feature.setdefault("properties", {})
+        if not isinstance(props, dict):
+            props = {}
+            feature["properties"] = props
+        props["pin"] = derive_nah_pin(props)
+    dst.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+
+
 def add_background_layer(style_layers: List[Dict[str, Any]]) -> None:
     style_layers.append({
         "id": "background",
@@ -361,6 +494,7 @@ def add_symbol_layer(style_layers: List[Dict[str, Any]], base_id: str, source_la
         "layout": {
             "icon-image": icon_image,
             "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.35, 12, 0.65],
+            "icon-anchor": "bottom",
             "icon-allow-overlap": True,
             "icon-ignore-placement": True,
             "text-field": ["coalesce", ["get", "alt_name"], ["get", "short_name"], ["get", "name"], ""],
@@ -385,7 +519,55 @@ def should_use_symbol_points(bundle: BundleSpec) -> bool:
 def point_icon_for_bundle(bundle: BundleSpec) -> Any:
     if bundle.slug == "rd-dienststellen":
         return build_rd_icon_expression()
+    if bundle.slug == "nah-stuetzpunkte":
+        return build_nah_icon_expression()
     return ICON_BY_FOLDER.get(bundle.slug, "fallback-pin")
+
+
+def layer_has_geom_type(layer: LayerSpec, geom_type: str) -> bool:
+    return geom_type in set(layer.geom_types)
+
+
+def build_nah_style(bundle: BundleSpec, base_url: str, sprite_url: Optional[str], glyphs_url: Optional[str]) -> Dict[str, Any]:
+    pmtiles_url = build_pmtiles_source_url(base_url, bundle.pmtiles_relpath)
+    style: Dict[str, Any] = {
+        "version": 8,
+        "name": f"OE5ITH {bundle.title} (CI)",
+        "metadata": {
+            "generator": "build_hosted_overlays.py",
+            "folder": bundle.title,
+            "sourceLayers": [layer.layer for layer in bundle.layers],
+            "styleStrategy": "nah-manifest-aware",
+        },
+        "sources": {
+            DEFAULT_SOURCE_ID: {
+                "type": "vector",
+                "url": pmtiles_url,
+                "minzoom": 0,
+                "maxzoom": DEFAULT_MAXZOOM,
+            }
+        },
+        "layers": [],
+    }
+    if glyphs_url:
+        style["glyphs"] = glyphs_url
+    if sprite_url:
+        style["sprite"] = sprite_url
+
+    layers = style["layers"]
+    add_background_layer(layers)
+    point_icon = build_nah_icon_expression()
+
+    for spec in bundle.layers:
+        base_id = f"{bundle.slug}-{spec.layer}"
+        if layer_has_geom_type(spec, "polygon"):
+            add_fill_layer(layers, base_id, spec.layer)
+            add_line_layer(layers, base_id, spec.layer)
+        elif layer_has_geom_type(spec, "line"):
+            add_line_layer(layers, base_id, spec.layer)
+        if layer_has_geom_type(spec, "point"):
+            add_symbol_layer(layers, base_id, spec.layer, point_icon)
+    return style
 
 
 def build_pmtiles_source_url(base_url: str, pmtiles_relpath: Path) -> str:
@@ -409,6 +591,8 @@ def build_style(bundle: BundleSpec, base_url: str, sprite_url: Optional[str], gl
         return build_anfahrtszeit_style(bundle, base_url, sprite_url, glyphs_url)
     if bundle.slug == "leitstellen-bereiche":
         return build_leitstellen_bereiche_style(bundle, base_url, sprite_url, glyphs_url)
+    if bundle.slug == "nah-stuetzpunkte":
+        return build_nah_style(bundle, base_url, sprite_url, glyphs_url)
 
     template = load_template_style(bundle)
     if template is not None:
@@ -805,7 +989,9 @@ def build_pmtiles(bundle: BundleSpec, out_dir: Path, extra_args: Sequence[str], 
             for spec in bundle.layers:
                 enriched_file = temp_root / f"{spec.layer}.geojson"
                 build_rd_enriched_geojson(spec.file, enriched_file)
-                enriched_specs.append(LayerSpec(layer=spec.layer, file=enriched_file, geom_type=spec.geom_type))
+                enriched_specs.append(
+                    LayerSpec(layer=spec.layer, file=enriched_file, geom_type=spec.geom_type, geom_types=spec.geom_types)
+                )
             rd_extra_args = list(extra_args)
             if "--no-feature-limit" not in rd_extra_args:
                 rd_extra_args.append("--no-feature-limit")
@@ -818,6 +1004,41 @@ def build_pmtiles(bundle: BundleSpec, out_dir: Path, extra_args: Sequence[str], 
             if not has_drop_rate:
                 rd_extra_args.extend(["-r", "1"])
             cmd = build_tippecanoe_command(out_pmtiles, enriched_specs, rd_extra_args)
+            print(f"\n=== {bundle.title} ===")
+            print(f"PMTiles: {out_pmtiles}")
+            print(">>", " ".join(cmd))
+            if not dry_run:
+                subprocess.run(cmd, check=True)
+        return
+
+    if bundle.slug == "nah-stuetzpunkte":
+        with tempfile.TemporaryDirectory(prefix="nah-pin-preprocess-") as temp_dir:
+            temp_root = Path(temp_dir)
+            enriched_specs: List[LayerSpec] = []
+            for spec in bundle.layers:
+                enriched_file = temp_root / f"{spec.layer}.geojson"
+                build_nah_enriched_geojson(spec.file, enriched_file)
+                enriched_specs.append(
+                    LayerSpec(layer=spec.layer, file=enriched_file, geom_type=spec.geom_type, geom_types=spec.geom_types)
+                )
+            nah_extra_args = list(extra_args)
+            if "--no-feature-limit" not in nah_extra_args:
+                nah_extra_args.append("--no-feature-limit")
+            if "--no-tile-size-limit" not in nah_extra_args:
+                nah_extra_args.append("--no-tile-size-limit")
+            if "--no-line-simplification" not in nah_extra_args:
+                nah_extra_args.append("--no-line-simplification")
+            if "--no-tiny-polygon-reduction" not in nah_extra_args:
+                nah_extra_args.append("--no-tiny-polygon-reduction")
+            if "--no-tiny-polygon-simplification" not in nah_extra_args:
+                nah_extra_args.append("--no-tiny-polygon-simplification")
+            has_drop_rate = any(
+                arg == "-r" or arg.startswith("-r") or arg == "--drop-rate"
+                for arg in nah_extra_args
+            )
+            if not has_drop_rate:
+                nah_extra_args.extend(["-r", "1"])
+            cmd = build_tippecanoe_command(out_pmtiles, enriched_specs, nah_extra_args)
             print(f"\n=== {bundle.title} ===")
             print(f"PMTiles: {out_pmtiles}")
             print(">>", " ".join(cmd))
@@ -839,7 +1060,11 @@ def main() -> int:
     parser.add_argument("--out", default="dist", help="Output directory for hosted bundle.")
     parser.add_argument("--base-url", default="", help="Optional public base URL where the bundle will be hosted.")
     parser.add_argument("--sprite-url", default="../assets/sprites/oe5ith-markers/sprite", help="Sprite URL for MapLibre styles.")
-    parser.add_argument("--glyphs-url", default="../assets/fonts/{fontstack}/{range}.pbf", help="Glyphs URL for MapLibre styles.")
+    parser.add_argument(
+        "--glyphs-url",
+        default="https://tiles.oe5ith.at/assets/fonts/{fontstack}/{range}.pbf",
+        help="Glyphs URL for MapLibre styles.",
+    )
     parser.add_argument("--skip-pmtiles", action="store_true", help="Do not run tippecanoe, only generate manifests/styles/index.")
     parser.add_argument("--dry-run", action="store_true", help="Print tippecanoe commands without executing them.")
     parser.add_argument("--clean", action="store_true", help="Remove output directory before rebuilding PMTiles/manifests/styles.")
@@ -858,7 +1083,8 @@ def main() -> int:
     if not bundle_dirs:
         raise SystemExit(f"Keine GeoJSON-Dateien unter {root} gefunden.")
 
-    bundles = [collect_bundle_spec(root, bundle_dir) for bundle_dir in bundle_dirs]
+    geometry_manifest = load_geometry_manifest(root)
+    bundles = [collect_bundle_spec(root, bundle_dir, geometry_manifest) for bundle_dir in bundle_dirs]
 
     if not args.skip_pmtiles and not args.dry_run and shutil.which("tippecanoe") is None:
         raise SystemExit("tippecanoe nicht gefunden. Nutze --skip-pmtiles oder installiere tippecanoe.")
@@ -869,7 +1095,15 @@ def main() -> int:
             "root": str(root),
             "folder": bundle.title,
             "pmtiles": str(out_dir / bundle.pmtiles_relpath),
-            "layers": [{"layer": layer.layer, "file": str(layer.file), "geom_type": layer.geom_type} for layer in bundle.layers],
+            "layers": [
+                {
+                    "layer": layer.layer,
+                    "file": str(layer.file),
+                    "geom_type": layer.geom_type,
+                    "geom_types": list(layer.geom_types),
+                }
+                for layer in bundle.layers
+            ],
         }
         write_json(out_dir / bundle.manifest_relpath, manifest_payload)
 
