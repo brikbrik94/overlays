@@ -110,10 +110,10 @@ def expr_truthy(prop: str) -> list:
 
 
 def build_icon_case_expression(sprite_ids: Dict[str, str]) -> list:
-    nef = sprite_ids.get("nef", "nef-pin")
-    nah = sprite_ids.get("nah", "nah-pin")
+    nef = sprite_ids.get("nef", "fallback-pin")
+    nah = sprite_ids.get("nah", "fallback-pin")
     brd = sprite_ids.get("brd", "brd-pin")
-    rd  = sprite_ids.get("rd",  "rd-pin")
+    rd  = sprite_ids.get("rd",  "fallback-pin")
     fb  = sprite_ids.get("fallback", "fallback-pin")
 
     return [
@@ -226,6 +226,7 @@ def add_points(style_layers: list, src: str, base_id: str, src_layer: str,
             "layout": {
                 "icon-image": icon_expr,
                 "icon-size": 1.0,
+                "icon-anchor": "bottom",
                 "icon-allow-overlap": True
             }
         })
@@ -348,9 +349,9 @@ def main() -> int:
             palette = {str(k): v for k, v in pj.items()}
 
     icon_expr = build_icon_case_expression({
-        "rd": "rd-pin",
-        "nef": "nef-pin",
-        "nah": "nah-pin",
+        "rd": "fallback-pin",
+        "nef": "fallback-pin",
+        "nah": "fallback-pin",
         "brd": "brd-pin",
         "fallback": "fallback-pin"
     })

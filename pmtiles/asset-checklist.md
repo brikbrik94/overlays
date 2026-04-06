@@ -7,7 +7,7 @@ Die unten genannten Pfade/URLs sind daher als Zielstruktur bzw. Referenz zu vers
 
 Fehlend im aktuellen Stand sind insbesondere:
 
-- einzelne Marker-SVGs (z. B. `rd-pin`, `nah-pin`, `nef-pin`, `brd-pin`, `fallback-pin`)
+- einzelne Marker-SVGs (z. B. provider-spezifische `rd-*`, `nef-*`, `nah-*`, plus `brd-pin` und `fallback-pin`)
 - ein fertiger Sprite-Atlas (`.png`, `@2x.png`, `.json`)
 - Glyph-PBF-Dateien für Textlabels
 - ein lokaler Ablageort im Repo war bisher nicht vorhanden; dieser liegt jetzt unter `assets/fonts/`
@@ -35,9 +35,6 @@ Damit die erzeugten Styles direkt von `tiles.oe5ith.at` geladen werden können, 
 
 Statt pro Kategorie getrennte SVG-Logik zu fahren, ein einheitlicher MapLibre-Sprite-Atlas mit klaren IDs:
 
-- `rd-pin`
-- `nah-pin`
-- `nef-pin`
 - `brd-pin`
 - `fallback-pin`
 

@@ -18,6 +18,7 @@ entstehen, damit du das Bundle direkt auf einem Server wie `tiles.oe5ith.at` aus
 Der neue Haupt-Workflow für den produktiven Export.
 
 Er scannt das GeoJSON-Root rekursiv und behandelt **jeden Ordner, der direkt `.geojson`-Dateien enthält**, als eigenes Overlay-Bundle.
+Wenn im GeoJSON-Root eine `manifest.json` liegt (z. B. im externen Daten-Repo), werden dort hinterlegte Geometrietypen beim Layer-Mapping bevorzugt verwendet.
 
 Beispiele aus diesem Repo:
 
@@ -75,6 +76,46 @@ Low-Level-Helfer, falls du gezielt aus vielen GeoJSON-Dateien eine oder mehrere 
 Spezial-Generator für Manifest-basierte Styles mit `linien.json` / `color_mapping.json`.
 Das Skript bleibt im Repo, ist aber **nicht mehr der einfachste Hauptweg** für dein aktuelles Hosting-Ziel.
 
+### 4) `scripts/init_external_geojson_repo.sh`
+
+Hilfsskript zum einmaligen Klonen (oder optionalen Refresh) eines externen GeoJSON-Repos.
+
+Standard-Quelle:
+
+- `git@github.com:brikbrik94/geojson.git`
+
+Standard-Ziel:
+
+- `external/geojson-data`
+
+Beispiel:
+
+```bash
+./init.sh --refresh
+```
+
+Kurz-Wrapper im Repo-Root:
+
+- `init.sh` → ruft intern `scripts/init_external_geojson_repo.sh` auf
+
+### 5) `scripts/run_overlay_build.sh`
+
+Interaktiver Wrapper für den Build-Prozess. Das Skript fragt:
+
+- welche Datenquelle verwendet werden soll (`local`, `external`, `custom`)
+- ob ein `--clean` Build laufen soll
+- ob Sprites vorher neu gebaut werden sollen
+
+Beispiel:
+
+```bash
+./run.sh
+```
+
+Kurz-Wrapper im Repo-Root:
+
+- `run.sh` → ruft intern `scripts/run_overlay_build.sh` auf
+
 ## Zielstruktur im Output
 
 Nach einem Lauf mit `--out dist` sieht die Struktur sinngemäß so aus:
@@ -111,7 +152,7 @@ Die erzeugten Styles orientieren sich an der bereits vorhandenen dunklen CI-Opti
 Standardmäßig referenzieren die Styles:
 
 - Sprite: `https://tiles.oe5ith.at/assets/sprites/oe5ith-markers`
-- Glyphs: `https://tiles.oe5ith.at/assets/fonts/{fontstack}/{range}.pbf`
+- Glyphs: `https://tiles.oe5ith.at/assets/fonts/Open-Sans-Regular/{range}.pbf`
 
 Diese URLs kannst du per CLI überschreiben.
 
