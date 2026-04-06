@@ -115,14 +115,16 @@ for group in rd nef nah brd fallback; do
   if [[ -d "$PNG_DIR/$group" ]]; then
     find "$PNG_DIR/$group" -maxdepth 1 -type f -name '*.png' | while read -r icon; do
       base="$(basename "$icon" .png)"
+      if [[ ( "$group" == "brd" || "$group" == "fallback" ) && "$base" == "$group" ]]; then
+        # In diesen Gruppen ist `<group>-pin` der einzige benötigte Key.
+        # Das zusätzliche `<group>-<group>` wäre rein redundant.
+        continue
+      fi
       cp "$icon" "$COMBINED_DIR/${group}-${base}.png"
     done
   fi
 done
 
-copy_icon_alias "$PNG_DIR/rd" "oerk.png" "rd-pin.png" "$COMBINED_DIR"
-copy_icon_alias "$PNG_DIR/nef" "oerk.png" "nef-pin.png" "$COMBINED_DIR"
-copy_icon_alias "$PNG_DIR/nah" "adac-luftrettung.png" "nah-pin.png" "$COMBINED_DIR"
 copy_icon_alias "$PNG_DIR/brd" "brd.png" "brd-pin.png" "$COMBINED_DIR"
 copy_icon_alias "$PNG_DIR/fallback" "fallback.png" "fallback-pin.png" "$COMBINED_DIR"
 
