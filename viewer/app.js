@@ -10,7 +10,7 @@ function setStatus(message, extra) {
 const protocol = new pmtiles.Protocol();
 maplibregl.addProtocol('pmtiles', protocol.tile);
 
-const DEFAULT_GLYPHS = '/assets/fonts/{fontstack}/{range}.pbf';
+const DEFAULT_GLYPHS = 'https://tiles.oe5ith.at/assets/fonts/Open-Sans-Regular/{range}.pbf';
 const BASE_OSM_SOURCE = {
   type: 'raster',
   tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
@@ -70,9 +70,9 @@ async function debugSpriteAvailability(style, styleFile) {
 
   const spriteJsonUrl = resolveSpriteJsonUrl(style.sprite);
   const requiredIcons = styleFile.includes('rd-dienststellen')
-    ? ['rd-pin', 'nef-pin', 'brd-pin']
+    ? ['brd-pin', 'fallback-pin']
     : styleFile.includes('nah-stuetzpunkte')
-      ? ['nah-pin']
+      ? ['fallback-pin']
       : [];
 
   try {
