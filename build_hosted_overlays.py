@@ -39,7 +39,7 @@ DEFAULT_SOURCE_ID = "folder"
 DEFAULT_FONT_STACK = ["Segoe UI Regular", "Arial Unicode MS Regular"]
 SYMBOL_FOLDERS = {"rd-dienststellen", "nah-stuetzpunkte"}
 ICON_BY_FOLDER = {
-    "nah-stuetzpunkte": "nah-pin",
+    "nah-stuetzpunkte": "fallback-pin",
 }
 ZONEN_FALLBACK_COLOR = "#6b7280"
 ANFAHRTSZEIT_COLOR_RAMP = ["#22c55e", "#84cc16", "#eab308", "#f59e0b", "#f97316", "#dc2626"]
@@ -212,6 +212,10 @@ def build_rd_icon_expression() -> List[Any]:
     return ["coalesce", ["get", "pin"], "fallback-pin"]
 
 
+def build_nah_icon_expression() -> List[Any]:
+    return ["coalesce", ["get", "pin"], "fallback-pin"]
+
+
 def truthy_value(value: Any) -> bool:
     if isinstance(value, bool):
         return value
@@ -293,6 +297,53 @@ def build_rd_enriched_geojson(src: Path, dst: Path) -> None:
             props = {}
             feature["properties"] = props
         props["pin"] = derive_rd_pin(props)
+    dst.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+
+
+def derive_nah_pin(properties: Dict[str, Any]) -> str:
+    emergency = str(properties.get("emergency", "")).strip().lower()
+    if emergency != "air_rescue_service":
+        return "fallback-pin"
+
+    provider_text = " ".join(
+        str(properties.get(key, "")).strip().lower()
+        for key in ("brand", "operator", "name", "short_name", "description", "alt_name")
+    )
+    provider_text = (
+        provider_text.replace("ö", "oe")
+        .replace("ä", "ae")
+        .replace("ü", "ue")
+        .replace("ß", "ss")
+    )
+
+    mapping_rules = [
+        ("nah-adac-luftrettung", (" adac ", "adac luftrettung")),
+        ("nah-drf-luftrettung", (" drf ", "drf luftrettung")),
+        ("nah-oeamtc-flugrettung", ("oeamtc", "christophorus flugrettungsverein")),
+        ("nah-martin-flugrettung", ("martin flugrettung", "heli austria")),
+        ("nah-schenk-air", ("schenkair", "schenk air")),
+        ("nah-ara-flugrettung", ("ara luftrettung",)),
+        ("nah-wucher-helicopter", ("wucher",)),
+        ("nah-shs-schider-helicopter-service", ("schider helicopter service", "shs")),
+        ("nah-bundesministerium-des-inneren", ("bundesministerium des inneren", "polizei", "libelle")),
+    ]
+    text = f" {provider_text} "
+    for pin, needles in mapping_rules:
+        if any(needle in text for needle in needles):
+            return pin
+    return "fallback-pin"
+
+
+def build_nah_enriched_geojson(src: Path, dst: Path) -> None:
+    payload = json.loads(src.read_text(encoding="utf-8"))
+    for feature in payload.get("features", []):
+        if not isinstance(feature, dict):
+            continue
+        props = feature.setdefault("properties", {})
+        if not isinstance(props, dict):
+            props = {}
+            feature["properties"] = props
+        props["pin"] = derive_nah_pin(props)
     dst.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
 
 
@@ -385,6 +436,8 @@ def should_use_symbol_points(bundle: BundleSpec) -> bool:
 def point_icon_for_bundle(bundle: BundleSpec) -> Any:
     if bundle.slug == "rd-dienststellen":
         return build_rd_icon_expression()
+    if bundle.slug == "nah-stuetzpunkte":
+        return build_nah_icon_expression()
     return ICON_BY_FOLDER.get(bundle.slug, "fallback-pin")
 
 
@@ -818,6 +871,33 @@ def build_pmtiles(bundle: BundleSpec, out_dir: Path, extra_args: Sequence[str], 
             if not has_drop_rate:
                 rd_extra_args.extend(["-r", "1"])
             cmd = build_tippecanoe_command(out_pmtiles, enriched_specs, rd_extra_args)
+            print(f"\n=== {bundle.title} ===")
+            print(f"PMTiles: {out_pmtiles}")
+            print(">>", " ".join(cmd))
+            if not dry_run:
+                subprocess.run(cmd, check=True)
+        return
+
+    if bundle.slug == "nah-stuetzpunkte":
+        with tempfile.TemporaryDirectory(prefix="nah-pin-preprocess-") as temp_dir:
+            temp_root = Path(temp_dir)
+            enriched_specs: List[LayerSpec] = []
+            for spec in bundle.layers:
+                enriched_file = temp_root / f"{spec.layer}.geojson"
+                build_nah_enriched_geojson(spec.file, enriched_file)
+                enriched_specs.append(LayerSpec(layer=spec.layer, file=enriched_file, geom_type=spec.geom_type))
+            nah_extra_args = list(extra_args)
+            if "--no-feature-limit" not in nah_extra_args:
+                nah_extra_args.append("--no-feature-limit")
+            if "--no-tile-size-limit" not in nah_extra_args:
+                nah_extra_args.append("--no-tile-size-limit")
+            has_drop_rate = any(
+                arg == "-r" or arg.startswith("-r") or arg == "--drop-rate"
+                for arg in nah_extra_args
+            )
+            if not has_drop_rate:
+                nah_extra_args.extend(["-r", "1"])
+            cmd = build_tippecanoe_command(out_pmtiles, enriched_specs, nah_extra_args)
             print(f"\n=== {bundle.title} ===")
             print(f"PMTiles: {out_pmtiles}")
             print(">>", " ".join(cmd))
