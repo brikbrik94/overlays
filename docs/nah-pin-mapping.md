@@ -11,7 +11,7 @@ Beim Build wird jede NAH-GeoJSON-Datei vor Tippecanoe angereichert:
 3. Der Style nutzt anschließend:
 
 ```json
-["coalesce", ["get", "pin"], "nah-pin"]
+["coalesce", ["get", "pin"], "fallback-pin"]
 ```
 
 Dadurch greifen provider-spezifische Sprite-Icons automatisch für Punktdaten,
@@ -33,4 +33,4 @@ gezeichnet werden.
 - `nah-shs-schider-helicopter-service`
 - `nah-bundesministerium-des-inneren`
 
-Wenn kein Treffer gefunden wird, wird `nah-pin` als Fallback gesetzt.
+Wenn kein Treffer gefunden wird, wird `fallback-pin` als Fallback gesetzt.

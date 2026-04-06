@@ -39,7 +39,7 @@ DEFAULT_SOURCE_ID = "folder"
 DEFAULT_FONT_STACK = ["Segoe UI Regular", "Arial Unicode MS Regular"]
 SYMBOL_FOLDERS = {"rd-dienststellen", "nah-stuetzpunkte"}
 ICON_BY_FOLDER = {
-    "nah-stuetzpunkte": "nah-pin",
+    "nah-stuetzpunkte": "fallback-pin",
 }
 ZONEN_FALLBACK_COLOR = "#6b7280"
 ANFAHRTSZEIT_COLOR_RAMP = ["#22c55e", "#84cc16", "#eab308", "#f59e0b", "#f97316", "#dc2626"]
@@ -213,7 +213,7 @@ def build_rd_icon_expression() -> List[Any]:
 
 
 def build_nah_icon_expression() -> List[Any]:
-    return ["coalesce", ["get", "pin"], "nah-pin"]
+    return ["coalesce", ["get", "pin"], "fallback-pin"]
 
 
 def truthy_value(value: Any) -> bool:
@@ -303,7 +303,7 @@ def build_rd_enriched_geojson(src: Path, dst: Path) -> None:
 def derive_nah_pin(properties: Dict[str, Any]) -> str:
     emergency = str(properties.get("emergency", "")).strip().lower()
     if emergency != "air_rescue_service":
-        return "nah-pin"
+        return "fallback-pin"
 
     provider_text = " ".join(
         str(properties.get(key, "")).strip().lower()
@@ -331,7 +331,7 @@ def derive_nah_pin(properties: Dict[str, Any]) -> str:
     for pin, needles in mapping_rules:
         if any(needle in text for needle in needles):
             return pin
-    return "nah-pin"
+    return "fallback-pin"
 
 
 def build_nah_enriched_geojson(src: Path, dst: Path) -> None:
