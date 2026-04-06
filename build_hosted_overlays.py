@@ -268,8 +268,10 @@ def build_tippecanoe_command(out_pmtiles: Path, specs: Sequence[LayerSpec], extr
         arg in {"--drop-densest-as-needed", "--drop-fraction-as-needed", "--no-feature-limit", "--no-tile-size-limit"}
         for arg in extra_args
     )
+    has_unlimited_tiles = "--no-feature-limit" in extra_args and "--no-tile-size-limit" in extra_args
     if not has_drop_strategy:
-        cmd.append("--drop-densest-as-needed")
+        if not has_unlimited_tiles:
+            cmd.append("--drop-densest-as-needed")
     cmd.extend(extra_args)
     for spec in specs:
         cmd.extend(["-L", f"{spec.layer}:{spec.file}"])
@@ -1024,6 +1026,12 @@ def build_pmtiles(bundle: BundleSpec, out_dir: Path, extra_args: Sequence[str], 
                 nah_extra_args.append("--no-feature-limit")
             if "--no-tile-size-limit" not in nah_extra_args:
                 nah_extra_args.append("--no-tile-size-limit")
+            if "--no-line-simplification" not in nah_extra_args:
+                nah_extra_args.append("--no-line-simplification")
+            if "--no-tiny-polygon-reduction" not in nah_extra_args:
+                nah_extra_args.append("--no-tiny-polygon-reduction")
+            if "--no-tiny-polygon-simplification" not in nah_extra_args:
+                nah_extra_args.append("--no-tiny-polygon-simplification")
             has_drop_rate = any(
                 arg == "-r" or arg.startswith("-r") or arg == "--drop-rate"
                 for arg in nah_extra_args
