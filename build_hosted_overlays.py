@@ -194,7 +194,15 @@ def load_geometry_manifest(root: Path) -> Dict[str, Tuple[str, ...]]:
     return mapping
 
 
-def discover_bundle_dirs(root: Path) -> List[Path]:
+def discover_bundle_dirs(root: Path, geometry_manifest: Optional[Dict[str, Tuple[str, ...]]] = None) -> List[Path]:
+    if geometry_manifest:
+        bundle_dirs = set()
+        for rel_path in geometry_manifest:
+            candidate = (root / rel_path).resolve()
+            if candidate.is_file():
+                bundle_dirs.add(candidate.parent)
+        return sorted(bundle_dirs)
+
     bundle_dirs = set()
     for geojson_file in root.rglob("*.geojson"):
         if geojson_file.is_file():
@@ -226,9 +234,22 @@ def collect_bundle_spec(root: Path, bundle_dir: Path, geometry_manifest: Optiona
     relative_dir = bundle_dir.relative_to(root)
     geometry_manifest = geometry_manifest or {}
     layer_specs = []
-    for geojson_file in sorted(bundle_dir.glob("*.geojson")):
+    if geometry_manifest:
+        manifest_files = sorted(
+            root / rel_path
+            for rel_path in geometry_manifest.keys()
+            if Path(rel_path).parent == relative_dir and (root / rel_path).is_file()
+        )
+        geojson_files = manifest_files
+    else:
+        geojson_files = sorted(bundle_dir.glob("*.geojson"))
+
+    for geojson_file in geojson_files:
         rel_file = geojson_file.relative_to(root).as_posix()
-        geom_types = geometry_manifest.get(rel_file) or detect_geom_types_from_geojson(geojson_file)
+        if geometry_manifest:
+            geom_types = geometry_manifest.get(rel_file, ("unknown",))
+        else:
+            geom_types = detect_geom_types_from_geojson(geojson_file)
         layer_specs.append(
             LayerSpec(
                 layer=sanitize_layer_name(geojson_file.stem),
@@ -561,13 +582,12 @@ def build_nah_style(bundle: BundleSpec, base_url: str, sprite_url: Optional[str]
 
     for spec in bundle.layers:
         base_id = f"{bundle.slug}-{spec.layer}"
-        if layer_has_geom_type(spec, "polygon"):
-            add_fill_layer(layers, base_id, spec.layer)
-            add_line_layer(layers, base_id, spec.layer)
-        elif layer_has_geom_type(spec, "line"):
-            add_line_layer(layers, base_id, spec.layer)
-        if layer_has_geom_type(spec, "point"):
-            add_symbol_layer(layers, base_id, spec.layer, point_icon)
+        # Für NAH immer alle relevanten Layer anlegen und Geometrie per Filter
+        # im Layer selbst entscheiden lassen. Das verhindert, dass bei unvollständigen
+        # oder inkonsistenten Geometrietyp-Hinweisen Layer komplett fehlen.
+        add_fill_layer(layers, base_id, spec.layer)
+        add_line_layer(layers, base_id, spec.layer)
+        add_symbol_layer(layers, base_id, spec.layer, point_icon)
     return style
 
 
@@ -1078,11 +1098,11 @@ def main() -> int:
 
     copy_static_assets_to_dist(REPO_ROOT, out_dir)
 
-    bundle_dirs = discover_bundle_dirs(root)
+    geometry_manifest = load_geometry_manifest(root)
+    bundle_dirs = discover_bundle_dirs(root, geometry_manifest)
     if not bundle_dirs:
         raise SystemExit(f"Keine GeoJSON-Dateien unter {root} gefunden.")
 
-    geometry_manifest = load_geometry_manifest(root)
     bundles = [collect_bundle_spec(root, bundle_dir, geometry_manifest) for bundle_dir in bundle_dirs]
 
     if not args.skip_pmtiles and not args.dry_run and shutil.which("tippecanoe") is None:
