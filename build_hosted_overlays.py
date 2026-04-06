@@ -547,6 +547,17 @@ def add_nah_symbol_layer(style_layers: List[Dict[str, Any]], base_id: str, sourc
             "icon-anchor": "bottom",
             "icon-allow-overlap": True,
             "icon-ignore-placement": True,
+            "text-field": ["coalesce", ["get", "alt_name"], ""],
+            "text-size": 11,
+            "text-font": DEFAULT_FONT_STACK,
+            "text-offset": [0, 1.2],
+            "text-anchor": "top",
+            "text-optional": True,
+        },
+        "paint": {
+            "text-color": TEXT,
+            "text-halo-color": HALO,
+            "text-halo-width": 1,
         },
     })
 
