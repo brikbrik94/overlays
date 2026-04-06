@@ -14,7 +14,7 @@ from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
-from urllib.parse import parse_qs, urlparse
+from urllib.parse import parse_qs, unquote, urlparse
 
 VIEWER_DIR = Path(__file__).resolve().parent / "viewer"
 DEFAULT_BUNDLE_DIR = Path(__file__).resolve().parent / "dist"
@@ -41,20 +41,27 @@ class OverlayRequestHandler(BaseHTTPRequestHandler):
             return self.serve_file(VIEWER_DIR / "app.js")
         if path == "/viewer/styles.css":
             return self.serve_file(VIEWER_DIR / "styles.css")
+        if path == "/favicon.ico":
+            return self.send_response_no_content()
         if path == "/api/overlays":
             return self.serve_overlays()
         if path.startswith("/assets/"):
-            relative = path.removeprefix("/assets/")
+            relative = unquote(path.removeprefix("/assets/"))
             return self.serve_assets_file(relative)
         if path == "/api/style":
             query = parse_qs(parsed.query)
             style_file = query.get("style", [None])[0]
             return self.serve_style(style_file)
         if path.startswith("/bundle/"):
-            relative = path.removeprefix("/bundle/")
+            relative = unquote(path.removeprefix("/bundle/"))
             return self.serve_bundle_file(relative)
 
         self.send_error(HTTPStatus.NOT_FOUND, "Route nicht gefunden")
+
+    def send_response_no_content(self) -> None:
+        self.send_response(HTTPStatus.NO_CONTENT)
+        self.send_header("Content-Length", "0")
+        self.end_headers()
 
     @property
     def bundle_dir(self) -> Path:
@@ -138,6 +145,7 @@ class OverlayRequestHandler(BaseHTTPRequestHandler):
                 if isinstance(layout, dict):
                     layout["icon-image"] = ["coalesce", ["get", "pin"], "fallback-pin"]
                     layout["icon-size"] = ["interpolate", ["linear"], ["zoom"], 6, 0.35, 12, 0.65]
+                    layout["icon-anchor"] = "bottom"
                     layout["icon-allow-overlap"] = True
                     layout["icon-ignore-placement"] = True
                     for key in ["text-field", "text-size", "text-font", "text-offset", "text-anchor", "text-optional"]:
