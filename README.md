@@ -75,6 +75,46 @@ Low-Level-Helfer, falls du gezielt aus vielen GeoJSON-Dateien eine oder mehrere 
 Spezial-Generator für Manifest-basierte Styles mit `linien.json` / `color_mapping.json`.
 Das Skript bleibt im Repo, ist aber **nicht mehr der einfachste Hauptweg** für dein aktuelles Hosting-Ziel.
 
+### 4) `scripts/init_external_geojson_repo.sh`
+
+Hilfsskript zum einmaligen Klonen (oder optionalen Refresh) eines externen GeoJSON-Repos.
+
+Standard-Quelle:
+
+- `git@github.com:brikbrik94/geojson.git`
+
+Standard-Ziel:
+
+- `external/geojson-data`
+
+Beispiel:
+
+```bash
+./init.sh --refresh
+```
+
+Kurz-Wrapper im Repo-Root:
+
+- `init.sh` → ruft intern `scripts/init_external_geojson_repo.sh` auf
+
+### 5) `scripts/run_overlay_build.sh`
+
+Interaktiver Wrapper für den Build-Prozess. Das Skript fragt:
+
+- welche Datenquelle verwendet werden soll (`local`, `external`, `custom`)
+- ob ein `--clean` Build laufen soll
+- ob Sprites vorher neu gebaut werden sollen
+
+Beispiel:
+
+```bash
+./run.sh
+```
+
+Kurz-Wrapper im Repo-Root:
+
+- `run.sh` → ruft intern `scripts/run_overlay_build.sh` auf
+
 ## Zielstruktur im Output
 
 Nach einem Lauf mit `--out dist` sieht die Struktur sinngemäß so aus:
