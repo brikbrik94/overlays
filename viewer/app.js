@@ -70,9 +70,9 @@ async function debugSpriteAvailability(style, styleFile) {
 
   const spriteJsonUrl = resolveSpriteJsonUrl(style.sprite);
   const requiredIcons = styleFile.includes('rd-dienststellen')
-    ? ['rd-pin', 'nef-pin', 'brd-pin']
+    ? ['brd-pin', 'fallback-pin']
     : styleFile.includes('nah-stuetzpunkte')
-      ? ['nah-pin']
+      ? ['fallback-pin']
       : [];
 
   try {
