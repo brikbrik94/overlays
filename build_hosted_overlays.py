@@ -1054,7 +1054,7 @@ def main() -> int:
     parser.add_argument("--sprite-url", default="../assets/sprites/oe5ith-markers/sprite", help="Sprite URL for MapLibre styles.")
     parser.add_argument(
         "--glyphs-url",
-        default="https://tiles.oe5ith.at/assets/fonts/Open-Sans-Regular/{range}.pbf",
+        default="https://tiles.oe5ith.at/assets/fonts/{fontstack}/{range}.pbf",
         help="Glyphs URL for MapLibre styles.",
     )
     parser.add_argument("--skip-pmtiles", action="store_true", help="Do not run tippecanoe, only generate manifests/styles/index.")
