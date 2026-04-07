@@ -128,6 +128,77 @@
       }
     },
     {
+      "id": "nah-stuetzpunkte-nah_bayern-labels",
+      "type": "symbol",
+      "source": "folder",
+      "source-layer": "nah_bayern",
+      "filter": [
+        "==",
+        [
+          "geometry-type"
+        ],
+        "Point"
+      ],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          [
+            "get",
+            "alt_name"
+          ],
+          [
+            "get",
+            "short_name"
+          ],
+          [
+            "get",
+            "name"
+          ],
+          ""
+        ],
+        "text-size": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          10,
+          12,
+          12
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-anchor": "top",
+        "text-offset": [
+          0,
+          1.2
+        ],
+        "text-allow-overlap": true,
+        "text-ignore-placement": true,
+        "icon-image": "label-bubble-sdf",
+        "icon-anchor": "top",
+        "icon-text-fit": "both",
+        "icon-text-fit-padding": [
+          2,
+          8,
+          3,
+          8
+        ],
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true,
+        "icon-optional": false
+      },
+      "paint": {
+        "text-color": "#111827",
+        "icon-color": "#ffffff",
+        "icon-opacity": 0.96
+      }
+    },
+    {
       "id": "nah-stuetzpunkte-nah_oesterreich-symbols",
       "type": "symbol",
       "source": "folder",
@@ -166,6 +237,77 @@
       }
     },
     {
+      "id": "nah-stuetzpunkte-nah_oesterreich-labels",
+      "type": "symbol",
+      "source": "folder",
+      "source-layer": "nah_oesterreich",
+      "filter": [
+        "==",
+        [
+          "geometry-type"
+        ],
+        "Point"
+      ],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          [
+            "get",
+            "alt_name"
+          ],
+          [
+            "get",
+            "short_name"
+          ],
+          [
+            "get",
+            "name"
+          ],
+          ""
+        ],
+        "text-size": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          10,
+          12,
+          12
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-anchor": "top",
+        "text-offset": [
+          0,
+          1.2
+        ],
+        "text-allow-overlap": true,
+        "text-ignore-placement": true,
+        "icon-image": "label-bubble-sdf",
+        "icon-anchor": "top",
+        "icon-text-fit": "both",
+        "icon-text-fit-padding": [
+          2,
+          8,
+          3,
+          8
+        ],
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true,
+        "icon-optional": false
+      },
+      "paint": {
+        "text-color": "#111827",
+        "icon-color": "#ffffff",
+        "icon-opacity": 0.96
+      }
+    },
+    {
       "id": "nah-stuetzpunkte-nah_oesterreich_clean-symbols",
       "type": "symbol",
       "source": "folder",
@@ -201,6 +343,77 @@
         ],
         "icon-allow-overlap": true,
         "icon-anchor": "bottom"
+      }
+    },
+    {
+      "id": "nah-stuetzpunkte-nah_oesterreich_clean-labels",
+      "type": "symbol",
+      "source": "folder",
+      "source-layer": "nah_oesterreich_clean",
+      "filter": [
+        "==",
+        [
+          "geometry-type"
+        ],
+        "Point"
+      ],
+      "layout": {
+        "text-field": [
+          "coalesce",
+          [
+            "get",
+            "alt_name"
+          ],
+          [
+            "get",
+            "short_name"
+          ],
+          [
+            "get",
+            "name"
+          ],
+          ""
+        ],
+        "text-size": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          10,
+          12,
+          12
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-anchor": "top",
+        "text-offset": [
+          0,
+          1.2
+        ],
+        "text-allow-overlap": true,
+        "text-ignore-placement": true,
+        "icon-image": "label-bubble-sdf",
+        "icon-anchor": "top",
+        "icon-text-fit": "both",
+        "icon-text-fit-padding": [
+          2,
+          8,
+          3,
+          8
+        ],
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true,
+        "icon-optional": false
+      },
+      "paint": {
+        "text-color": "#111827",
+        "icon-color": "#ffffff",
+        "icon-opacity": 0.96
       }
     }
   ]
