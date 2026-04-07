@@ -563,16 +563,17 @@ def add_nah_label_layer(style_layers: List[Dict[str, Any]], base_id: str, source
         "filter": geometry_filter("Point", "MultiPoint"),
         "layout": {
             "text-field": ["coalesce", ["get", "alt_name"], ["get", "short_name"], ["get", "name"], ""],
-            "text-size": ["interpolate", ["linear"], ["zoom"], 6, 10, 12, 12],
+            "text-size": ["interpolate", ["linear"], ["zoom"], 6, 9.5, 12, 11],
             "text-font": DEFAULT_FONT_STACK,
-            "text-offset": [0, 1.2],
+            "text-offset": [0, 1.25],
             "text-anchor": "top",
             "text-allow-overlap": True,
             "text-ignore-placement": True,
             "icon-image": "label-bubble-sdf",
+            "icon-size": 1,
             "icon-anchor": "top",
             "icon-text-fit": "both",
-            "icon-text-fit-padding": [4, 14, 5, 14],
+            "icon-text-fit-padding": [0, 4, 0, 4],
             "icon-allow-overlap": True,
             "icon-ignore-placement": True,
             "icon-optional": False,
@@ -580,7 +581,7 @@ def add_nah_label_layer(style_layers: List[Dict[str, Any]], base_id: str, source
         "paint": {
             "text-color": "#111827",
             "icon-color": "#ffffff",
-            "icon-opacity": 0.96,
+            "icon-opacity": 0.9,
         },
     })
 

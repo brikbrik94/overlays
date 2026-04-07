@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="/viewer/styles.css" />
   </head>
   <body>
-    <aside class="sidebar">
+    <button id="mobile-menu-toggle" class="mobile-only" type="button">☰</button>
+    <aside id="sidebar" class="sidebar">
       <h1>Overlay Test Viewer</h1>
       <p class="lead">OSM-Basiskarte + lokal servierte Overlay-Styles aus deinem Build-Verzeichnis.</p>
 
@@ -18,6 +19,11 @@
       </select>
 
       <button id="reload-button" type="button">Liste neu laden</button>
+
+      <div id="layer-panel" class="panel" style="display: none;">
+        <h2>Layer-Auswahl</h2>
+        <div id="layer-list" class="layer-list"></div>
+      </div>
 
       <div class="panel">
         <h2>Status</h2>

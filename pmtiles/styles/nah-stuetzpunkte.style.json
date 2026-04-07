@@ -183,10 +183,10 @@
         "icon-anchor": "top",
         "icon-text-fit": "both",
         "icon-text-fit-padding": [
+          0,
           4,
-          14,
-          5,
-          14
+          0,
+          4
         ],
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
@@ -292,10 +292,10 @@
         "icon-anchor": "top",
         "icon-text-fit": "both",
         "icon-text-fit-padding": [
+          0,
           4,
-          14,
-          5,
-          14
+          0,
+          4
         ],
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
@@ -401,10 +401,10 @@
         "icon-anchor": "top",
         "icon-text-fit": "both",
         "icon-text-fit-padding": [
+          0,
           4,
-          14,
-          5,
-          14
+          0,
+          4
         ],
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,

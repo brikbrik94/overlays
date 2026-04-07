@@ -1,10 +1,70 @@
 const statusBox = document.getElementById('status-box');
 const overlaySelect = document.getElementById('overlay-select');
 const reloadButton = document.getElementById('reload-button');
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const sidebar = document.getElementById('sidebar');
+const layerPanel = document.getElementById('layer-panel');
+const layerList = document.getElementById('layer-list');
 const DEBUG_SPRITES = true;
+
+// Mobile Menu Toggle
+mobileMenuToggle.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+  mobileMenuToggle.textContent = sidebar.classList.contains('active') ? '✕' : '☰';
+});
+
+// Close sidebar on overlay selection (mobile)
+overlaySelect.addEventListener('change', () => {
+  if (window.innerWidth <= 768) {
+    sidebar.classList.remove('active');
+    mobileMenuToggle.textContent = '☰';
+  }
+});
 
 function setStatus(message, extra) {
   statusBox.textContent = extra ? `${message}\n\n${extra}` : message;
+}
+
+function updateLayerPanel(style) {
+  layerList.innerHTML = '';
+  const layers = style.layers.filter(l => l.source === 'folder' && l['source-layer']);
+  
+  if (layers.length === 0) {
+    layerPanel.style.display = 'none';
+    return;
+  }
+  
+  layerPanel.style.display = 'block';
+  
+  // Group layers by source-layer (e.g. symbols, labels, fill)
+  const groupedLayers = {};
+  layers.forEach(l => {
+    const sl = l['source-layer'];
+    if (!groupedLayers[sl]) groupedLayers[sl] = [];
+    groupedLayers[sl].push(l.id);
+  });
+  
+  Object.keys(groupedLayers).sort().forEach(sourceLayer => {
+    const layerIds = groupedLayers[sourceLayer];
+    const item = document.createElement('label');
+    item.className = 'layer-item';
+    
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.checked = true;
+    checkbox.addEventListener('change', () => {
+      const visibility = checkbox.checked ? 'visible' : 'none';
+      layerIds.forEach(id => {
+        if (map.getLayer(id)) {
+          map.setLayoutProperty(id, 'visibility', visibility);
+        }
+      });
+    });
+    
+    item.appendChild(checkbox);
+    item.appendChild(document.createTextNode(sourceLayer));
+    layerList.appendChild(item);
+  });
 }
 
 const protocol = new pmtiles.Protocol();
@@ -40,6 +100,40 @@ const map = new maplibregl.Map({
 });
 
 map.addControl(new maplibregl.NavigationControl(), 'top-right');
+
+// Debug: Log map errors
+map.on('error', (e) => {
+  console.error('[map-error]', e.error || e);
+});
+
+// Debug: Log data loading status
+map.on('dataloading', (e) => {
+  if (e.dataType === 'source') {
+    console.debug('[map-debug] loading source:', e.sourceId);
+  }
+});
+
+// Debug: Log features on click
+map.on('click', (e) => {
+  console.info('[map-click] point:', e.point, 'lngLat:', e.lngLat);
+  const features = map.queryRenderedFeatures(e.point);
+  if (features.length > 0) {
+    console.info('[feature-debug] clicked features:', features.map(f => ({
+      layer: f.layer.id,
+      sourceLayer: f.sourceLayer,
+      properties: f.properties,
+      geometry: f.geometry.type
+    })));
+  } else {
+    console.info('[feature-debug] no features at click point');
+  }
+});
+
+window.addEventListener('unhandledrejection', event => {
+  console.error('[promise-error]', event.reason);
+});
+
+console.info('[app-init] initializing viewer...');
 
 let overlayCatalog = [];
 async function fetchOverlayCatalog() {
@@ -208,6 +302,7 @@ async function applyOverlay(styleFile) {
   const style = await fetchOverlayStyle(styleFile);
   const spriteDebug = await debugSpriteAvailability(style, styleFile);
   map.setStyle(composeMapStyle(style), { diff: false });
+  updateLayerPanel(style);
   const sourceFeatureCounts = await debugOverlayFeatures(style, styleFile);
   const activeOverlay = style.metadata?.localTestServer || { styleFile };
   setStatus(

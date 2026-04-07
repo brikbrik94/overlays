@@ -114,7 +114,6 @@ class OverlayRequestHandler(BaseHTTPRequestHandler):
 
         try:
             style = json.loads(style_path.read_text(encoding="utf-8"))
-            style = self.sanitize_rd_style(style, style_file)
             style = self.rewrite_style_for_local_bundle(style, style_file)
         except Exception as exc:
             return self.send_json({"error": str(exc)}, status=HTTPStatus.INTERNAL_SERVER_ERROR)

@@ -14,12 +14,16 @@ def write_png_rgba(path: Path, width: int, height: int, pixels: Iterable[bytes])
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--out", default="assets/sprites/sdf/label-bubble-sdf.png")
-    parser.add_argument("--width", type=int, default=256)
-    parser.add_argument("--height", type=int, default=128)
-    parser.add_argument("--radius", type=float, default=16.0)
-    parser.add_argument("--spread", type=float, default=18.0)
+    parser.add_argument("--out", default="assets/sprites/sdf/label-bubble.png")
+    parser.add_argument("--width", type=int, default=64)
+    parser.add_argument("--height", type=int, default=64)
+    parser.add_argument("--radius", type=float, default=5.0)
+    parser.add_argument("--spread", type=float, default=0.5)
+    parser.add_argument("--color", default="255,255,255", help="RGB color as 'R,G,B'")
     args = parser.parse_args()
+    
+    rgb = tuple(map(int, args.color.split(",")))
+    
     out_path = Path(args.out).expanduser().resolve()
     out_path.parent.mkdir(parents=True, exist_ok=True)
     rows = []
@@ -31,7 +35,7 @@ def main():
         for x in range(args.width):
             sd = sd_rounded_box(x - cx, y - cy, hx, hy, radius)
             alpha = int(round(max(0.0, min(1.0, 0.5 - (sd / args.spread))) * 255.0))
-            row.extend((255, 255, 255, alpha))
+            row.extend((*rgb, alpha))
         rows.append(bytes(row))
     write_png_rgba(out_path, args.width, args.height, rows)
     print(f"Wrote {out_path}")

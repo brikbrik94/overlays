@@ -44,13 +44,13 @@ def build_sprite_group(group: str, icons: Sequence[IconSpec], out_dir: Path, sca
             "x": x, "y": 0, "width": img.width, "height": img.height,
             "pixelRatio": scale, "sdf": icon.sdf
         }
-        if icon.name == "label-bubble-sdf":
-            stretch_x_start = max(1, int(round(img.width * 0.25)))
-            stretch_x_end = min(img.width - 1, max(stretch_x_start + 1, int(round(img.width * 0.75))))
-            stretch_y_start = max(1, int(round(img.height * 0.40)))
-            stretch_y_end = min(img.height - 1, max(stretch_y_start + 1, int(round(img.height * 0.60))))
-            entry["stretchX"] = [[stretch_x_start, stretch_x_end]]
-            entry["stretchY"] = [[stretch_y_start, stretch_y_end]]
+        if icon.name in ["label-bubble", "label-bubble-blue", "label-bubble-yellow"]:
+            # OE5ITH: Fix for non-SDF label background
+            # Radius: 5px, Icon size: 64x64
+            radius = 5 * scale
+            entry["stretchX"] = [[radius, img.width - radius]]
+            entry["stretchY"] = [[radius, img.height - radius]]
+            entry["content"] = [radius, radius, img.width - radius, img.height - radius]
         manifest[icon.name] = entry
         x += img.width + padding
 
