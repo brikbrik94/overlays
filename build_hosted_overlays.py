@@ -569,7 +569,7 @@ def add_nah_label_layer(style_layers: List[Dict[str, Any]], base_id: str, source
             "text-anchor": "top",
             "text-allow-overlap": True,
             "text-ignore-placement": True,
-            "icon-image": ["coalesce", ["image", "label-bubble-sdf"], ["image", "oe5ith-markers/label-bubble-sdf"]],
+            "icon-image": "label-bubble-sdf",
             "icon-anchor": "top",
             "icon-text-fit": "both",
             "icon-text-fit-padding": [2, 8, 3, 8],
