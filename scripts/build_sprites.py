@@ -40,10 +40,19 @@ def build_sprite_group(group: str, icons: Sequence[IconSpec], out_dir: Path, sca
     x = 0
     for icon, img in images:
         sprite.paste(img, (x, 0), img)
-        manifest[icon.name] = {
+        entry = {
             "x": x, "y": 0, "width": img.width, "height": img.height,
             "pixelRatio": scale, "sdf": icon.sdf
         }
+        if icon.name == "label-bubble-sdf":
+            cap = max(1, int(round(img.height * 0.48)))
+            inset = max(1, int(round(img.height * 0.22)))
+            right_stretch = max(cap + 1, img.width - cap)
+            bottom_stretch = max(inset + 1, img.height - inset)
+            entry["stretchX"] = [[cap, right_stretch]]
+            entry["stretchY"] = [[inset, bottom_stretch]]
+            entry["content"] = [inset, inset, max(inset + 1, img.width - inset), max(inset + 1, img.height - inset)]
+        manifest[icon.name] = entry
         x += img.width + padding
 
     group_dir = out_dir / group

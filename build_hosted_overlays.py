@@ -550,46 +550,37 @@ def add_nah_symbol_layer(style_layers: List[Dict[str, Any]], base_id: str, sourc
             "icon-anchor": "bottom",
             "icon-allow-overlap": True,
             "icon-ignore-placement": True,
-            "text-field": ["coalesce", ["get", "alt_name"], ""],
-            "text-size": 11,
-            "text-font": DEFAULT_FONT_STACK,
-            "text-offset": [0, 1.2],
-            "text-anchor": "top",
-            "text-optional": True,
-        },
-        "paint": {
-            "text-color": LABEL_TEXT,
-            "text-halo-color": LABEL_BUBBLE,
-            "text-halo-width": ["interpolate", ["linear"], ["zoom"], 6, 2.0, 12, 2.8],
-            "text-halo-blur": 0.6,
         },
     })
 
 
-def add_nah_symbol_layer(style_layers: List[Dict[str, Any]], base_id: str, source_layer: str, icon_image: Any) -> None:
+def add_nah_label_layer(style_layers: List[Dict[str, Any]], base_id: str, source_layer: str) -> None:
     style_layers.append({
-        "id": f"{base_id}-symbols",
+        "id": f"{base_id}-labels",
         "type": "symbol",
         "source": DEFAULT_SOURCE_ID,
         "source-layer": source_layer,
         "filter": geometry_filter("Point", "MultiPoint"),
         "layout": {
-            "icon-image": icon_image,
-            "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.35, 12, 0.65],
-            "icon-anchor": "bottom",
-            "icon-allow-overlap": True,
-            "icon-ignore-placement": True,
-            "text-field": ["coalesce", ["get", "alt_name"], ""],
-            "text-size": 11,
+            "text-field": ["coalesce", ["get", "alt_name"], ["get", "short_name"], ["get", "name"], ""],
+            "text-size": ["interpolate", ["linear"], ["zoom"], 6, 10, 12, 12],
             "text-font": DEFAULT_FONT_STACK,
             "text-offset": [0, 1.2],
             "text-anchor": "top",
-            "text-optional": True,
+            "text-allow-overlap": True,
+            "text-ignore-placement": True,
+            "icon-image": "label-bubble-sdf",
+            "icon-anchor": "top",
+            "icon-text-fit": "both",
+            "icon-text-fit-padding": [4, 14, 5, 14],
+            "icon-allow-overlap": True,
+            "icon-ignore-placement": True,
+            "icon-optional": False,
         },
         "paint": {
-            "text-color": TEXT,
-            "text-halo-color": HALO,
-            "text-halo-width": 1,
+            "text-color": "#111827",
+            "icon-color": "#ffffff",
+            "icon-opacity": 0.96,
         },
     })
 
@@ -648,6 +639,7 @@ def build_nah_style(bundle: BundleSpec, base_url: str, sprite_url: Optional[str]
         add_fill_layer(layers, base_id, spec.layer)
         add_line_layer(layers, base_id, spec.layer)
         add_nah_symbol_layer(layers, base_id, spec.layer, point_icon)
+        add_nah_label_layer(layers, base_id, spec.layer)
     return style
 
 
