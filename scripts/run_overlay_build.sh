@@ -153,18 +153,13 @@ if [[ "$REBUILD_SPRITES" =~ ^(yes|y|ja)$ ]]; then
   bash "$ROOT_DIR/scripts/run_sprite_pipeline.sh"
 fi
 
-PYTHON_BIN="$(detect_python_bin)"
-BUILD_CMD=("$PYTHON_BIN" "$ROOT_DIR/build_hosted_overlays.py" --root "$DATA_ROOT" --out "$OUT_DIR")
-if [[ "$CLEAN_MODE" =~ ^(yes|y|ja)$ ]]; then
-  BUILD_CMD+=(--clean)
-fi
-if [[ "$SKIP_PMTILES" -eq 1 ]]; then
-  BUILD_CMD+=(--skip-pmtiles)
+if [[ "$SKIP_PMTILES" -ne 1 ]]; then
+  echo "🗺️ Building PMTiles..."
+  bash "$ROOT_DIR/scripts/run_pmtiles_build.sh" --root "$DATA_ROOT" --out "$OUT_DIR"
 fi
 
-printf "\n🚀 Running build: %s\n" "${BUILD_CMD[*]}"
-"${BUILD_CMD[@]}"
+echo "🎨 Building Styles and Manifest..."
+bash "$ROOT_DIR/scripts/run_style_build.sh" --root "$DATA_ROOT" --out "$OUT_DIR"
 
 echo
-
-echo "✅ Build complete. Output: $OUT_DIR"
+echo "✨ All-in-one build complete! Output is in: $OUT_DIR"

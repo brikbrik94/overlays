@@ -1,8 +1,18 @@
 # build artifacts
 /dist/
+/pmtiles/
+!/pmtiles/styles/
+!/pmtiles/README.md
+!/pmtiles/asset-checklist.md
+
+# data files
+*.geojson
+*.pmtiles
 
 # python
 __pycache__/
 *.pyc
 .venv/
 external/
+.idea/
+.vscode/

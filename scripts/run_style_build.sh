@@ -39,7 +39,7 @@ export PYTHONPATH="$ROOT_DIR/scripts/style_builders:${PYTHONPATH:-}"
 echo "🚀 Starting modular Style build..."
 
 # Liste der Builder (hier fügen wir schrittweise neue hinzu)
-BUILDERS=("build_nah.py" "build_rd.py" "build_zonen.py" "build_anfahrtszeit.py" "build_leitstellen.py" "build_bezirke.py" "build_gemeinden.py")
+BUILDERS=("build_nah.py" "build_rd.py" "build_zonen.py" "build_anfahrtszeit.py" "build_leitstellen.py" "build_bezirke.py" "build_gemeinden.py" "build_sonstiges.py")
 
 for builder in "${BUILDERS[@]}"; do
   python3 "$ROOT_DIR/scripts/style_builders/$builder" --root "$EXTERNAL_DATA_DIR" --out "$OUT_DIR" --base-url "$BASE_URL"
@@ -56,5 +56,9 @@ python3 "$ROOT_DIR/scripts/style_builders/build_strassen.py" --root "$EXTERNAL_D
 echo "📇 Generating index.json..."
 python3 "$ROOT_DIR/scripts/generate_index.py" --out "$OUT_DIR" --base-url "$BASE_URL"
 
+# Manifest generieren
+echo "📜 Generating manifest.json for external scripts..."
+python3 "$ROOT_DIR/scripts/generate_manifest.py"
+
 echo
-echo "✅ Style build complete. Styles and index.json are in: $OUT_DIR/styles"
+echo "✅ Style build complete. Styles, index.json and manifest.json are ready."
